@@ -27,8 +27,8 @@ width, height = image.size
 draw = ImageDraw.Draw(image)
 text_kor = "아기자기"
 text_eng = "Welcome to"
-font_kor = ImageFont.truetype("Cozem/font/arial-cufonfonts/NanumSquareNeo-eHv.ttf", 50)
-font_eng = ImageFont.truetype("Cozem/font/arial-cufonfonts/ARIAL.TTF", 50)
+font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
+font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
 text_width, text_height = draw.textsize(text_kor, font=font_kor)
 
 stroke_width = 2
