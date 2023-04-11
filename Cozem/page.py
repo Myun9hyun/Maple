@@ -109,7 +109,7 @@ elif choice == "길드페이지":
             '''
 
         with col2:
-            st.image("MH/image/elinel.jpg", use_column_width=True)
+            st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
       
@@ -118,7 +118,7 @@ elif choice == "직위관리":
     tab1, tab2, tab3, tab4 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause"])
     with tab1:
         st.header("💎코어젬스톤💎")
-        st.image("MH/image/cozem_guild.jpg", use_column_width=True)
+        st.image("Cozem/image/cozem_guild.jpg", use_column_width=True)
         def Flag_cozem(flag):
             if flag >= 0 and flag < 500:
                 i = 0
