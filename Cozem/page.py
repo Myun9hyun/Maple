@@ -21,7 +21,7 @@ import datetime
 st.set_page_config(page_title="BanShamDoongDolYoung", page_icon=":rabbit:", layout="wide")
 password = 1234
 
-image = Image.open("MH/image/cover_guild.jpg")
+image = Image.open("Cozem/image/cover_guild.jpg")
 # width, height = image.size
 # # 이미지에 텍스트 추가
 # draw = ImageDraw.Draw(image)
@@ -830,17 +830,17 @@ elif choice == "아카이브":
         col1, col2=st.columns(2)
         with col1:
             st.write("**리나와 한컷**")
-            st.image("MH/image/guild1.jpg", use_column_width=True)
+            st.image("Cozem/image/guild1.jpg", use_column_width=True)
         with col2:
             st.write("**왕의 쉼터**")
-            st.image("MH/image/guild2.jpg", use_column_width=True)
+            st.image("Cozem/image/guild2.jpg", use_column_width=True)
         col3, col4 = st.columns(2)
         with col3:
             st.write("**옷맞춤**")
-            st.image("MH/image/guild3.jpg", use_column_width=True)
+            st.image("Cozem/image/guild3.jpg", use_column_width=True)
         with col4:
             st.write("**엘리넬**")
-            st.image("MH/image/elinel.jpg", use_column_width=True)
+            st.image("Cozem/image/elinel.jpg", use_column_width=True)
 else:
     tab1, tab2, tab3= st.tabs(["🎁Random Box", "🔗Link","🏚Attic"])
     with tab1:
@@ -1346,8 +1346,8 @@ else:
 
                     if password_input_poster == day:
                         st.success('다락방의 낮을 공개할게!')
-                        img_url1='https://github.com/Myun9hyun/trash/raw/main/MH/room/day_new.jpg'
-                        img_url2='https://github.com/Myun9hyun/trash/raw/main/MH/room/day_secret_new.jpg'
+                        img_url1='https://github.com/Myun9hyun/Maple/raw/main/Cozem/image/day_new.jpg'
+                        img_url2='https://github.com/Myun9hyun/Maple/raw/main/Cozem/image/day_secret_new.jpg'
                         st.image(img_url1)
                         st.image(img_url2)
                     else: 
@@ -1357,8 +1357,8 @@ else:
                     password_input_night = st.number_input('비밀번호를 입력해주세요 : ', min_value=0, key='password_input_night')
                     if password_input_night == night:
                         st.success('다락방의 밤을 공개할게!')  
-                        img_url1='https://github.com/Myun9hyun/trash/raw/main/MH/room/night_new.jpg'
-                        img_url2='https://github.com/Myun9hyun/trash/raw/main/MH/room/night_secret_new.jpg'
+                        img_url1='https://github.com/Myun9hyun/Maple/raw/main/Cozem/image/night_new.jpg'
+                        img_url2='https://github.com/Myun9hyun/Maple/raw/main/Cozem/image/night_secret_new.jpg'
                         st.image(img_url1)
                         st.image(img_url2)
                     else: 
