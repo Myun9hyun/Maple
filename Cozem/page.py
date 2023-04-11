@@ -85,6 +85,7 @@ if choice == "메인페이지":
     > * 47포 길드
     > * Lv220 이상 가입 가능
     > * 연합길드 '초초' 보유
+    [![GitHub](https://img.shields.io/badge/Github-3152A0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Myun9hyun)
     '''
     
     
