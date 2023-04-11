@@ -86,7 +86,7 @@ if choice == "메인페이지":
     > * Lv220 이상 가입 가능
     > * 연합길드 '초초' 보유
     '''
-    
+    ![GitHub](https://github.com/Myun9hyun)
     
 
 elif choice == "길드페이지":
