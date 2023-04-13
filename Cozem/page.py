@@ -113,6 +113,7 @@ with st.sidebar:
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
     bgm = st.text_input("원하시는 배경음악을 입력하세요")
+    st.write("나린, 도원경, 차원의균열, 첫번째동행 중에서 골라주세용")
     # set_BGM(bgm)
     st.write()
     audio_file = open(f'Cozem/bgm/{bgm}.mp3', 'rb')
