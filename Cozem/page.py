@@ -115,7 +115,7 @@ elif choice == "길드페이지":
       
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
-    tab1, tab2, tab3, tab4 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem"])
     with tab1:
         st.header("💎코어젬스톤💎")
         st.image("Cozem/image/cozem_guild.jpg", use_column_width=True)
@@ -705,7 +705,7 @@ elif choice == "직위관리":
                 try:
                     data2 = pd.read_csv(FILE_PATH2)
                 except FileNotFoundError:
-                    data2 = pd.DataFrame(columns=['Name', 'Why', 'Period'])
+                    data2 = pd.DataFrame(columns=['Name', 'Why', 'Due to'])
                 return data2
 
             # 데이터를 파일에 저장하기
@@ -715,7 +715,7 @@ elif choice == "직위관리":
             # 데이터 초기화 함수
             def clear_data2():
                 global data2
-                data2 = pd.DataFrame(columns=['Name', 'Why', 'Period'])
+                data2 = pd.DataFrame(columns=['Name', 'Why', 'Due to'])
                 # 파일 삭제
                 os.remove(FILE_PATH2)
             # 데이터 삭제 함수
@@ -733,7 +733,7 @@ elif choice == "직위관리":
                 data2 = data2.append({
                     'Name': name, 
                     'Why' : why,
-                    'Period' : period
+                    'Due to' : period
 
                 }, ignore_index=True)
             
@@ -747,7 +747,7 @@ elif choice == "직위관리":
                     # 데이터 삭제 기능
                     # if st.button('데이터 삭제'):
                         # 사용자로부터 삭제할 행 번호 입력받기
-                        st.write(data2[['Name','Why', 'Period']])
+                        st.write(data2[['Name','Why', 'Due to']])
                         row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data2.shape[0]-1)
                         st.write("Enter를 입력하면 삭제됩니다.")
                         if st.button('데이터 삭제'):
@@ -791,6 +791,107 @@ elif choice == "직위관리":
                 main()
         else:
             st.warning('비밀번호가 틀렸습니다.')
+    with tab5 :
+        st.header("💝기부 코젬 관리")
+        st.write("기능 구현중...")
+    #     FILE_PATH3 = 'data3.csv'
+    #     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+    #     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password6')
+    #     if password_input == password:
+    #         st.success('접근을 허용합니다')
+    #         options = ["기부 코젬 추가➕", "기부 코젬 조회🔎", "기부 코젬 목록 삭제✂", "데이터 초기화💣" ]
+    #         option = st.selectbox("기능 선택", options, key='select4')
+    #     # 파일에서 데이터 불러오기
+    #         def load_data3():
+    #             try:
+    #                 data3 = pd.read_csv(FILE_PATH3)
+    #             except FileNotFoundError:
+    #                 data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Sum'])
+    #             return data3
+
+    #         # 데이터를 파일에 저장하기
+    #         def save_data3(data3):
+    #             data3.to_csv(FILE_PATH3, index=False)
+
+    #         # 데이터 초기화 함수
+    #         def clear_data3():
+    #             global data3
+    #             data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Sum'])
+    #             # 파일 삭제
+    #             os.remove(FILE_PATH3)
+    #         # 데이터 삭제 함수
+    #         def delete_data3(row_index):
+    #             global data3
+    #             data3 = data3.drop(index=row_index).reset_index(drop=True)
+
+    #         # 불러온 데이터를 전역 변수로 저장
+    #         data3 = load_data3()
+    #         def add_data3(info, cozem, sum):
+    #             global data3
+    #             if name in data3['Info'].values:
+    #                 st.warning(f'{name} (은)는 이미 있는 이름이야!')
+    #                 return
+    #             data3 = data3.append({
+    #                 'Info': info, 
+    #                 'Cozem' : cozem,
+    #                 'Sum' : sum
+
+    #             }, ignore_index=True)
+            
+
+    #         def main():
+    #             if option == "기부 코젬 목록 삭제✂":
+    #                 st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+    #                 password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass10')
+    #                 if password_input == password:
+    #                     st.success('접근을 허용합니다')
+    #                 # 데이터 삭제 기능
+    #                 # if st.button('데이터 삭제'):
+    #                     # 사용자로부터 삭제할 행 번호 입력받기
+    #                     st.write(data3[['Info','Cozem', 'Sum']])
+    #                     row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data3.shape[0]-1)
+    #                     st.write("Enter를 입력하면 삭제됩니다.")
+    #                     if st.button('데이터 삭제'):
+    #                         # 해당 행이 존재할 경우, 행을 삭제
+    #                         if row_index >= 0 and row_index < data3.shape[0]:
+    #                             delete_data3(row_index)
+    #                             save_data3(data3)  # 데이터를 파일에 저장
+    #                             st.success('입력하신 행이 삭제되었습니다.')
+    #                 else:
+    #                     st.warning('비밀번호가 틀렸습니다.')
+    #             elif option == "기부 코젬 추가➕":
+    #                 info = st.text_input("기부 코젬 주차를 입력해주세요")
+    #                 cozem = st.number_input("기부받은 갯수를 입력해주세요")
+    #                 day = st.date_input(
+    #                     "기부받은 날짜를 입력해주세요",
+    #                     datetime.date(2023, 4, 10))
+    #                 if st.button('유예자 이름 추가'):
+    #                     add_data3(name, why, day)
+    #                     save_data3(data3)
+    #                     st.success(f"유예자 {name}이(가) 추가되었습니다.")
+
+    #             elif option == "기부 코젬 조회🔎":
+    #                 if st.button('기부 코젬 확인'):
+    #                     st.write("기부 코젬 목록입니다.")
+    #                     st.write(data3)
+
+    #             elif option == "데이터 초기화💣":
+    #                 st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+    #                 password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass9')
+    #                 if password_input == password:
+    #                     st.success('접근을 허용합니다')
+    #                     # 데이터 전부 삭제
+    #                     st.write("⚠️버튼을 누르면 데이터가 다 날아갑니다!⚠️")
+    #                     st.write("⚠️신중하게 누르세요!!⚠️")
+    #                     if st.button('차트 초기화'):
+    #                         clear_data3()
+    #                         st.warning('차트가 초기화 되었습니다')
+    #                 else:
+    #                     st.warning('비밀번호가 틀렸습니다.')
+    #         if __name__ == "__main__":
+    #             main()
+    #     else:
+    #         st.warning('비밀번호가 틀렸습니다.')
         
 
 elif choice == "아카이브":
