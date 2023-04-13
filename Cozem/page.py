@@ -33,7 +33,7 @@ font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
 text_width, text_height = draw.textsize(text_kor, font=font_kor)
 font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 15)
-font_madeby = ImageFont.truetype("Cozem/font/ARIAL.TTF", 15)
+font_madeby = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 15)
 stroke_width = 2
 stroke_fill = (0, 0, 0)
 
