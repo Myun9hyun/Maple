@@ -74,14 +74,15 @@ draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
 def set_BGM(bgm):
-    
-    audio_path = f"Cozem/bgm/{bgm}.mp3"
-    audio_file = open(audio_path, 'rb').read()
+    if bgm:
+        audio_path = f"Cozem/bgm/{bgm}.mp3"
+        audio_file = open(audio_path, 'rb').read()
 
-    return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
-                        {base64.b64encode(audio_file).decode()}"></audio>',\
-                        unsafe_allow_html=True)
-
+        return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
+                            {base64.b64encode(audio_file).decode()}"></audio>',\
+                            unsafe_allow_html=True)
+    else:
+        pass
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
 
