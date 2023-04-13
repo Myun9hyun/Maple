@@ -818,13 +818,13 @@ elif choice == "직위관리":
     with tab5 :
         st.header("💝기부 코젬 관리")
         st.write("기능 구현중...")
-    #     FILE_PATH3 = 'data3.csv'
-    #     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
-    #     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password6')
-    #     if password_input == password:
-    #         st.success('접근을 허용합니다')
-    #         options = ["기부 코젬 추가➕", "기부 코젬 조회🔎", "기부 코젬 목록 삭제✂", "데이터 초기화💣" ]
-    #         option = st.selectbox("기능 선택", options, key='select4')
+        FILE_PATH3 = 'data3.csv'
+        st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+        password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password6')
+        if password_input == password:
+            st.success('접근을 허용합니다')
+            options = ["기부 코젬 추가➕", "기부 코젬 조회🔎", "기부 코젬 목록 삭제✂", "데이터 초기화💣" ]
+            option = st.selectbox("기능 선택", options, key='select4')
     #     # 파일에서 데이터 불러오기
     #         def load_data3():
     #             try:
@@ -869,7 +869,7 @@ elif choice == "직위관리":
     #                 password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass10')
     #                 if password_input == password:
     #                     st.success('접근을 허용합니다')
-    #                 # 데이터 삭제 기능
+    #                 # 데이터 삭제 기능 
     #                 # if st.button('데이터 삭제'):
     #                     # 사용자로부터 삭제할 행 번호 입력받기
     #                     st.write(data3[['Info','Cozem', 'Sum']])
