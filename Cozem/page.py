@@ -73,8 +73,8 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
-def set_BGM():
-    audio_path = "Cozem/bgm/Narin.mp3"
+def set_BGM(bgm):
+    audio_path = "Cozem/bgm/나린.mp3"
     audio_file = open(audio_path, 'rb').read()
 
     return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
@@ -111,7 +111,7 @@ if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
     set_BGM()
     st.write()
-    audio_file = open('Cozem/bgm/Dowonkyung.mp3', 'rb')
+    audio_file = open('Cozem/bgm/도원경.mp3', 'rb')
     audio_bytes = audio_file.read()
 
     # st.audio(audio_bytes, format='audio/mp3')
