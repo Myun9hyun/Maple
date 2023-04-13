@@ -73,7 +73,13 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
+def set_BGM():
+    audio_path = "Cozem/bgm/Fantasia.mp3"
+    audio_file = open(audio_path, 'rb').read()
 
+    return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
+                        {base64.b64encode(audio_file).decode()}"></audio>',\
+                        unsafe_allow_html=True)
 
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
@@ -103,6 +109,7 @@ with st.sidebar:
 # 선택된 메뉴에 따라 다른 탭 출력
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
+    set_BGM()
     st.write()
     '''
     ### 아기자기 길드 페이지에 오신것을 환영합니다😊
