@@ -73,8 +73,9 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
-def set_BGM():
-    audio_path = "Cozem/bgm/나린.mp3"
+def set_BGM(bgm):
+    bgm = st.text_input("원하시는 배경음악을 입력하세요")
+    audio_path = f"Cozem/bgm/{bgm}.mp3"
     audio_file = open(audio_path, 'rb').read()
 
     return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
