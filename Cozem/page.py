@@ -74,7 +74,7 @@ draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
 def set_BGM(bgm):
-    bgm = st.text_input("원하시는 배경음악을 입력하세요")
+    
     audio_path = f"Cozem/bgm/{bgm}.mp3"
     audio_file = open(audio_path, 'rb').read()
 
@@ -110,6 +110,7 @@ with st.sidebar:
 # 선택된 메뉴에 따라 다른 탭 출력
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
+    bgm = st.text_input("원하시는 배경음악을 입력하세요")
     set_BGM(bgm)
     st.write()
     audio_file = open('Cozem/bgm/도원경.mp3', 'rb')
