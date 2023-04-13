@@ -133,8 +133,8 @@ if choice == "메인페이지":
         audio_file = open(f'Cozem/bgm/{bgm}.mp3', 'rb')
         audio_bytes = audio_file.read()
 
-        st.audio(audio_bytes, format='audio/mp3')
-        st.write(f"{bgm} 배경음악입니다.🎵")
+        # st.audio(audio_bytes, format='audio/mp3')
+        # st.write(f"{bgm} 배경음악입니다.🎵")
     
     
     
