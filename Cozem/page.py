@@ -73,7 +73,7 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
-def set_BGM(bgm):
+def set_BGM():
     audio_path = "Cozem/bgm/나린.mp3"
     audio_file = open(audio_path, 'rb').read()
 
