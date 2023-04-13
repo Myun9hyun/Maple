@@ -74,7 +74,7 @@ draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
 def set_BGM():
-    audio_path = "Cozem/bgm/Fantasia.mp3"
+    audio_path = "Cozem/bgm/Narin.mp3"
     audio_file = open(audio_path, 'rb').read()
 
     return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
