@@ -39,7 +39,7 @@ x = text_width - 100
 y = height - text_height - 200
 z = height - text_height - 255
 x_ver = width - text_width + 50
-y_ver = height - text_height - 50
+y_ver = height - text_height + 30
 # 테두리가 있는 텍스트 그리기
 draw.text((x - stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x + stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
