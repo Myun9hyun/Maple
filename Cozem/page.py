@@ -112,8 +112,9 @@ with st.sidebar:
 # 선택된 메뉴에 따라 다른 탭 출력
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
-    bgm = st.text_input("원하시는 배경음악을 입력하세요")
     st.write("나린, 도원경, 차원의균열, 첫번째동행 중에서 골라주세용")
+    bgms = ["나린","도원경", "차원의균열", "첫번째동행"]
+    bgm = st.selectbox("원하시는 배경음악을 입력하세요", bgms)
     # set_BGM(bgm)
     st.write()
     audio_file = open(f'Cozem/bgm/{bgm}.mp3', 'rb')
