@@ -109,8 +109,12 @@ with st.sidebar:
 # 선택된 메뉴에 따라 다른 탭 출력
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
-    set_BGM()
+    # set_BGM()
     st.write()
+    audio_file = open('Cozem/bgm/Dowonkyung.mp3', 'rb')
+    audio_bytes = audio_file.read()
+
+    st.audio(audio_bytes, format='audio/mp3')
     '''
     ### 아기자기 길드 페이지에 오신것을 환영합니다😊
     > * 47포 길드
