@@ -82,6 +82,7 @@ def set_BGM(bgm):
                             {base64.b64encode(audio_file).decode()}"></audio>',\
                             unsafe_allow_html=True)
     else:
+        st.write("잘못된 입력입니다.")
         pass
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
