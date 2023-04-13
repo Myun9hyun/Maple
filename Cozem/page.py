@@ -113,13 +113,13 @@ with st.sidebar:
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
     bgm = st.text_input("원하시는 배경음악을 입력하세요")
-    set_BGM(bgm)
+    # set_BGM(bgm)
     st.write()
-    audio_file = open('Cozem/bgm/도원경.mp3', 'rb')
+    audio_file = open(f'Cozem/bgm/{bgm}.mp3', 'rb')
     audio_bytes = audio_file.read()
 
-    # st.audio(audio_bytes, format='audio/mp3')
-    # st.write("도원경 배경음악입니다.")
+    st.audio(audio_bytes, format='audio/mp3')
+    st.write(f"{bgm} 배경음악입니다.")
     '''
     ### 아기자기 길드 페이지에 오신것을 환영합니다😊
     > * 47포 길드
