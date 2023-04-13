@@ -28,7 +28,7 @@ draw = ImageDraw.Draw(image)
 text_kor = "아기자기"
 text_eng = "Welcome to"
 text_ver = "ver.04.13_2"
-text_madeby = "@Doong.D.H"
+text_madeby = "@둥둥향"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
 text_width, text_height = draw.textsize(text_kor, font=font_kor)
