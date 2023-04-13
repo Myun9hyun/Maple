@@ -115,6 +115,7 @@ if choice == "메인페이지":
     audio_bytes = audio_file.read()
 
     st.audio(audio_bytes, format='audio/mp3')
+    st.write("도원경 배경음악입니다.")
     '''
     ### 아기자기 길드 페이지에 오신것을 환영합니다😊
     > * 47포 길드
