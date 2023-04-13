@@ -31,14 +31,14 @@ text_ver = "ver.04.13_1"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
 text_width, text_height = draw.textsize(text_kor, font=font_kor)
-font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 10)
+font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 15)
 stroke_width = 2
 stroke_fill = (0, 0, 0)
 
 x = text_width - 100
 y = height - text_height - 200
 z = height - text_height - 255
-x_ver = width - text_width + 50
+x_ver = width - text_width + 70
 y_ver = height - text_height + 30
 # 테두리가 있는 텍스트 그리기
 draw.text((x - stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
