@@ -1608,7 +1608,7 @@ elif choice == "피드백 남기기":
 
     # 불러온 데이터를 전역 변수로 저장
     data10 = load_data10()
-    def add_data10(name, why, period):
+    def add_data10(name, comment, period):
         global data10
         data10 = data10.append({
             'Name': name, 
@@ -1638,12 +1638,12 @@ elif choice == "피드백 남기기":
                 st.warning('비밀번호가 틀렸습니다.')
         elif option == "피드백 남기기➕":
             name = st.text_input("피드백 하시는 분의 이름을 입력해주세요")
-            why = st.text_input("피드백 내용을 적어주세요")
+            comment = st.text_input("피드백 내용을 적어주세요")
             day = st.date_input(
                 "피드백 남기는 날짜를 설정해주세요",
                 datetime.date(2023, 4, 20))
             if st.button('피드백 남기기'):
-                add_data10(name, why, day)
+                add_data10(name, comment, day)
                 save_data10(data10)
                 st.success("피드백이 추가되었습니다.")
 
