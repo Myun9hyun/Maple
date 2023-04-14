@@ -1579,91 +1579,91 @@ elif choice == "이것저것":
 
 elif choice == "피드백 남기기":
     st.header("둥둥에게 피드백을 남겨주세요!")
-        FILE_PATH10 = 'data10.csv'
-        options = ["피드백 남기기➕", "피드백 내용 조회🔎", "피드백 내용 삭제✂", "피드백 초기화💣" ]
-        option = st.selectbox("기능 선택", options, key='select3')
-        # 파일에서 데이터 불러오기
-        def load_data10():
-            try:
-                data10 = pd.read_csv(FILE_PATH10)
-            except FileNotFoundError:
-                data10 = pd.DataFrame(columns=['Name', 'Comment', 'Day'])
-            return data10
-
-        # 데이터를 파일에 저장하기
-        def save_data10(data10):
-            data10.to_csv(FILE_PATH2, index=False)
-
-        # 데이터 초기화 함수
-        def clear_data10():
-            global data10
+    FILE_PATH10 = 'data10.csv'
+    options = ["피드백 남기기➕", "피드백 내용 조회🔎", "피드백 내용 삭제✂", "피드백 초기화💣" ]
+    option = st.selectbox("기능 선택", options, key='select3')
+    # 파일에서 데이터 불러오기
+    def load_data10():
+        try:
+            data10 = pd.read_csv(FILE_PATH10)
+        except FileNotFoundError:
             data10 = pd.DataFrame(columns=['Name', 'Comment', 'Day'])
-            # 파일 삭제
-            os.remove(FILE_PATH10)
+        return data10
 
-        # 데이터 삭제 함수
-        def delete_data10(row_index):
-            global data10
-            data10 = data10.drop(index=row_index).reset_index(drop=True)
+    # 데이터를 파일에 저장하기
+    def save_data10(data10):
+        data10.to_csv(FILE_PATH2, index=False)
 
-        # 불러온 데이터를 전역 변수로 저장
-        data10 = load_data10()
-        def add_data10(name, why, period):
-            global data10
-            data10 = data10.append({
-                'Name': name, 
-                'Comment' : comment,
-                'Day' : day
+    # 데이터 초기화 함수
+    def clear_data10():
+        global data10
+        data10 = pd.DataFrame(columns=['Name', 'Comment', 'Day'])
+        # 파일 삭제
+        os.remove(FILE_PATH10)
 
-            }, ignore_index=True)
-        def main():
-            if option == "피드백 내용 삭제✂":
-                st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
-                password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass14')
-                if password_input == password:
-                    st.success('접근을 허용합니다')
-                # 데이터 삭제 기능
-                # if st.button('데이터 삭제'):
-                    # 사용자로부터 삭제할 행 번호 입력받기
-                    st.write(data10[['Name','Comment', 'Day']])
-                    row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data10.shape[0]-1)
-                    st.write("Enter를 입력하면 삭제됩니다.")
-                    if st.button('데이터 삭제'):
-                        # 해당 행이 존재할 경우, 행을 삭제
-                        if row_index >= 0 and row_index < data10.shape[0]:
-                            delete_data10(row_index)
-                            save_data10(data10)  # 데이터를 파일에 저장
-                            st.success('입력하신 행이 삭제되었습니다.')
-                else:
-                    st.warning('비밀번호가 틀렸습니다.')
-            elif option == "피드백 남기기➕":
-                name = st.text_input("피드백 하시는 분의 이름을 입력해주세요")
-                why = st.text_input("피드백 내용을 적어주세요")
-                day = st.date_input(
-                    "피드백 남기는 날짜를 설정해주세요",
-                    datetime.date(2023, 4, 20))
-                if st.button('피드백 남기기'):
-                    add_data10(name, why, day)
-                    save_data10(data10)
-                    st.success("피드백이 추가되었습니다.")
+    # 데이터 삭제 함수
+    def delete_data10(row_index):
+        global data10
+        data10 = data10.drop(index=row_index).reset_index(drop=True)
 
-            elif option == "피드백 내용 조회🔎":
-                if st.button('피드백 확인'):
-                    st.write("피드백 내용입니다.")
-                    st.write(data10)
+    # 불러온 데이터를 전역 변수로 저장
+    data10 = load_data10()
+    def add_data10(name, why, period):
+        global data10
+        data10 = data10.append({
+            'Name': name, 
+            'Comment' : comment,
+            'Day' : day
 
-            elif option == "피드백 초기화💣":
-                st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
-                password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass16')
-                if password_input == password:
-                    st.success('접근을 허용합니다')
-                    # 데이터 전부 삭제
-                    st.write("⚠️버튼을 누르면 데이터가 다 날아갑니다!⚠️")
-                    st.write("⚠️신중하게 누르세요!!⚠️")
-                    if st.button('초기화'):
-                        clear_data10()
-                        st.warning('초기화 되었습니다')
-                else:
-                    st.warning('비밀번호가 틀렸습니다.')
-        if __name__ == "__main__":
-            main()
+        }, ignore_index=True)
+    def main():
+        if option == "피드백 내용 삭제✂":
+            st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+            password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass14')
+            if password_input == password:
+                st.success('접근을 허용합니다')
+            # 데이터 삭제 기능
+            # if st.button('데이터 삭제'):
+                # 사용자로부터 삭제할 행 번호 입력받기
+                st.write(data10[['Name','Comment', 'Day']])
+                row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data10.shape[0]-1)
+                st.write("Enter를 입력하면 삭제됩니다.")
+                if st.button('데이터 삭제'):
+                    # 해당 행이 존재할 경우, 행을 삭제
+                    if row_index >= 0 and row_index < data10.shape[0]:
+                        delete_data10(row_index)
+                        save_data10(data10)  # 데이터를 파일에 저장
+                        st.success('입력하신 행이 삭제되었습니다.')
+            else:
+                st.warning('비밀번호가 틀렸습니다.')
+        elif option == "피드백 남기기➕":
+            name = st.text_input("피드백 하시는 분의 이름을 입력해주세요")
+            why = st.text_input("피드백 내용을 적어주세요")
+            day = st.date_input(
+                "피드백 남기는 날짜를 설정해주세요",
+                datetime.date(2023, 4, 20))
+            if st.button('피드백 남기기'):
+                add_data10(name, why, day)
+                save_data10(data10)
+                st.success("피드백이 추가되었습니다.")
+
+        elif option == "피드백 내용 조회🔎":
+            if st.button('피드백 확인'):
+                st.write("피드백 내용입니다.")
+                st.write(data10)
+
+        elif option == "피드백 초기화💣":
+            st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+            password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass16')
+            if password_input == password:
+                st.success('접근을 허용합니다')
+                # 데이터 전부 삭제
+                st.write("⚠️버튼을 누르면 데이터가 다 날아갑니다!⚠️")
+                st.write("⚠️신중하게 누르세요!!⚠️")
+                if st.button('초기화'):
+                    clear_data10()
+                    st.warning('초기화 되었습니다')
+            else:
+                st.warning('비밀번호가 틀렸습니다.')
+    if __name__ == "__main__":
+        main()
