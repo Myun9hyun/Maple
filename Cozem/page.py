@@ -927,7 +927,7 @@ elif choice == "직위관리":
                         st.write(data3[['Info','Cozem', 'Day']])
                         row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data3.shape[0]-1, key='row1')
                         st.write("Enter를 입력하면 삭제됩니다.")
-                        if st.button('데이터 삭제'):
+                        if st.button('데이터 삭제', key='button1'):
                             # 해당 행이 존재할 경우, 행을 삭제
                             if row_index >= 0 and row_index < data3.shape[0]:
                                 delete_data3(row_index)
