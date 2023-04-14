@@ -1608,7 +1608,7 @@ elif choice == "피드백 남기기":
 
     # 불러온 데이터를 전역 변수로 저장
     data10 = load_data10()
-    def add_data10(name, comment, period):
+    def add_data10(name, comment, day):
         global data10
         data10 = data10.append({
             'Name': name, 
