@@ -947,7 +947,7 @@ elif choice == "직위관리":
                     else:
                         st.warning('비밀번호가 틀렸습니다.')
                 elif option == "기부 코젬 추가➕":
-                    info = st.text_input("기부 코젬 주차를 입력해주세요")
+                    info = st.text_input("기부 코젬 사유를 입력해주세요")
                     cozem = st.number_input("기부받은 갯수를 입력해주세요", min_value=0)
                     day = st.date_input(
                         "기부받은 날짜를 입력해주세요",
