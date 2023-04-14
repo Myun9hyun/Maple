@@ -90,7 +90,7 @@ st.image(image, use_column_width=True)
 
 with st.sidebar:
     choice = option_menu("Menu", ["메인페이지", "길드페이지", "직위관리", "아카이브", "이것저것", "피드백 남기기"],
-                         icons=['house', 'bi bi-emoji-smile', 'bi bi-robot', 'bi bi-palette', 'bi bi-card-text'],
+                         icons=['house', 'bi bi-emoji-smile', 'bi bi-robot', 'bi bi-palette','bi bi-archive', 'bi bi-card-text'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
