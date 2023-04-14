@@ -870,7 +870,7 @@ elif choice == "직위관리":
         password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password6')
         if password_input == password:
             st.success('접근을 허용합니다')
-            options = ["기부 코젬 추가➕", "기부 코젬 조회🔎", "기부 코젬 목록 삭제✂", "데이터 초기화💣" ]
+            options = ["기부 코젬 추가➕", "기부 코젬 사용" ,"기부 코젬 조회🔎", "기부 코젬 목록 삭제✂", "데이터 초기화💣" ]
             option = st.selectbox("기능 선택", options, key='select4')
         # 파일에서 데이터 불러오기
             def load_data3():
@@ -945,7 +945,17 @@ elif choice == "직위관리":
                         add_data3(info, cozem, day)
                         save_data3(data3)
                         st.success(f"기부코젬 {info}이(가) 추가되었습니다.")
-
+                elif option == "기부 코젬 사용":
+                    donate_total = data3['Cozem'].sum()
+                    use_reason = st.text_input("기부 코젬 사용 목적을 작성해주세요")
+                    use_donate = st.number_input("사용할 코젬의 갯수를 입력해주세요", min_value=0)
+                    use_day = st.date_input("사용한 날짜를 입력해주세요", 
+                                            datetime.date(2023, 4, 17)
+                                            )
+                    if st.button("기부 코젬 사용하기"):
+                        donate_total - use_donate
+                        save_data3(data3)
+                        st.success(f"코젬 {use_donate}개를 사용했습니다.")
                 elif option == "기부 코젬 조회🔎":
                     donate_total = data3['Cozem'].sum()
                     if st.button('기부 코젬 확인'):
