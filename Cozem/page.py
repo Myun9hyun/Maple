@@ -1051,7 +1051,7 @@ elif choice == "아카이브":
         with col4:
             st.write("**엘리넬**")
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
-else:
+elif choice == "이것저것":
     tab1, tab2, tab3= st.tabs(["🎁Random Box", "🔗Link","🏚Attic"])
     with tab1:
         def random_values(values, probabilities, n):
@@ -1578,7 +1578,7 @@ else:
             main()
 
 elif choice == "피드백 남기기":
-    st.write()
+    st.write("안녕")
     # st.header("⏸유예기간 관리⏸")
     #     FILE_PATH2 = 'data2.csv'
     #     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
