@@ -972,8 +972,8 @@ elif choice == "직위관리":
                         else:
                             st.warning(f"사용할 코젬이 부족합니다! 남은 코젬은{donate_total}개 입니다.")
                 elif option == "기부 코젬 조회🔎":
-                    donate_total = data3['Cozem'].sum()
-                    use_total = data3['Use'].sum()
+                    int(donate_total) = data3['Cozem'].sum()
+                    int(use_total) = data3['Use'].sum()
                     total_donate_cozem = donate_total - use_total
                     if st.button('기부 코젬 확인'):
                         st.write("기부 코젬 목록입니다.")
