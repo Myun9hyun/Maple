@@ -385,7 +385,7 @@ elif choice == "직위관리":
             password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0)
             if password_input == password:
                 st.success('접근을 허용합니다')
-                options = ["이름추가","데이터 추가➕", "데이터 조회🔎", "데이터 삭제✂", "데이터 초기화💣", "노블 사용⭕제한❌", "위클리 코젬 계산📋", "데이터 다운로드💾"]
+                options = ["이름추가🎫","데이터 추가➕", "데이터 조회🔎", "데이터 삭제✂", "데이터 초기화💣", "노블 사용⭕제한❌", "위클리 코젬 계산📋", "데이터 다운로드💾"]
                 option = st.selectbox("기능 선택", options)
                 
                 if option == "데이터 추가➕":
@@ -398,8 +398,7 @@ elif choice == "직위관리":
                     if st.button('추가하기'):
                         save_data(data)  # 데이터를 파일에 저장
                         st.success(f'{select_name}의 데이터가 추가되었습니다!')
-                elif option == "이름추가":
-                    
+                elif option == "이름추가🎫":
                     name = st.text_input('이름을 입력해줘')
                 
             # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
