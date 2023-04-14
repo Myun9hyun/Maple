@@ -116,12 +116,12 @@ with st.sidebar:
     with col3:
         st.write("Play")
         if st.button("▶"):
-            st.success("음악을 재생합니다")
+            st.success("음악 재생")
             set_BGM(bgm)
     with col4:
         st.write("Stop")
         if st.button("⬛"):
-            st.warning("음악을 정지합니다.")
+            st.warning("음악 정지")
             pass
 
 # 선택된 메뉴에 따라 다른 탭 출력
