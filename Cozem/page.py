@@ -1658,7 +1658,7 @@ elif choice == "피드백 남기기":
             if st.button('피드백 남기기'):
                 add_data10(name, comment, day)
                 save_data10(data10)
-                st.success("피드백이 추가되었습니다.")
+                st.success("피드백 감사합니다!!ヾ(•ω•`)o")
 
         elif option == "피드백 내용 조회🔎":
             if st.button('피드백 확인'):
