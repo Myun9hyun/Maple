@@ -948,12 +948,12 @@ elif choice == "직위관리":
                         st.warning('비밀번호가 틀렸습니다.')
                 elif option == "기부 코젬 추가➕":
                     info = st.text_input("기부 코젬 사유를 입력해주세요")
-                    cozem = st.number_input("기부받은 갯수를 입력해주세요", min_value=0)
+                    donate_cozem = st.number_input("기부받은 갯수를 입력해주세요", min_value=0)
                     day = st.date_input(
                         "기부받은 날짜를 입력해주세요",
                         datetime.date(2023, 4, 10))
                     if st.button('기부 코젬 추가'):
-                        add_data3(info, cozem, day)
+                        add_data3(info, donate_cozem, day)
                         save_data3(data3)
                         st.success(f"기부코젬 {info}이(가) 추가되었습니다.")
                 elif option == "기부 코젬 사용":
@@ -964,7 +964,8 @@ elif choice == "직위관리":
                                             datetime.date(2023, 4, 17)
                                             )
                     if st.button("기부 코젬 사용하기"):
-                        if cozem >= use_cozem:
+                        donate_total = data3['Cozem'].sum()
+                        if donate_total <= use_cozem:
                             use_cozem(use_reason, use_donate, use_day)
                             save_data3(data3)
                             st.success(f"코젬 {use_donate}개를 사용했습니다.")
