@@ -920,11 +920,6 @@ elif choice == "직위관리":
                     'Day' : day
 
                 }, ignore_index=True)
-            def Donate_total():
-                global data3
-                donate_total = data3['Cozem'].sum()
-            
-            
 
             def main():
                 if option == "기부 코젬 목록 삭제✂":
