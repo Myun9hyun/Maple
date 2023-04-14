@@ -89,8 +89,8 @@ def set_BGM(bgm):
 st.image(image, use_column_width=True)
 
 with st.sidebar:
-    choice = option_menu("Menu", ["메인페이지", "길드페이지", "직위관리", "아카이브", "이것저것"],
-                         icons=['house', 'bi bi-emoji-smile', 'bi bi-robot', 'bi bi-palette'],
+    choice = option_menu("Menu", ["메인페이지", "길드페이지", "직위관리", "아카이브", "이것저것", "피드백 남기기"],
+                         icons=['house', 'bi bi-emoji-smile', 'bi bi-robot', 'bi bi-palette', 'bi bi-card-text'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
@@ -1576,3 +1576,49 @@ else:
         
         if __name__ == '__main__':
             main()
+
+elif option == "피드백 남기기":
+    st.header("⏸유예기간 관리⏸")
+        FILE_PATH2 = 'data2.csv'
+        st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+        password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password5')
+        if password_input == password:
+            st.success('접근을 허용합니다')
+            options = ["유예자 추가➕", "유예자 조회🔎", "유예자 삭제✂", "데이터 초기화💣" ]
+            option = st.selectbox("기능 선택", options, key='select3')
+        # 파일에서 데이터 불러오기
+            def load_data2():
+                try:
+                    data2 = pd.read_csv(FILE_PATH2)
+                except FileNotFoundError:
+                    data2 = pd.DataFrame(columns=['Name', 'Why', 'Due to'])
+                return data2
+
+            # 데이터를 파일에 저장하기
+            def save_data2(data2):
+                data2.to_csv(FILE_PATH2, index=False)
+
+            # 데이터 초기화 함수
+            def clear_data2():
+                global data2
+                data2 = pd.DataFrame(columns=['Name', 'Why', 'Due to'])
+                # 파일 삭제
+                os.remove(FILE_PATH2)
+            # 데이터 삭제 함수
+            def delete_data2(row_index):
+                global data2
+                data2 = data2.drop(index=row_index).reset_index(drop=True)
+
+            # 불러온 데이터를 전역 변수로 저장
+            data2 = load_data2()
+            def add_data2(name, why, period):
+                global data2
+                if name in data2['Name'].values:
+                    st.warning(f'{name} (은)는 이미 있는 이름이야!')
+                    return
+                data2 = data2.append({
+                    'Name': name, 
+                    'Why' : why,
+                    'Due to' : period
+
+                }, ignore_index=True)
