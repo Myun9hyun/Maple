@@ -970,7 +970,7 @@ elif choice == "직위관리":
                             save_data3(data3)
                             st.success(f"코젬 {use_donate}개를 사용했습니다.")
                         else:
-                            st.warning("사용할 코젬이 부족합니다!")
+                            st.warning(f"사용할 코젬이 부족합니다! 남은 코젬은{donate_total}개 입니다.")
                 elif option == "기부 코젬 조회🔎":
                     donate_total = data3['Cozem'].sum()
                     use_total = data3['Use'].sum()
