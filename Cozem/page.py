@@ -20,6 +20,7 @@ import datetime
 
 st.set_page_config(page_title="BanShamDoongDolYoung", page_icon=":rabbit:", layout="wide")
 password = 1234
+password_test = "1234"
 
 image = Image.open("Cozem/image/cover_guild.jpg")
 width, height = image.size
@@ -917,8 +918,8 @@ elif choice == "직위관리":
             def main():
                 if option == "기부 코젬 목록 삭제✂":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
-                    password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass10')
-                    if password_input == password:
+                    password_input = st.text_input('비밀번호를 입력해주세요 : ',min_value=0,type='password', key='pass10')
+                    if password_input == password_test:
                         st.success('접근을 허용합니다')
                     # 데이터 삭제 기능 
                     # if st.button('데이터 삭제'):
