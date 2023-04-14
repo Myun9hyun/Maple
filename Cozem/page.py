@@ -113,10 +113,12 @@ with st.sidebar:
     bgm = st.selectbox("🔈원하시는 배경음악을 골라주세용", bgms)
     col3, col4 = st.columns(2)
     with col3:
+        st.write("Play")
         if st.button("▶"):
             st.success("음악을 재생합니다")
             set_BGM(bgm)
     with col4:
+        st.write("Stop")
         if st.button("⬛"):
             st.warning("음악을 정지합니다.")
             pass
