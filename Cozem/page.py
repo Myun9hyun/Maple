@@ -970,18 +970,21 @@ elif choice == "직위관리":
                     donate_total = int(data3['Cozem'].sum())
                     use_total = int(data3['Use'].sum())
                     total_donate_cozem = donate_total - use_total
-                    if st.button('기부 코젬 확인'):
-                        st.write("기부 코젬 목록입니다.")
-                        st.write(data3)
-                    if st.button("기부 코젬 총합"):
-                        st.write("기부받은 코젬의 총 합계입니다.")
-                        st.write(f'기부받은 갯수는 {donate_total}개입니다.')
-                    if st.button("사용 코젬 총합"):
-                        st.write("사용한 코젬의 총 합계입니다.")
-                        st.write(f"사용한 갯수는 {use_total}개 입니다.")
-                    if st.button("남은 갯수 조회"):
-                        st.write("남은 갯수의 총 합계입니다")
-                        st.write(f"남은 기부 코젬은 총 {total_donate_cozem}개입니다.")
+                    co11, col2 = columns(2)
+                    with col1:
+                        if st.button('기부 코젬 확인'):
+                            st.write("기부 코젬 목록입니다.")
+                            st.write(data3)
+                        if st.button("기부 코젬 총합"):
+                            st.write("기부받은 코젬의 총 합계입니다.")
+                            st.write(f'기부받은 갯수는 {donate_total}개입니다.')
+                    with col2:
+                        if st.button("사용 코젬 총합"):
+                            st.write("사용한 코젬의 총 합계입니다.")
+                            st.write(f"사용한 갯수는 {use_total}개 입니다.")
+                        if st.button("남은 갯수 조회"):
+                            st.write("남은 갯수의 총 합계입니다")
+                            st.write(f"남은 기부 코젬은 총 {total_donate_cozem}개입니다.")
                 elif option == "데이터 초기화💣":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
                     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass9')
