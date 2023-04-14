@@ -1592,7 +1592,7 @@ elif choice == "피드백 남기기":
 
     # 데이터를 파일에 저장하기
     def save_data10(data10):
-        data10.to_csv(FILE_PATH2, index=False)
+        data10.to_csv(FILE_PATH10, index=False)
 
     # 데이터 초기화 함수
     def clear_data10():
