@@ -1577,7 +1577,7 @@ else:
         if __name__ == '__main__':
             main()
 
-elif option == "피드백 남기기":
+elif choice == "피드백 남기기":
     st.header("⏸유예기간 관리⏸")
         FILE_PATH2 = 'data2.csv'
         st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
