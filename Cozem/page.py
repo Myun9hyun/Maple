@@ -965,7 +965,7 @@ elif choice == "직위관리":
                                             )
                     if st.button("기부 코젬 사용하기"):
                         donate_total = data3['Cozem'].sum()
-                        if  donate_total >= :use_donate
+                        if  donate_total >= use_donate:
                             use_cozem(use_reason, use_donate, use_day)
                             save_data3(data3)
                             st.success(f"코젬 {use_donate}개를 사용했습니다.")
