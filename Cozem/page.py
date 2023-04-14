@@ -970,7 +970,7 @@ elif choice == "직위관리":
                     donate_total = int(data3['Cozem'].sum())
                     use_total = int(data3['Use'].sum())
                     total_donate_cozem = donate_total - use_total
-                    co15, col6 = st.columns(2)
+                    col5, col6 = st.columns(2)
                     with col5:
                         if st.button('기부 코젬 확인'):
                             st.write("기부 코젬 목록입니다.")
