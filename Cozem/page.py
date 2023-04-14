@@ -125,17 +125,17 @@ with st.sidebar:
     bgms = ["나린","도원경", "차원의균열", "첫번째동행", "에오스탑외부", "오시리아대륙항해", "아쿠아리움필드",
                 "오디움_신의창", "강림_괴력난신" , "아델의맹세", "아쉴롬_일리움", "악몽의시계탑", "시간의신전"]
     bgm = st.selectbox("🔈원하시는 배경음악을 골라주세용", bgms)
-    col3, col4 = st.columns(2)
-    with col3:
-        st.write("Play")
-        if st.button("▶"):
-            st.success("음악 재생")
-            set_BGM(bgm)
-    with col4:
-        st.write("Stop")
-        if st.button("⬛"):
-            st.warning("음악 정지")
-            pass
+    # col3, col4 = st.columns(2)
+    # with col3:
+    #     st.write("Play")
+    #     if st.button("▶"):
+    #         st.success("음악 재생")
+    set_BGM(bgm)
+    # with col4:
+    #     st.write("Stop")
+    #     if st.button("⬛"):
+    #         st.warning("음악 정지")
+    #         pass
 
 # 선택된 메뉴에 따라 다른 탭 출력
 if choice == "메인페이지":
