@@ -877,7 +877,7 @@ elif choice == "직위관리":
                 try:
                     data3 = pd.read_csv(FILE_PATH3)
                 except FileNotFoundError:
-                    data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Day'])
+                    data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Day', 'Use'])
                 return data3
 
             # 데이터를 파일에 저장하기
@@ -887,7 +887,7 @@ elif choice == "직위관리":
             # 데이터 초기화 함수
             def clear_data3():
                 global data3
-                data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Day'])
+                data3 = pd.DataFrame(columns=['Info', 'Cozem', 'Day', 'Use'])
                 # 파일 삭제
                 os.remove(FILE_PATH3)
             # 데이터 삭제 함수
@@ -909,6 +909,17 @@ elif choice == "직위관리":
 
                 }, ignore_index=True)
             
+            def use_cozem(info, use_cozem, day):
+                global data3
+                if info in data3['Info'].values:
+                    st.warning(f'{info} (은)는 이미 있는 이유야!')
+                    return
+                data3 = data3.append({
+                    'Info': info, 
+                    'Use' : use_cozem,
+                    'Day' : day
+
+                }, ignore_index=True)
             def Donate_total():
                 global data3
                 donate_total = data3['Cozem'].sum()
@@ -924,7 +935,7 @@ elif choice == "직위관리":
                     # 데이터 삭제 기능 
                     # if st.button('데이터 삭제'):
                         # 사용자로부터 삭제할 행 번호 입력받기
-                        st.write(data3[['Info','Cozem', 'Day']])
+                        st.write(data3[['Info','Cozem', 'Day', 'Use']])
                         row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data3.shape[0]-1, key='row1')
                         st.write("Enter를 입력하면 삭제됩니다.")
                         if st.button('데이터 삭제', key='button1'):
@@ -953,7 +964,8 @@ elif choice == "직위관리":
                                             datetime.date(2023, 4, 17)
                                             )
                     if st.button("기부 코젬 사용하기"):
-                        donate_total - use_donate
+                        
+                        use_cozem(use_reason, use_donate, use_day)
                         save_data3(data3)
                         st.success(f"코젬 {use_donate}개를 사용했습니다.")
                 elif option == "기부 코젬 조회🔎":
