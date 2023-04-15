@@ -204,7 +204,7 @@ elif choice == "길드페이지":
             st.title("PDF Viewer")
 
             # PDF 파일 경로 입력
-            pdf_path = "path/to/pdf/file.pdf"
+            pdf_path = "Cozem/rule/아기자기_길드_규정_2023.pdf"
 
             # PDF 파일 열기
             with fitz.open(pdf_path) as pdf:
