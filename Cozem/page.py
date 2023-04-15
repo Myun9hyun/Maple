@@ -819,6 +819,9 @@ elif choice == "직위관리":
                 if name in data2['Name'].values:
                     st.warning(f'{name} (은)는 이미 있는 이름이야!')
                     return
+                else:
+                    st.success(f"유예자 {name}이(가) 추가되었습니다.")
+
                 data2 = data2.append({
                     'Name': name, 
                     'Why' : why,
@@ -856,7 +859,6 @@ elif choice == "직위관리":
                     if st.button('유예자 이름 추가'):
                         add_data2(name, why, day)
                         save_data2(data2)
-                        st.success(f"유예자 {name}이(가) 추가되었습니다.")
 
                 elif option == "유예자 조회🔎":
                     if st.button('유예자 확인'):
@@ -932,6 +934,9 @@ elif choice == "직위관리":
                 if info in data3['Info'].values:
                     st.warning(f'{info} (은)는 이미 있는 이유야!')
                     return
+                else:
+                    st.success(f"코젬 {use_donate}개를 사용했습니다.")
+
                 data3 = data3.append({
                     'Info': info, 
                     'Use' : use_cozem,
@@ -980,7 +985,6 @@ elif choice == "직위관리":
                         if  donate_total >= use_donate:
                             use_cozem(use_reason, use_donate, use_day)
                             save_data3(data3)
-                            st.success(f"코젬 {use_donate}개를 사용했습니다.")
                         else:
                             st.warning(f"사용할 코젬이 부족합니다! 남은 코젬은{donate_total}개 입니다.")
                 elif option == "기부/사용 코젬 조회🔎":
