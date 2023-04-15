@@ -212,7 +212,7 @@ elif choice == "길드페이지":
                 for i, page in enumerate(doc):
                     pixmap = page.get_pixmap()
                     image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
-                    st.image(image, caption=f"Page {i+1}", use_column_width=True)
+                    st.image(image, caption=f"Page {i+1}")
 
 
 
