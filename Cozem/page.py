@@ -345,7 +345,7 @@ elif choice == "직위관리":
                 add_data(name,character_type, weekly_mission, suro, flag)
             elif character_type == '부캐':
                 # main_name = st.text_input('본캐 이름을 입력하세요')
-                main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist(), key='main12')
+                main_name = st.selectbox('본캐 이름을 골라줘', options=data5['Name'].tolist(), key='main12')
                 main_data = data.loc[data['Name'] == main_name]
                 if len(main_data) == 0:
                     st.warning(f"{main_name} (은)는 등록되어있지 않아!")
