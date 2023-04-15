@@ -210,10 +210,9 @@ elif choice == "길드페이지":
         if pdf_url:
             with fitz.open(pdf_url) as doc:
                 for i, page in enumerate(doc):
-                    image = page.getPixmap().getImageData(output="png")
-                    image = Image.open(image)
+                    pixmap = page.get_pixmap()
+                    image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
                     st.image(image, caption=f"Page {i+1}", use_column_width=True)
-
 
 
 
