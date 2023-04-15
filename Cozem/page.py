@@ -201,7 +201,7 @@ elif choice == "길드페이지":
 # Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
 
         def main():
-            st.title("아기자기 길드 규정")
+            # st.title("아기자기 길드 규정")
 
             # PDF 파일 불러오기
             with open("Cozem/rule/아기자기_길드_규정_2023.pdf", "rb") as f:
