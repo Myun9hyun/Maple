@@ -318,7 +318,7 @@ elif choice == "직위관리":
                     st.warning(f'{name} (은)는 추가되어있어!')
                     return
                 else:
-                    st.success(f"{name}(이)가 추가할 수 있어!")
+                    st.success(f"{name}(이)는 추가할 수 있어!")
                 suro_cozem = Suro_cozem(suro)  # Suro_cozem 함수를 이용해 suro_cozem 값을 계산
                 flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
                 cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
