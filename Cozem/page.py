@@ -198,22 +198,25 @@ elif choice == "길드페이지":
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
+
+
         def main():
             st.title("아기자기 길드 규정")
 
-            # PDF 파일 경로 입력
-            pdf_path = ("Cozem/rule/아기자기_길드_규정 _2023.pdf")
-            if pdf_path:
-                with open(pdf_path, "rb") as f:
-                    pdf_reader = PyPDF2.PdfFileReader(f)
-                    pages = st.slider("Select a page", 1, pdf_reader.numPages)
+            # PDF 파일 불러오기
+            with open("Cozem/rule/아기자기_길드_규정_2023.pdf", "rb") as f:
+                pdf_reader = PyPDF2.PdfFileReader(f)
 
-                    # 선택된 페이지를 출력
-                    page = pdf_reader.getPage(pages-1)
-                    st.write(page.extractText())
+                # 페이지 선택
+                pages = st.slider("Select a page", 1, pdf_reader.numPages)
+
+                # 선택된 페이지 출력
+                page = pdf_reader.getPage(pages-1)
+                st.write(page.extractText())
 
         if __name__ == "__main__":
             main()
+
       
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
