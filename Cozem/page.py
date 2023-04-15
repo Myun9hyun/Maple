@@ -723,7 +723,7 @@ elif choice == "직위관리":
                     warning_count = data1.loc[data1['Name']==name, 'Warning'].values[0] if name in data1['Name'].values else 0
                     if st.button('경고자 이름 추가'):
                         add_data1(name, warning_count, reason)
-                        save_data1(data1):
+                        save_data1(data1)
                         # st.success(f"경고자 {name}이(가) 추가되었습니다.")
                 elif option == '경고횟수 추가/차감':
                     name = st.text_input("경고자 이름을 입력해주세요")
