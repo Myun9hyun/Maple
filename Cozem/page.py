@@ -202,7 +202,7 @@ elif choice == "길드페이지":
             st.title("아기자기 길드 규정")
 
             # PDF 파일 경로 입력
-            pdf_path = st.text_input("Cozem/rule/아기자기_길드_규정 _2023.pdf")
+            pdf_path = ("Cozem/rule/아기자기_길드_규정 _2023.pdf")
             if pdf_path:
                 with open(pdf_path, "rb") as f:
                     pdf_reader = PyPDF2.PdfFileReader(f)
