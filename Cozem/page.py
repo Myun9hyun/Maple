@@ -287,7 +287,7 @@ elif choice == "직위관리":
         def add_name(names): # 낮 품목 저장
             global data5 
             if names in data5['Name'].values:
-                # st.warning(f'{names} (은)는 이미 있는 이름ㅇㅇ이야!')
+                # st.warning(f'{names} (은)는 이미 있는 이름이야!')
                 return
             data5 = data5.append({'Name': names}, ignore_index=True)
 
@@ -344,7 +344,7 @@ elif choice == "직위관리":
                 main_name = st.text_input('본캐 이름을 입력하세요')
                 main_data = data.loc[data['Name'] == main_name]
                 if len(main_data) == 0:
-                    st.warning(f"{main_name} (은)는 등록되어있지 않아!.")
+                    st.warning(f"{main_name} (은)는 등록되어있지 않아!")
                     return
                 else:
                     main_data_index = main_data.index[0]
