@@ -468,8 +468,8 @@ elif choice == "직위관리":
                         # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
                         st.write(data)
                         st.write(data5)
-                        row_index = st.number_input('삭제하고 싶은 코젬데이터의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
-                        row_index_name = st.number_input('삭제하고 싶은 이름데이터의 번호를 입력해주세요', min_value=0, max_value=data5.shape[0]-1)
+                        row_index = st.number_input('삭제하고 싶은 코젬데이터의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1, key='delete1')
+                        row_index_name = st.number_input('삭제하고 싶은 이름데이터의 번호를 입력해주세요', min_value=0, max_value=data5.shape[0]-1, key='delete2')
                         st.write("Enter를 입력하면 삭제됩니다.")
                         if st.button('코젬데이터 삭제'):
                             # 해당 행이 존재할 경우, 행을 삭제
