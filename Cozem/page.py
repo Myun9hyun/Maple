@@ -198,22 +198,25 @@ elif choice == "길드페이지":
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
-# Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
+        import streamlit as st
+        import fitz  # PyMuPDF 라이브러리
 
         def main():
-            st.title("아기자기 길드 규정")
+            st.title("PDF Viewer")
 
             # PDF 파일 경로 입력
-            pdf_path = "Cozem/rule/아기자기_길드_규정_2023.pdf"
+            pdf_path = "path/to/pdf/file.pdf"
 
-            # iframe으로 PDF 파일 출력
-            with open(pdf_path, "rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-                st.markdown(pdf_display, unsafe_allow_html=True)
+            # PDF 파일 열기
+            with fitz.open(pdf_path) as pdf:
+                # 첫 페이지를 이미지로 변환하여 스트림릿에 보여주기
+                page = pdf[0]
+                image_bytes = page.getPixmap().getPNGData()
+                st.image(image_bytes)
 
         if __name__ == "__main__":
             main()
+
 
       
 elif choice == "직위관리":
