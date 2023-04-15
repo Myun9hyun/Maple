@@ -318,7 +318,7 @@ elif choice == "직위관리":
                     st.warning(f'{name} (은)는 추가되어있어!')
                     return
                 else:
-                    st.success(f"{name}(이)가 추가되었어!")
+                    st.success(f"{name}(이)가 추가할 수 있어!")
                 suro_cozem = Suro_cozem(suro)  # Suro_cozem 함수를 이용해 suro_cozem 값을 계산
                 flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
                 cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
@@ -414,7 +414,7 @@ elif choice == "직위관리":
                     if st.button('추가하기'):
                         
                         save_data(data)  # 데이터를 파일에 저장
-                        # st.success(f'{select_name}의 데이터가 추가되었습니다!')
+                        st.success(f'{select_name}의 데이터가 추가되었습니다!')
                 elif option == "이름추가🎫":
                     name = st.text_input('이름을 입력해줘')
                     if st.button('이름추가'):
