@@ -347,7 +347,7 @@ elif choice == "직위관리":
                 main_data = data.loc[data['Name'] == main_name]
                 if len(main_data) == 0:
                     st.warning(f"{main_name} (은)는 등록되어있지 않아!")
-                    return
+                    # return
                 else:
                     main_data_index = main_data.index[0]
                     suro_cozem = Suro_cozem(suro)
