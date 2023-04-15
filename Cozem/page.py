@@ -198,7 +198,7 @@ elif choice == "길드페이지":
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
-Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
+# Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
 
         def main():
             st.title("아기자기 길드 규정")
