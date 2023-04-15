@@ -201,18 +201,16 @@ elif choice == "길드페이지":
 # Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
 
         def main():
-            # st.title("아기자기 길드 규정")
+            st.title("아기자기 길드 규정")
 
-            # PDF 파일 불러오기
-            with open("Cozem/rule/아기자기_길드_규정_2023.pdf", "rb") as f:
-                pdf_reader = PyPDF2.PdfFileReader(f)
+            # PDF 파일 경로 입력
+            pdf_path = "Cozem/rule/아기자기_길드_규정_2023.pdf"
 
-                # 페이지 선택
-                pages = st.slider("Select a page", 1, pdf_reader.numPages)
-
-                # 선택된 페이지 출력
-                page = pdf_reader.getPage(pages-1)
-                st.write(page.extractText())
+            # iframe으로 PDF 파일 출력
+            with open(pdf_path, "rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+                st.markdown(pdf_display, unsafe_allow_html=True)
 
         if __name__ == "__main__":
             main()
