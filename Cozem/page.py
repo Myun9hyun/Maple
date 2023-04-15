@@ -687,6 +687,9 @@ elif choice == "직위관리":
                 if name in data1['Name'].values:
                     st.warning(f'{name} (은)는 이미 있는 이름이야!')
                     return
+                else:
+                    st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
                 data1 = data1.append({
                     'Name': name, 
                     'Warning' : warning_count,
