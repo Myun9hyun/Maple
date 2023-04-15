@@ -723,7 +723,7 @@ elif choice == "직위관리":
                         save_data1(data1)
                         if name in data1['Name'].values:
                             return
-                        else:
+                        elif name not in data1['Name'].values::
                             st.success(f"경고자 {name}이(가) 추가되었습니다.")
                 elif option == '경고횟수 추가/차감':
                     name = st.text_input("경고자 이름을 입력해주세요")
