@@ -207,12 +207,16 @@ elif choice == "길드페이지":
         pdf_url = "Cozem/rule/아기자기_길드_규정_2023.pdf"
 
         # PDF 파일을 이미지로 변환합니다.
+
+
+        # PDF 파일을 이미지로 변환합니다.
         if pdf_url:
             with fitz.open(pdf_url) as doc:
                 for i, page in enumerate(doc):
-                    pixmap = page.get_pixmap()
+                    pixmap = page.get_pixmap(dpi=300)  # dpi 값을 300으로 설정
                     image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
-                    st.image(image, caption=f"Page {i+1}")
+                    st.image(image, caption=f"Page {i+1}", use_column_width=True)
+
 
 
 
