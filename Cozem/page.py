@@ -289,11 +289,18 @@ elif choice == "직위관리":
 
         # 데이터 초기화 함수
         def clear_data():
-            global data, data5
+            global data
             data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
-            data5 = pd.DataFrame(columns=['Name'])
+            # data5 = pd.DataFrame(columns=['Name'])
             # 파일 삭제
             os.remove(FILE_PATH)
+            # os.remove(FILE_PATH5)
+        def clear_data5():
+            global data5
+            # data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
+            data5 = pd.DataFrame(columns=['Name'])
+            # 파일 삭제
+            # os.remove(FILE_PATH)
             os.remove(FILE_PATH5)
         # 데이터 삭제 함수
         def delete_data(row_index):
@@ -498,9 +505,13 @@ elif choice == "직위관리":
                         # 데이터 전부 삭제
                         st.write("⚠️버튼을 누르면 데이터가 다 날아갑니다!⚠️")
                         st.write("⚠️신중하게 누르세요!!⚠️")
-                        if st.button('차트 초기화'):
+                        if st.button('코젬 차트 초기화'):
                             clear_data()
                             # clear_data5()
+                            st.warning('차트가 초기화 되었습니다')
+                        if st.button('이름 차트 초기화'):
+                            # clear_data()
+                            clear_data5()
                             st.warning('차트가 초기화 되었습니다')
                     else:
                         st.warning('비밀번호가 틀렸습니다.')
