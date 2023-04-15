@@ -9,7 +9,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 import joblib
-import xgboost as xgb
 import seaborn as sns
 from streamlit_option_menu import option_menu
 import os
