@@ -408,14 +408,13 @@ elif choice == "직위관리":
                     weekly_mission = st.number_input('주간 미션 점수를 입력해주세요', min_value=0)
                     suro = st.number_input('수로 점수를 입력해주세요', min_value=0)
                     flag = st.number_input('플래그 점수를 입력해주세요', min_value=0)
-                    add_character_data(select_name, is_main_character, weekly_mission, suro, flag)
+                    
                     if st.button('추가하기'):
+                        add_character_data(select_name, is_main_character, weekly_mission, suro, flag)
                         save_data(data)  # 데이터를 파일에 저장
                         st.success(f'{select_name}의 데이터가 추가되었습니다!')
                 elif option == "이름추가🎫":
                     name = st.text_input('이름을 입력해줘')
-                
-            # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
                     if st.button('이름추가'):
                         if name in data5['Name'].values:
                             st.warning(f"{name}은(는) 이미 있는 이름이야!")
@@ -424,7 +423,7 @@ elif choice == "직위관리":
                         # if st.button('추가'):
                             add_name(name)
                             save_data5(data5)  # 데이터를 파일에 저장
-                            st.success('이름이 추가되었어!')
+                            st.success(f'이름 {name}이(가) 추가되었어!')
                     
 
                 elif option == "데이터 조회🔎":
