@@ -500,7 +500,7 @@ elif choice == "직위관리":
                         st.write("⚠️신중하게 누르세요!!⚠️")
                         if st.button('차트 초기화'):
                             clear_data()
-                            clear_data5()
+                            # clear_data5()
                             st.warning('차트가 초기화 되었습니다')
                     else:
                         st.warning('비밀번호가 틀렸습니다.')
