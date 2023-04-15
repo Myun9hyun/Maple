@@ -465,7 +465,8 @@ elif choice == "직위관리":
                     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass13')
                     if password_input == password:
                         st.success('접근을 허용합니다')
-                        st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                        # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                        st.write(data)
                         st.write(data5)
                         row_index = st.number_input('삭제하고 싶은 코젬데이터의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
                         row_index_name = st.number_input('삭제하고 싶은 이름데이터의 번호를 입력해주세요', min_value=0, max_value=data5.shape[0]-1)
