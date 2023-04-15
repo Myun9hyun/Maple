@@ -465,17 +465,22 @@ elif choice == "직위관리":
                     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass13')
                     if password_input == password:
                         st.success('접근을 허용합니다')
-                    # 데이터 삭제 기능
-                    # if st.button('데이터 삭제'):
-                        # 사용자로부터 삭제할 행 번호 입력받기
                         st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
-                        row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
+                        st.write(data5[['Name']])
+                        row_index = st.number_input('삭제하고 싶은 코젬데이터의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
+                        row_index_name = st.number_input('삭제하고 싶은 이름데이터의 번호를 입력해주세요', min_value=0, max_value=data5.shape[0]-1)
                         st.write("Enter를 입력하면 삭제됩니다.")
-                        if st.button('데이터 삭제'):
+                        if st.button('코젬데이터 삭제'):
                             # 해당 행이 존재할 경우, 행을 삭제
                             if row_index >= 0 and row_index < data.shape[0]:
                                 delete_data(row_index)
                                 save_data(data)  # 데이터를 파일에 저장
+                                st.success('입력하신 행이 삭제되었습니다.')
+                        if st.button('이름데이터 삭제'):
+                            # 해당 행이 존재할 경우, 행을 삭제
+                            if row_index >= 0 and row_index < data5.shape[0]:
+                                delete_data5(row_index)
+                                save_data5(data5)  # 데이터를 파일에 저장
                                 st.success('입력하신 행이 삭제되었습니다.')
                     else:
                         st.warning('비밀번호가 틀렸습니다.')
