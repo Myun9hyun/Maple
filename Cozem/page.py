@@ -17,6 +17,7 @@ import openpyxl
 from io import BytesIO
 import base64
 import datetime
+import PyPDF2
 
 st.set_page_config(page_title="BanShamDoongDolYoung", page_icon=":rabbit:", layout="wide")
 password = 1234
@@ -197,6 +198,22 @@ elif choice == "길드페이지":
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
+        def main():
+            st.title("아기자기 길드 규정")
+
+            # PDF 파일 경로 입력
+            pdf_path = st.text_input("Cozem/rule/아기자기_길드_규정 _2023.pdf")
+            if pdf_path:
+                with open(pdf_path, "rb") as f:
+                    pdf_reader = PyPDF2.PdfFileReader(f)
+                    pages = st.slider("Select a page", 1, pdf_reader.numPages)
+
+                    # 선택된 페이지를 출력
+                    page = pdf_reader.getPage(pages-1)
+                    st.write(page.extractText())
+
+        if __name__ == "__main__":
+            main()
       
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
