@@ -969,8 +969,7 @@ elif choice == "직위관리":
                     use_reason = st.text_input("기부 코젬 사용 목적을 작성해주세요")
                     use_donate = st.number_input("사용할 코젬의 갯수를 입력해주세요", min_value=0)
                     use_day = st.date_input("사용한 날짜를 입력해주세요", 
-                                            datetime.date(2023, 4, 17)
-                                            )
+                                                datetime.date.today())
                     if st.button("기부 코젬 사용하기"):
                         donate_total = data3['Cozem'].sum()
                         if  donate_total >= use_donate:
