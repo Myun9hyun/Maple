@@ -192,35 +192,28 @@ elif choice == "길드페이지":
             | 부마 | 돌체라페  | 메르세데스 | [![Colab](https://img.shields.io/badge/kakaotalk-돌체라페-yellow)](https://open.kakao.com/o/sEmQw9Ye) |
             | 부마 | 영래곰  | 듀얼블레이드 | [![Colab](https://img.shields.io/badge/kakaotalk-영래곰-yellow)](https://open.kakao.com/o/sBK5y3md) |
             '''
-
+# pdf_path = "Cozem/rule/아기자기_길드_규정_2023.pdf"
         with col2:
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
         import streamlit as st
-        import fitz  # PyMuPDF 라이브러리
+        import fitz
+        from PIL import Image
 
-        def main():
-            st.title("PDF Viewer")
+        st.title("PDF Viewer")
 
-            # PDF 파일 경로 입력
-            pdf_path = "Cozem/rule/아기자기_길드_규정_2023.pdf"
+        # PDF 파일의 URL을 입력받습니다.
+        pdf_url = "Cozem/rule/아기자기_길드_규정_2023.pdf"
 
-            # PDF 파일 열기
-            with fitz.open(pdf_path) as pdf:
-                # 페이지 수
-                num_pages = len(pdf)
+        # PDF 파일을 이미지로 변환합니다.
+        if pdf_url:
+            with fitz.open(pdf_url) as doc:
+                for i, page in enumerate(doc):
+                    image = page.getPixmap().getImageData(output="png")
+                    image = Image.open(image)
+                    st.image(image, caption=f"Page {i+1}", use_column_width=True)
 
-                # 페이지별 이미지 보여주기
-                for i in range(num_pages):
-                    page = pdf[i]
-                    pixmap = page.getPixmap()
-                    with fitz.Pixmap(pixmap) as pixmap_alpha:
-                        image_bytes = pixmap_alpha.getPNGData()
-                    st.image(image_bytes, caption=f"Page {i+1}/{num_pages}")
-
-        if __name__ == "__main__":
-            main()
 
 
 
