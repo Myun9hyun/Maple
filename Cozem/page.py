@@ -213,12 +213,6 @@ elif choice == "길드페이지":
                     image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
                     st.image(image, caption=f"Page {i+1}", use_column_width=True)
 
-
-
-
-
-
-      
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem"])
