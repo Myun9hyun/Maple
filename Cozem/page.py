@@ -204,7 +204,7 @@ Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
             st.title("아기자기 길드 규정")
 
             # PDF 파일 불러오기
-            with open("Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf", "rb") as f:
+            with open("Cozem/rule/아기자기_길드_규정_2023.pdf", "rb") as f:
                 pdf_reader = PyPDF2.PdfFileReader(f)
 
                 # 페이지 선택
