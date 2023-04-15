@@ -198,13 +198,13 @@ elif choice == "길드페이지":
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
         st.header("💎코어젬스톤💎")
-
+Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf
 
         def main():
             st.title("아기자기 길드 규정")
 
             # PDF 파일 불러오기
-            with open("Cozem/rule/아기자기_길드_규정_2023.pdf", "rb") as f:
+            with open("Myun9hyun/Maple/Cozem/rule/아기자기_길드_규정 _2023.pdf", "rb") as f:
                 pdf_reader = PyPDF2.PdfFileReader(f)
 
                 # 페이지 선택
