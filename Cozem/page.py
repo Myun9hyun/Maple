@@ -28,7 +28,7 @@ width, height = image.size
 draw = ImageDraw.Draw(image)
 text_kor = "아기자기"
 text_eng = "Welcome to"
-text_ver = "ver.04.14_1"
+text_ver = "ver.04.15_4"
 text_madeby = "@둥둥향"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
@@ -175,7 +175,7 @@ if choice == "메인페이지":
     
 
 elif choice == "길드페이지":
-    tab1, tab2= st.tabs(["😎Manager", "💎Cozem"])
+    tab1, tab2= st.tabs(["😎Manager", "📋Rules"])
     with tab1:
         st.header("😎Manager")
         st.write()
@@ -196,18 +196,14 @@ elif choice == "길드페이지":
         with col2:
             st.image("Cozem/image/elinel.jpg", use_column_width=True)
     with tab2:
-        st.header("💎코어젬스톤💎")
+        st.header("📋길드 규정집📋")
         import streamlit as st
         import fitz
         from PIL import Image
 
-        st.title("PDF Viewer")
 
         # PDF 파일의 URL을 입력받습니다.
         pdf_url = "Cozem/rule/아기자기_길드_규정_2023.pdf"
-
-        # PDF 파일을 이미지로 변환합니다.
-
 
         # PDF 파일을 이미지로 변환합니다.
         if pdf_url:
