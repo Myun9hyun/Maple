@@ -295,7 +295,8 @@ elif choice == "직위관리":
             global data
             # role = st.radio("본캐/부캐 선택", ("본캐", "부캐"))
             if character_type == "부캐":
-                main_name = st.text_input("본캐의 이름을 입력하세요.")
+                main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
+                # main_name = st.text_input("본캐의 이름을 입력하세요.")
                 if main_name not in data['Name'].values:
                     st.warning(f'{main_name} (은)는 존재하지 않는 이름이야!')
                     return
