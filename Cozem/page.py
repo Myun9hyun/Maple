@@ -410,9 +410,9 @@ elif choice == "직위관리":
                     weekly_mission = st.number_input('주간 미션 점수를 입력해주세요', min_value=0)
                     suro = st.number_input('수로 점수를 입력해주세요', min_value=0)
                     flag = st.number_input('플래그 점수를 입력해주세요', min_value=0)
-                    
+                    add_character_data(select_name, is_main_character, weekly_mission, suro, flag)
                     if st.button('추가하기'):
-                        add_character_data(select_name, is_main_character, weekly_mission, suro, flag)
+                        
                         save_data(data)  # 데이터를 파일에 저장
                         # st.success(f'{select_name}의 데이터가 추가되었습니다!')
                 elif option == "이름추가🎫":
