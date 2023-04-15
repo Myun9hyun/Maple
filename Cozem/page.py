@@ -214,11 +214,12 @@ elif choice == "길드페이지":
                 # 페이지별 이미지 보여주기
                 for i in range(num_pages):
                     page = pdf[i]
-                    image_bytes = page.getPixmap().getPNGData()
+                    image_bytes = page.get_pixmap().getPNGData()
                     st.image(image_bytes, caption=f"Page {i+1}/{num_pages}")
 
         if __name__ == "__main__":
             main()
+
 
 
 
