@@ -208,13 +208,18 @@ elif choice == "길드페이지":
 
             # PDF 파일 열기
             with fitz.open(pdf_path) as pdf:
-                # 첫 페이지를 이미지로 변환하여 스트림릿에 보여주기
-                page = pdf[0]
-                image_bytes = page.getPixmap().getPNGData()
-                st.image(image_bytes)
+                # 페이지 수
+                num_pages = len(pdf)
+
+                # 페이지별 이미지 보여주기
+                for i in range(num_pages):
+                    page = pdf[i]
+                    image_bytes = page.getPixmap().getPNGData()
+                    st.image(image_bytes, caption=f"Page {i+1}/{num_pages}")
 
         if __name__ == "__main__":
             main()
+
 
 
       
