@@ -292,7 +292,7 @@ elif choice == "직위관리":
             data5 = data5.append({'Name': names}, ignore_index=True)
 
         def add_data(name,character_type, weekly_mission, suro, flag):
-            global data
+            global data, data5
             # role = st.radio("본캐/부캐 선택", ("본캐", "부캐"))
             if character_type == "부캐":
                 main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
