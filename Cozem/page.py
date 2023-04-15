@@ -315,7 +315,7 @@ elif choice == "직위관리":
             else:
                 # 중복 검사
                 if name in data['Name'].values:
-                    st.warning(f'{name} (은)는 이미 있는 이름이야!')
+                    st.warning(f'{name} (은)는 추가되어있어!')
                     return
                 else:
                     st.success(f"{name}(이)가 추가되었어!")
