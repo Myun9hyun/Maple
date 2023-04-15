@@ -295,8 +295,8 @@ elif choice == "직위관리":
             global data, data5
             # role = st.radio("본캐/부캐 선택", ("본캐", "부캐"))
             if character_type == "부캐":
-                main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
-                # main_name = st.text_input("본캐의 이름을 입력하세요.")
+                # main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
+                main_name = st.text_input("본캐의 이름을 입력하세요.")
                 if main_name not in data['Name'].values:
                     st.warning(f'{main_name} (은)는 존재하지 않는 이름이야!')
                     return
@@ -345,7 +345,7 @@ elif choice == "직위관리":
                 add_data(name,character_type, weekly_mission, suro, flag)
             elif character_type == '부캐':
                 # main_name = st.text_input('본캐 이름을 입력하세요')
-                main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
+                main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist(), key='main12')
                 main_data = data.loc[data['Name'] == main_name]
                 if len(main_data) == 0:
                     st.warning(f"{main_name} (은)는 등록되어있지 않아!")
@@ -407,7 +407,7 @@ elif choice == "직위관리":
                 option = st.selectbox("기능 선택", options)
                 
                 if option == "데이터 추가➕":
-                    select_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
+                    select_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist(),key='main13')
                     is_main_character = st.radio('본캐/부캐', ('본캐', '부캐'))
                     weekly_mission = st.number_input('주간 미션 점수를 입력해주세요', min_value=0)
                     suro = st.number_input('수로 점수를 입력해주세요', min_value=0)
