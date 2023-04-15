@@ -847,7 +847,7 @@ elif choice == "직위관리":
                     why = st.text_input("사유를 입력해주세요(곤란하면 개인사유로 작성)")
                     day = st.date_input(
                         "유예기한을 설정해주세요",
-                        datetime.date(2023, 4, 10))
+                            datetime.date.today())
                     if st.button('유예자 이름 추가'):
                         add_data2(name, why, day)
                         save_data2(data2)
@@ -959,7 +959,7 @@ elif choice == "직위관리":
                     donate_cozem = st.number_input("기부받은 갯수를 입력해주세요", min_value=0)
                     day = st.date_input(
                         "기부받은 날짜를 입력해주세요",
-                        datetime.date(2023, 4, 10))
+                            datetime.date.today())
                     if st.button('기부 코젬 추가'):
                         add_data3(info, donate_cozem, day)
                         save_data3(data3)
