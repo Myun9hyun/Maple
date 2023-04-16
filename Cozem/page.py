@@ -119,7 +119,8 @@ def set_BGM(bgm):
 
         # Add "정지" button to stop the audio playback
         if st.button("정지"):
-            stopAudio()
+            bgm_audio.pause();
+            bgm_audio.currentTime = 0;
 
     else:
         st.write("잘못된 입력입니다.")
