@@ -420,8 +420,10 @@ elif choice == "직위관리":
                     if st.button('차트 열기'):
                         if not data.empty:
                             st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                            st.write(data5)
                         elif not data5.empty:
                             st.write(data5)
+                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
                         else:
                             st.write('입력되어있는 데이터가 없습니다.')
                 
@@ -895,7 +897,7 @@ elif choice == "직위관리":
             st.warning('비밀번호가 틀렸습니다.')
     with tab5 :
         st.header("💝기부 코젬 관리")
-        st.write("기능 구현중...")
+        # st.write("기능 구현중...")
         FILE_PATH3 = 'data3.csv'
         st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
         password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password6')
