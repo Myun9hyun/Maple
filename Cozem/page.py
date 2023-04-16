@@ -1144,144 +1144,144 @@ elif choice == "이것저것":
         | GoogleDocs | 📑아기자기명단 | [![Colab](https://img.shields.io/badge/GoogleDocs-아기자기명단-green)](https://onedrive.live.com/edit.aspx?resid=221CE48C87202DCA!2450&ithint=file%2cxlsx&authkey=!ADKQOeLCxzQp_5o) | 
         '''
     with tab3:
-        FILE_PATH1 = 'data1.csv'
-        FILE_PATH2 = 'data2.csv'
-        FILE_PATH3 = 'data3.csv'
-        FILE_PATH4 = 'data4.csv'
-        FILE_PATH5 = 'data5.csv'
+        FILE_PATH11 = 'data11.csv'
+        FILE_PATH21 = 'data21.csv'
+        FILE_PATH31 = 'data31.csv'
+        FILE_PATH41 = 'data41.csv'
+        FILE_PATH51 = 'data51.csv'
 
         # 파일에서 데이터 불러오기
-        def load_data(): #낮 품목
+        def load_data11(): #낮 품목
             try:
-                data = pd.read_csv(FILE_PATH1)
+                data11 = pd.read_csv(FILE_PATH11)
             except FileNotFoundError:
-                data = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
-            return data
+                data11 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
+            return data11
 
-        def load_data2():
+        def load_data21():
             try:
-                data2 = pd.read_csv(FILE_PATH2)
+                data21 = pd.read_csv(FILE_PATH21)
             except FileNotFoundError:
-                data2 = pd.DataFrame(columns=['Name', 'Point'])
-            return data2
+                data21 = pd.DataFrame(columns=['Name', 'Point'])
+            return data21
 
-        def load_data3():
+        def load_data31():
             try:
-                data3 = pd.read_csv(FILE_PATH3)
+                data31 = pd.read_csv(FILE_PATH31)
             except FileNotFoundError:
-                data3 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
-            return data3
+                data31 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
+            return data31
 
-        def load_data4(): # 밤 품목
+        def load_data41(): # 밤 품목
             try:
-                data4 = pd.read_csv(FILE_PATH4)
+                data41 = pd.read_csv(FILE_PATH41)
             except FileNotFoundError:
-                data4 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
-            return data4
-        def load_data5(): # 밤 장바구니
+                data41 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
+            return data41
+        def load_data51(): # 밤 장바구니
             try:
-                data5 = pd.read_csv(FILE_PATH5)
+                data51 = pd.read_csv(FILE_PATH51)
             except FileNotFoundError:
-                data5 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
-            return data5
+                data51 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
+            return data51
 
         # 데이터를 파일에 저장하기
-        def save_data(data):
-            data.to_csv(FILE_PATH1, index=False)
+        def save_data11(data11):
+            data11.to_csv(FILE_PATH11, index=False)
 
-        def save_data2(data2):
-            data2.to_csv(FILE_PATH2, index=False)
+        def save_data21(data21):
+            data21.to_csv(FILE_PATH21, index=False)
 
-        def save_data3(data3):
-            data3.to_csv(FILE_PATH3, index=False)
+        def save_data31(data31):
+            data31.to_csv(FILE_PATH31, index=False)
 
-        def save_data4(data4):
-            data4.to_csv(FILE_PATH4, index=False)
+        def save_data41(data41):
+            data41.to_csv(FILE_PATH41, index=False)
 
-        def save_data5(data5):
-            data5.to_csv(FILE_PATH5, index=False)
+        def save_data51(data51):
+            data51.to_csv(FILE_PATH51, index=False)
 
         # 데이터 초기화 함수
-        def clear_data():
-            global data, data2, data3, data4, data5
-            data = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
-            data2 = pd.DataFrame(columns=['Name', 'Point','Product'])
-            data3 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
-            data4 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
-            data5 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
+        def clear_data11():
+            global data11, data21, data31, data41, data51
+            data11 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
+            data21 = pd.DataFrame(columns=['Name', 'Point','Product'])
+            data31 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
+            data41 = pd.DataFrame(columns=['Name', 'Price', 'Mount'])
+            data51 = pd.DataFrame(columns=['Name', 'Product', 'Mount'])
             # 파일 삭제
-            os.remove(FILE_PATH1)
-            os.remove(FILE_PATH2)
-            os.remove(FILE_PATH3)
-            os.remove(FILE_PATH4)
-            os.remove(FILE_PATH5)
+            os.remove(FILE_PATH11)
+            os.remove(FILE_PATH21)
+            os.remove(FILE_PATH31)
+            os.remove(FILE_PATH41)
+            os.remove(FILE_PATH51)
 
         # 불러온 데이터를 전역 변수로 저장
-        data = load_data()
-        data2 = load_data2()
-        data3 = load_data3()
-        data4 = load_data4()
-        data5 = load_data5()
+        data11 = load_data11()
+        data21 = load_data21()
+        data31 = load_data31()
+        data41 = load_data41()
+        data51 = load_data51()
 
         # 사용자로부터 이름, 점수, 포인트, 수량을 입력받아 데이터프레임에 추가하는 함수
-        def add_data(name, price, mount): # 낮 품목 저장
-            global data
-            if name in data['Name'].values:
+        def add_data11(name, price, mount): # 낮 품목 저장
+            global data11
+            if name in data11`['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
-            data = data.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
-        def add_data4(name, price, mount): # 밤 품목 저장
-            global data4
-            if name in data4['Name'].values:
+        def add_data41(name, price, mount): # 밤 품목 저장
+            global data41
+            if name in data41['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
-            data4 = data4.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data41 = data41.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
-        def add_data2(name, point): # 포인트 배분 
-            global data2
-            if name in data2['Name'].values:
+        def add_data21(name, point): # 포인트 배분 
+            global data21
+            if name in data21['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 이름이야!')
                         return
-            data2 = data2.append({'Name': name, 'Point': point}, ignore_index=True)
+            data21 = data21.append({'Name': name, 'Point': point}, ignore_index=True)
 
-        def add_data3(name, price, mount):
-            global data3
-            data3 = data3.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+        def add_data31(name, price, mount):
+            global data31
+            data31 = data31.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
-        def add_data5(name, price, mount):
-            global data5
-            data5 = data5.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+        def add_data51(name, price, mount):
+            global data51
+            data51 = data51.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def purchase_item(name, product_name, mount): # 낮 구매하기
-            global data, data2
+            global data1, data21
             # data에서 product_name에 해당하는 row 선택
-            row = data[data['Name'] == product_name].iloc[0]
+            row = data11[data11['Name'] == product_name].iloc[0]
             # data2에서 name에 해당하는 row 선택
-            row2 = data2[data2['Name'] == name].iloc[0]
+            row2 = data21[data21['Name'] == name].iloc[0]
             # 구매하고자 하는 수량만큼 차감
             if row['Mount'] >= mount:
-                data.loc[data['Name'] == product_name, 'Mount'] -= mount
-                save_data(data)
+                data11.loc[data['Name'] == product_name, 'Mount'] -= mount
+                save_data11(data11)
                 # 품목 가격만큼 point 차감
                 total_price = row['Price'] * mount
                 if row2['Point'] >= total_price:
                     # 데이터프레임에 구매내역 추가
-                    data3 = load_data3()
-                    purchase_df = data3[(data3['Name'] == name) & (data3['Product'] == product_name)]
+                    data31 = load_data31()
+                    purchase_df = data31[(data31['Name'] == name) & (data31['Product'] == product_name)]
                     if purchase_df.empty:
                         purchase_df = pd.DataFrame({
                             'Name': [name],
                             'Product': [product_name],
                             'Mount': [mount]
                         })
-                        data3 = pd.concat([data3, purchase_df], ignore_index=True)
+                        data31 = pd.concat([data31, purchase_df], ignore_index=True)
                     else:
-                        data3.loc[(data3['Name'] == name) & (data3['Product'] == product_name), 'Mount'] += mount
-                    save_data3(data3)
+                        data31.loc[(data3['Name'] == name) & (data31['Product'] == product_name), 'Mount'] += mount
+                    save_data31(data31)
                     # 구매자의 포인트 차감
-                    data2.loc[data2['Name'] == name, 'Point'] -= total_price
-                    save_data2(data2)
+                    data21.loc[data21['Name'] == name, 'Point'] -= total_price
+                    save_data21(data21)
                     st.success(f'{product_name} {mount}개 구매 완료!')
                     # # 구매내역 호출 버튼 생성
                     # st.button("구매내역 확인", on_click=view_purchase_history)
@@ -1291,34 +1291,34 @@ elif choice == "이것저것":
                 st.warning(f'{product_name}(은)는 품절되었어(⊙_⊙;)')
 
         def purchase_item2(name, product_name, mount): # 밤 구매하기
-            global data4, data2
+            global data41, data21
             # data에서 product_name에 해당하는 row 선택
-            row = data4[data4['Name'] == product_name].iloc[0]
+            row = data41[data41['Name'] == product_name].iloc[0]
             # data2에서 name에 해당하는 row 선택
-            row2 = data2[data2['Name'] == name].iloc[0]
+            row2 = data21[data21['Name'] == name].iloc[0]
             # 구매하고자 하는 수량만큼 차감
             if row['Mount'] >= mount:
-                data4.loc[data4['Name'] == product_name, 'Mount'] -= mount
-                save_data4(data4)
+                data41.loc[add_data41['Name'] == product_name, 'Mount'] -= mount
+                save_data41(data41)
                 # 품목 가격만큼 point 차감
                 total_price = row['Price'] * mount
                 if row2['Point'] >= total_price:
                     # 데이터프레임에 구매내역 추가
-                    data5 = load_data5()
-                    purchase_df = data5[(data5['Name'] == name) & (data5['Product'] == product_name)]
+                    data51 = load_data51()
+                    purchase_df = data51[(data51['Name'] == name) & (data51['Product'] == product_name)]
                     if purchase_df.empty:
                         purchase_df = pd.DataFrame({
                             'Name': [name],
                             'Product': [product_name],
                             'Mount': [mount]
                         })
-                        data5 = pd.concat([data5, purchase_df], ignore_index=True)
+                        data51 = pd.concat([data51, purchase_df], ignore_index=True)
                     else:
-                        data5.loc[(data5['Name'] == name) & (data5['Product'] == product_name), 'Mount'] += mount
-                    save_data5(data5)
+                        data51.loc[(data51['Name'] == name) & (data51['Product'] == product_name), 'Mount'] += mount
+                    save_data51(data51)
                     # 구매자의 포인트 차감
-                    data2.loc[data2['Name'] == name, 'Point'] -= total_price
-                    save_data2(data2)
+                    data21.loc[data21['Name'] == name, 'Point'] -= total_price
+                    save_data21(data21)
                     st.success(f'{product_name} {mount}개 구매 완료!')
                     # # 구매내역 호출 버튼 생성
                     # st.button("구매내역 확인", on_click=view_purchase_history)
@@ -1329,27 +1329,27 @@ elif choice == "이것저것":
 
 
         def save_purchase_history(name, product_name, mount): # 낮 구매내역 저장
-            global data3
-            data3 = data3.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            global data31
+            data31 = data31.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
         def save_purchase_history2(name, product_name, mount): # 밤 구매내역 저장
-            global data5
-            data5 = data5.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            global data51
+            data51 = data51.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
             
-        def delete_data(row_index):
-                    global data
-                    data = data.drop(index=row_index).reset_index(drop=True)
-        def delete_data2(row_index):
-                    global data2
-                    data2 = data2.drop(index=row_index).reset_index(drop=True)
-        def delete_data3(row_index):
-                    global data3
-                    data3 = data3.drop(index=row_index).reset_index(drop=True)
-        def delete_data4(row_index):
-                    global data4
-                    data4 = data4.drop(index=row_index).reset_index(drop=True)
-        def delete_data5(row_index):
-                    global data5
-                    data5 = data5.drop(index=row_index).reset_index(drop=True)
+        def delete_data11(row_index):
+                    global data11
+                    data11 = data11.drop(index=row_index).reset_index(drop=True)
+        def delete_data21(row_index):
+                    global data21
+                    data21 = data21.drop(index=row_index).reset_index(drop=True)
+        def delete_data31(row_index):
+                    global data31
+                    data31 = data31.drop(index=row_index).reset_index(drop=True)
+        def delete_data41(row_index):
+                    global data41
+                    data41 = data41.drop(index=row_index).reset_index(drop=True)
+        def delete_data51(row_index):
+                    global data51
+                    data51 = data51.drop(index=row_index).reset_index(drop=True)
 
         # Streamlit 앱 생성
         def main():
@@ -1377,17 +1377,17 @@ elif choice == "이것저것":
                             if st.button('🌞물건/포인트보기🔎'):
                                 st.write('물품 목록이야╰(*°▽°*)╯')
                                 st.write('price는 가격, mount는 수량을 의미해!')
-                                st.write(data)
+                                st.write(data11)
                                 st.write('다락방 1회차에서 남기고 간 포인트와 이번 다락방에서 새롭게 지급된 포인트 합쳐서 보여줄게!')
                                 st.write('ヾ(•ω•`)o')
-                                st.write(data2)
+                                st.write(data21)
                         # 포인트 차감 버튼
                         elif option == '🌞물건구매🎁':
                             st.write('지급된 포인트와 물품 목록은 "물건/포인트보기🔎" 기능을 이용해줘(❁´◡`❁)')
                             # 구매자 이름 입력창
                             name = st.text_input('이름을 입력해줘😀')
                             # 구매하려는 품목 선택창
-                            product_name = st.selectbox('구매하려는 품목을 선택해줘(❁´◡`❁)', options=data['Name'].tolist())
+                            product_name = st.selectbox('구매하려는 품목을 선택해줘(❁´◡`❁)', options=data11['Name'].tolist())
                             # 구매 수량 입력창
                             mount = st.number_input('구매 수량을 입력해줘╰(*°▽°*)╯', min_value=1)
                             # 구매 버튼 클릭시 purchase_item 함수 실행
@@ -1395,7 +1395,7 @@ elif choice == "이것저것":
                                 purchase_item(name, product_name, mount)
                         elif option == '🌞구매내역🛒':
                             if st.button('구매내역 조회'):
-                                st.write(data3)
+                                st.write(data31``)
                     else:
                         st.warning('비밀번호가 틀렸습니다')
                 elif options_DN == '밤🌙':           
@@ -1411,17 +1411,17 @@ elif choice == "이것저것":
                             if st.button('🌙물건/포인트보기🔎'):
                                 st.write('물품 목록이야╰(*°▽°*)╯')
                                 st.write('price는 가격, mount는 수량을 의미해!')
-                                st.write(data4)
+                                st.write(data41)
                                 st.write('다락방 1회차에서 남기고 간 포인트와 이번 다락방에서 새롭게 지급된 포인트 합쳐서 보여줄게!')
                                 st.write('ヾ(•ω•`)o')
-                                st.write(data2)
+                                st.write(data21)
                         # 포인트 차감 버튼
                         elif option_night == '🌙물건구매🎁':
                             st.write('지급된 포인트와 물품 목록은 "물건/포인트보기🔎" 기능을 이용해줘(❁´◡`❁)')
                             # 구매자 이름 입력창
                             name = st.text_input('이름을 입력해줘😀')
                             # 구매하려는 품목 선택창
-                            product_name = st.selectbox('구매하려는 품목을 선택해줘(❁´◡`❁)', options=data4['Name'].tolist())
+                            product_name = st.selectbox('구매하려는 품목을 선택해줘(❁´◡`❁)', options=data41['Name'].tolist())
                             # 구매 수량 입력창
                             mount = st.number_input('구매 수량을 입력해줘╰(*°▽°*)╯', min_value=1)
 
@@ -1430,7 +1430,7 @@ elif choice == "이것저것":
                                 purchase_item2(name, product_name, mount)
                         elif option_night == '🌙구매내역🛒':
                             if st.button('구매내역 조회'):
-                                st.write(data5)
+                                st.write(data51)
                     else :
                         st.warning('비밀번호가 틀렸습니다.')
                 elif options_DN == '간부용😎':
@@ -1450,7 +1450,7 @@ elif choice == "이것저것":
                                 if st.button('데이터추가'):
                                     # if st.button('추가'):
                                     add_data(name, price, mount)
-                                    save_data(data)  # 데이터를 파일에 저장
+                                    save_data(data11)  # 데이터를 파일에 저장
                                     st.success('품목이 추가되었어!')
                             else:
                                 st.warning('비밀번호가 틀렸습니다')
@@ -1467,8 +1467,8 @@ elif choice == "이것저것":
                         # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
                                 if st.button('데이터추가'):
                                     # if st.button('추가'):
-                                    add_data4(name, price, mount)
-                                    save_data4(data4)  # 데이터를 파일에 저장
+                                    add_data41(name, price, mount)
+                                    save_data41(data41)  # 데이터를 파일에 저장
                                     st.success('품목이 추가되었어!')
                             else:
                                 st.warning('비밀번호가 틀렸습니다')
@@ -1482,54 +1482,54 @@ elif choice == "이것저것":
                                 if delete_datass == '품목🌞':
                                     # 사용자로부터 삭제할 행 번호 입력받기
                                     st.write("품목입니다")
-                                    st.write(data)
-                                    row_index = st.number_input('삭제하고 싶은 품목의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
+                                    st.write(data11)
+                                    row_index = st.number_input('삭제하고 싶은 품목의 번호를 입력해주세요', min_value=0, max_value=data11.shape[0]-1)
                                     if st.button('품목 삭제'):
                                     # 해당 행이 존재할 경우, 행을 삭제
-                                        if row_index >= 0 and row_index < data.shape[0]:
-                                            delete_data(row_index)
-                                            save_data(data)  # 데이터를 파일에 저장
+                                        if row_index >= 0 and row_index < data11.shape[0]:
+                                            delete_data11(row_index)
+                                            save_data11(data11)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                                 elif delete_datass == '품목🌙':
                                     # 사용자로부터 삭제할 행 번호 입력받기
                                     st.write("품목입니다")
-                                    st.write(data4)
-                                    row_index4 = st.number_input('삭제하고 싶은 품목의 번호를 입력해주세요', min_value=0, max_value=data.shape[0]-1)
+                                    st.write(data41)
+                                    row_index4 = st.number_input('삭제하고 싶은 품목의 번호를 입력해주세요', min_value=0, max_value=data11.shape[0]-1)
                                     if st.button('품목 삭제'):
                                     # 해당 행이 존재할 경우, 행을 삭제
-                                        if row_index4 >= 0 and row_index4 < data.shape[0]:
-                                            delete_data4(row_index4)
-                                            save_data4(data4)  # 데이터를 파일에 저장
+                                        if row_index4 >= 0 and row_index4 < data11.shape[0]:
+                                            delete_data41(row_index4)
+                                            save_data41(data41)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                                 elif delete_datass == '명단':
                                     st.write("포인트입니다")
-                                    st.write(data2)
-                                    row_index2 = st.number_input('삭제하고 싶은 포인트의 번호를 입력해주세요', min_value=0, max_value=data2.shape[0]-1)
+                                    st.write(data21)
+                                    row_index2 = st.number_input('삭제하고 싶은 포인트의 번호를 입력해주세요', min_value=0, max_value=data21.shape[0]-1)
                                     if st.button('포인트 삭제'):
                                         # 해당 행이 존재할 경우, 행을 삭제
-                                        if row_index2 >= 0 and row_index2 < data2.shape[0]:
-                                            delete_data2(row_index2)
-                                            save_data2(data2)  # 데이터를 파일에 저장
+                                        if row_index2 >= 0 and row_index2 < data21.shape[0]:
+                                            delete_data21(row_index2)
+                                            save_data2(data21)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                                 elif delete_datass == '구매내역🌞':
                                     st.write("구매내역🌞 입니다")
-                                    st.write(data3)
-                                    row_index3 = st.number_input('삭제하고 싶은 구매내역의 번호를 입력해주세요', min_value=0, max_value=data2.shape[0]-1)
+                                    st.write(data31)
+                                    row_index3 = st.number_input('삭제하고 싶은 구매내역의 번호를 입력해주세요', min_value=0, max_value=data21.shape[0]-1)
                                     if st.button('구매내역🌞 삭제'):
                                         # 해당 행이 존재할 경우, 행을 삭제
-                                        if row_index3 >= 0 and row_index3 < data3.shape[0]:
-                                            delete_data3(row_index3)
-                                            save_data3(data3)  # 데이터를 파일에 저장
+                                        if row_index3 >= 0 and row_index3 < data31.shape[0]:
+                                            delete_data31(row_index3)
+                                            save_data31(data31)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                                 elif delete_datass == '구매내역🌙':
                                     st.write("구매내역🌙 입니다")
-                                    st.write(data5)
-                                    row_index5 = st.number_input('삭제하고 싶은 구매내역의 번호를 입력해주세요', min_value=0, max_value=data2.shape[0]-1)
+                                    st.write(data51)
+                                    row_index5 = st.number_input('삭제하고 싶은 구매내역의 번호를 입력해주세요', min_value=0, max_value=data21.shape[0]-1)
                                     if st.button('구매내역🌙 삭제'):
                                         # 해당 행이 존재할 경우, 행을 삭제
-                                        if row_index5 >= 0 and row_index5 < data5.shape[0]:
-                                            delete_data5(row_index5)
-                                            save_data5(data5)  # 데이터를 파일에 저장
+                                        if row_index5 >= 0 and row_index5 < data51.shape[0]:
+                                            delete_data51(row_index5)
+                                            save_data5(data51)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                             else :
                                 st.warning('비밀번호가 틀렸습니다.')
@@ -1555,8 +1555,8 @@ elif choice == "이것저것":
                         # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
                                 if st.button('데이터추가'):
                                     # if st.button('추가'):
-                                    add_data2(name, point)
-                                    save_data2(data2)  # 데이터를 파일에 저장
+                                    add_data21(name, point)
+                                    save_data21(data21)  # 데이터를 파일에 저장
                                     st.success('포인트가 지급되었어!')
                             else :
                                 st.warning('비밀번호가 틀렸습니다.')
