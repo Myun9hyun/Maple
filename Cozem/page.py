@@ -1449,7 +1449,7 @@ elif choice == "이것저것":
                         # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
                                 if st.button('데이터추가'):
                                     # if st.button('추가'):
-                                    add_data(name, price, mount)
+                                    add_data11(name, price, mount)
                                     save_data(data11)  # 데이터를 파일에 저장
                                     st.success('품목이 추가되었어!')
                             else:
