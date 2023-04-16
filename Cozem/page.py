@@ -86,27 +86,9 @@ def set_BGM(bgm):
         st.write("잘못된 입력입니다.")
         pass
 
-
-
-
-
-
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
-# bgms = ["나린","도원경", "차원의균열", "첫번째동행", "에오스탑외부", "오시리아대륙항해", "아쿠아리움필드",
-#             "오디움_신의창", "강림_괴력난신" , "아델의맹세", "아쉴롬_일리움", "악몽의시계탑", "시간의신전"]
-# bgm = st.selectbox("🔈원하시는 배경음악을 골라주세용", bgms)
-# col3, col4 = st.columns(2)
-# with col3:
-#     st.write("Play")
-#     if st.button("▶"):
-#         st.success("음악 재생")
-#         set_BGM(bgm)
-# with col4:
-#     st.write("Stop")
-#     if st.button("⬛"):
-#         st.warning("음악 정지")
-#         pass
+
 with st.sidebar:
     choice = option_menu("Menu", ["메인페이지", "길드페이지", "직위관리", "아카이브", "이것저것", "피드백 남기기"],
                          icons=['house', 'bi bi-emoji-smile', 'bi bi-robot', 'bi bi-palette','bi bi-archive', 'bi bi-card-text'],
@@ -149,9 +131,7 @@ with st.sidebar:
 if choice == "메인페이지":
     st.header("💜아기자기 길드 페이지💚")
     st.write("### 아기자기 길드 페이지에 오신것을 환영합니다😊")
-    # col1, col2 = st.columns(2)
-    # with col1:
-        
+      
     st.write()
     '''
     ##### 우리 아기자기는요~
@@ -159,27 +139,6 @@ if choice == "메인페이지":
     * Lv220 이상 가입 가능
     * 연합길드 '초초' 보유
     '''
-    # with col2:
-        # st.write("나린, 도원경, 차원의균열, 첫번째동행 중에서 골라주세용")
-        # bgms = ["나린","도원경", "차원의균열", "첫번째동행", "에오스탑외부", "오시리아대륙항해", "아쿠아리움필드",
-        #         "오디움_신의창", "강림_괴력난신" , "아델의맹세", "아쉴롬_일리움", "악몽의시계탑", "시간의신전"]
-        # bgm = st.selectbox("🔈원하시는 배경음악을 골라주세용", bgms)
-        # col3, col4 = st.columns(2)
-        # with col3:
-        #     if st.button("배경음악 재생"):
-        #         set_BGM(bgm)
-        # with col4:
-        #     if st.button("노래 끄기"):
-        #         pass
-        
-        # audio_file = open(f'Cozem/bgm/{bgm}.mp3', 'rb')
-        # audio_bytes = audio_file.read()
-
-        # st.audio(audio_bytes, format='audio/mp3')
-        # st.write(f"{bgm} 배경음악입니다.🎵")
-    
-    
-    
 
 elif choice == "길드페이지":
     tab1, tab2= st.tabs(["😎Manager", "📋Rules"])
@@ -1691,9 +1650,6 @@ elif choice == "피드백 남기기":
             password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass14')
             if password_input == password:
                 st.success('접근을 허용합니다')
-            # 데이터 삭제 기능
-            # if st.button('데이터 삭제'):
-                # 사용자로부터 삭제할 행 번호 입력받기
                 st.write(data10[['Name','Comment', 'Day']])
                 row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data10.shape[0]-1)
                 st.write("Enter를 입력하면 삭제됩니다.")
@@ -1710,7 +1666,7 @@ elif choice == "피드백 남기기":
             comment = st.text_input("피드백 내용을 적어주세요")
             day = st.date_input(
                 "피드백 남기는 날짜를 설정해주세요",
-                datetime.date(2023, 4, 20))
+                datetime.date.today)
             if st.button('피드백 남기기'):
                 add_data10(name, comment, day)
                 save_data10(data10)
