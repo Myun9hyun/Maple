@@ -109,6 +109,7 @@ def set_BGM(bgm):
 
         function stopAudio() {{
             bgm_audio.pause();
+            bgm_audio.currentTime = 0;
         }}
         </script>
         """
