@@ -153,6 +153,7 @@ with st.sidebar:
                 "오디움_신의창", "강림_괴력난신" , "아델의맹세", "아쉴롬_일리움", "악몽의시계탑", "시간의신전"]
     bgm = st.selectbox("🔈원하시는 배경음악을 골라주세용", bgms)
     st.write("음악은 다른 기능을 사용하면 정지됩니다.")
+    set_BGM(bgm)
     col3, col4 = st.columns(2)
     with col3:
         st.write("Play")
