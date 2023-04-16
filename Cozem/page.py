@@ -22,7 +22,7 @@ st.set_page_config(page_title="BanShamDoongDolYoung", page_icon=":rabbit:", layo
 password = 1234
 password_test = "1234"
 
-# image = Image.open("Cozem/image/cover_guild.jpg")
+image = Image.open("Cozem/image/cover_guild.jpg")
 # width, height = image.size
 # # 이미지에 텍스트 추가
 # draw = ImageDraw.Draw(image)
