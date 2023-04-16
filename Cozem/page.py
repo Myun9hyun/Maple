@@ -85,76 +85,45 @@ draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
 #     else:
 #         st.write("잘못된 입력입니다.")
 #         pass
+import streamlit as st
+import base64
+
 def set_BGM(bgm):
     if bgm:
         audio_path = f"Cozem/bgm/{bgm}.mp3"
         audio_file = open(audio_path, 'rb').read()
 
-        audio_id = 'bgm_audio'
-        play_button_id = 'bgm_play_button'
-        stop_button_id = 'bgm_stop_button'
-        
-        st.markdown(f'<audio id="{audio_id}" autoplay loop="true" src="data:audio/mp3;base64,\
-                            {base64.b64encode(audio_file).decode()}"></audio>', unsafe_allow_html=True)
+        st.markdown(f'<audio id="bgm_audio" autoplay loop="true" src="data:audio/mp3;base64,\
+                            {base64.b64encode(audio_file).decode()}"></audio>',\
+                            unsafe_allow_html=True)
 
-        jscode = f"""
+        # Add JavaScript code to control the audio playback
+        jscode = """
         <script>
-            var audio = document.getElementById("{audio_id}");
-            var play_button = document.getElementById("{play_button_id}");
-            var stop_button = document.getElementById("{stop_button_id}");
-            
-            if (typeof audio.loop == 'boolean') {{
-                audio.loop = true;
-            }} else {{
-                audio.addEventListener('ended', function() {{
-                    this.currentTime = 0;
-                    this.play();
-                }}, false);
-            }}
-
-            play_button.onclick = function() {{
-                audio.play();
-                play_button.style.display = 'none';
-                stop_button.style.display = 'block';
-            }};
-
-            stop_button.onclick = function() {{
-                audio.pause();
-                audio.currentTime = 0;
-                play_button.style.display = 'block';
-                stop_button.style.display = 'none';
-            }};
+        const bgm_audio = document.getElementById("bgm_audio");
+        if (typeof bgm_audio.loop == 'boolean') {
+            bgm_audio.loop = true;
+        } else {
+            bgm_audio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        function stopAudio() {
+            bgm_audio.pause();
+            bgm_audio.currentTime = 0;
+        }
         </script>
         """
-        
-        st.markdown(f"""
-            <button id="{play_button_id}" style="display: none;">재생</button>
-            <button id="{stop_button_id}">정지</button>
-        """, unsafe_allow_html=True)
+        st.markdown(jscode, unsafe_allow_html=True)
 
-        if st.button("재생"):
-            jscode += f"""
-            <script>
-                audio.play();
-                play_button.style.display = 'none';
-                stop_button.style.display = 'block';
-            </script>
-            """
-            st.markdown(jscode, unsafe_allow_html=True)
-
-        elif st.button("정지"):
-            jscode += f"""
-            <script>
-                audio.pause();
-                audio.currentTime = 0;
-                play_button.style.display = 'block';
-                stop_button.style.display = 'none';
-            </script>
-            """
-            st.markdown(jscode, unsafe_allow_html=True)
+        # Add "정지" button to stop the audio playback
+        if st.button("정지"):
+            stopAudio()
 
     else:
         st.write("잘못된 입력입니다.")
+
 
 
 
