@@ -2,8 +2,6 @@ pandas
 statsmodels
 plotly
 matplotlib
-scikit-learn==0.24.2
-mlxtend
 seaborn
 streamlit_option_menu
 numpy
@@ -11,6 +9,5 @@ openpyxl
 streamlit
 tabulate
 Pillow
-torchviz
 PyPDF2==1.26.0
 PyMuPDF
