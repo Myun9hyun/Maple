@@ -423,7 +423,7 @@ elif choice == "직위관리":
                             st.write(data5)
                         elif not data5.empty:
                             st.write(data5)
-                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                            # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
                         else:
                             st.write('입력되어있는 데이터가 없습니다.')
                 
