@@ -74,35 +74,35 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
-def set_BGM(bgm):
-    if bgm:
-        audio_path = f"Cozem/bgm/{bgm}.mp3"
-        audio_file = open(audio_path, 'rb').read()
-
-        return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
-                            {base64.b64encode(audio_file).decode()}"></audio>',\
-                            unsafe_allow_html=True)
-    else:
-        st.write("잘못된 입력입니다.")
-        pass
-# import streamlit as st
-# from streamlit.components.v1 import html
-
 # def set_BGM(bgm):
 #     if bgm:
 #         audio_path = f"Cozem/bgm/{bgm}.mp3"
 #         audio_file = open(audio_path, 'rb').read()
-#         st.markdown(f'<div id="audio"></div>', unsafe_allow_html=True)
-#         html_code = f"""
-#         <script>
-#         var audio = new Audio("data:audio/mp3;base64,{base64.b64encode(audio_file).decode()}");
-#         audio.loop = true;
-#         audio.play();
-#         </script>
-#         """
-#         st.markdown(html_code, unsafe_allow_html=True)
+
+#         return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
+#                             {base64.b64encode(audio_file).decode()}"></audio>',\
+#                             unsafe_allow_html=True)
 #     else:
 #         st.write("잘못된 입력입니다.")
+#         pass
+import streamlit as st
+from streamlit.components.v1 import html
+
+def set_BGM(bgm):
+    if bgm:
+        audio_path = f"Cozem/bgm/{bgm}.mp3"
+        audio_file = open(audio_path, 'rb').read()
+        st.markdown(f'<div id="audio"></div>', unsafe_allow_html=True)
+        html_code = f"""
+        <script>
+        var audio = new Audio("data:audio/mp3;base64,{base64.b64encode(audio_file).decode()}");
+        audio.loop = true;
+        audio.play();
+        </script>
+        """
+        st.markdown(html_code, unsafe_allow_html=True)
+    else:
+        st.write("잘못된 입력입니다.")
 
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
