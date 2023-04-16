@@ -106,11 +106,26 @@ def set_BGM(bgm):
                 this.play();
             }}, false);
         }}
+
+        function stopAudio() {{
+            bgm_audio.pause();
+        }}
         </script>
         """
         st.markdown(jscode, unsafe_allow_html=True)
+
+        if st.button("정지"):
+            st.write("음악이 정지되었습니다.")
+            jscode = f"""
+            <script>
+            stopAudio();
+            </script>
+            """
+            st.markdown(jscode, unsafe_allow_html=True)
+
     else:
         st.write("잘못된 입력입니다.")
+
 
 # # streamlit에 이미지 표시
 st.image(image, use_column_width=True)
