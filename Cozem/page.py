@@ -115,7 +115,7 @@ def set_BGM(bgm):
         """
         st.markdown(jscode, unsafe_allow_html=True)
 
-        if st.button("정지"):
+        if st.button("정지", key='button1'):
             st.write("음악이 정지되었습니다.")
             jscode = f"""
             <script>
