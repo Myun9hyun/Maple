@@ -1551,7 +1551,7 @@ elif choice == "이것저것":
                             if password_input == password:
                                 st.success('접근을 허용합니다')
                                 name = st.text_input('닉네임을 입력해줘')
-                                point = st.number_input('포인트를 입력해줘', min_value=0, max_value=1000)
+                                point = st.number_input('포인트를 입력해줘', min_value=0, max_value=10000)
                         # 이름, 점수, 포인트가 입력되면 데이터프레임에 추가
                                 if st.button('데이터추가'):
                                     # if st.button('추가'):
