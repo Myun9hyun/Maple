@@ -74,56 +74,18 @@ draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=s
 draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
-# def set_BGM(bgm):
-#     if bgm:
-#         audio_path = f"Cozem/bgm/{bgm}.mp3"
-#         audio_file = open(audio_path, 'rb').read()
-
-#         return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
-#                             {base64.b64encode(audio_file).decode()}"></audio>',\
-#                             unsafe_allow_html=True)
-#     else:
-#         st.write("잘못된 입력입니다.")
-#         pass
-import streamlit as st
-import base64
-
 def set_BGM(bgm):
     if bgm:
         audio_path = f"Cozem/bgm/{bgm}.mp3"
         audio_file = open(audio_path, 'rb').read()
 
-        st.markdown(f'<audio id="bgm_audio" autoplay loop="true" src="data:audio/mp3;base64,\
+        return st.markdown(f'<audio autoplay loop="true" src="data:audio/mp3;base64,\
                             {base64.b64encode(audio_file).decode()}"></audio>',\
                             unsafe_allow_html=True)
-
-        # Add JavaScript code to control the audio playback
-        jscode = """
-        <script>
-        const bgm_audio = document.getElementById("bgm_audio");
-        if (typeof bgm_audio.loop == 'boolean') {
-            bgm_audio.loop = true;
-        } else {
-            bgm_audio.addEventListener('ended', function() {
-                this.currentTime = 0;
-                this.play();
-            }, false);
-        }
-        function stopAudio() {
-            bgm_audio.pause();
-            bgm_audio.currentTime = 0;
-        }
-        </script>
-        """
-        st.markdown(jscode, unsafe_allow_html=True)
-
-        # Add "정지" button to stop the audio playback
-        if st.button("정지"):
-            bgm_audio.pause();
-            bgm_audio.currentTime = 0;
-
     else:
         st.write("잘못된 입력입니다.")
+        pass
+
 
 
 
