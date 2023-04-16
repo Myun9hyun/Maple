@@ -724,7 +724,7 @@ elif choice == "직위관리":
                     else:
                         st.warning('비밀번호가 틀렸습니다.')
                 elif option == "경고자 추가➕":
-                    name = st.text_input("경고자 이름을 입력해주세요")
+                    name = st.selectbox("경고자 이름을 입력해주세요", options=data1['Name'].tolist(), key='warning1')
                     reason = st.text_input("경고 사유를 입력해주세요")
                     warning_count = data1.loc[data1['Name']==name, 'Warning'].values[0] if name in data1['Name'].values else 0
                     if st.button('경고자 이름 추가'):
