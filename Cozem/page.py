@@ -251,16 +251,13 @@ elif choice == "직위관리":
         def clear_data():
             global data
             data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
-            # data5 = pd.DataFrame(columns=['Name'])
             # 파일 삭제
             os.remove(FILE_PATH)
-            # os.remove(FILE_PATH5)
+            
         def clear_data5():
             global data5
-            # data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
             data5 = pd.DataFrame(columns=['Name'])
             # 파일 삭제
-            # os.remove(FILE_PATH)
             os.remove(FILE_PATH5)
         # 데이터 삭제 함수
         def delete_data(row_index):
@@ -281,7 +278,6 @@ elif choice == "직위관리":
 
         def add_data(name,character_type, weekly_mission, suro, flag):
             global data, data5
-            # role = st.radio("본캐/부캐 선택", ("본캐", "부캐"))
             if character_type == "부캐":
                 # main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
                 main_name = st.text_input("본캐의 이름을 입력하세요.")
@@ -450,8 +446,8 @@ elif choice == "직위관리":
                                 st.success('입력하신 행이 삭제되었습니다.')
                         if st.button('이름데이터 삭제'):
                             # 해당 행이 존재할 경우, 행을 삭제
-                            if row_index >= 0 and row_index < data5.shape[0]:
-                                delete_data5(row_index)
+                            if row_index_name >= 0 and row_index_name < data5.shape[0]:
+                                delete_data5(row_index_name)
                                 save_data5(data5)  # 데이터를 파일에 저장
                                 st.success('입력하신 행이 삭제되었습니다.')
                     else:
