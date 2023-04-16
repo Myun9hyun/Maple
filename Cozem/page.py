@@ -1261,7 +1261,7 @@ elif choice == "이것저것":
             row2 = data21[data21['Name'] == name].iloc[0]
             # 구매하고자 하는 수량만큼 차감
             if row['Mount'] >= mount:
-                data11.loc[data['Name'] == product_name, 'Mount'] -= mount
+                data11.loc[data11['Name'] == product_name, 'Mount'] -= mount
                 save_data11(data11)
                 # 품목 가격만큼 point 차감
                 total_price = row['Price'] * mount
