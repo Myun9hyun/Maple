@@ -1254,7 +1254,7 @@ elif choice == "이것저것":
             data51 = data51.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def purchase_item(name, product_name, mount): # 낮 구매하기
-            global data1, data21
+            global data11, data21
             # data에서 product_name에 해당하는 row 선택
             row = data11[data11['Name'] == product_name].iloc[0]
             # data2에서 name에 해당하는 row 선택
@@ -1395,7 +1395,7 @@ elif choice == "이것저것":
                                 purchase_item(name, product_name, mount)
                         elif option == '🌞구매내역🛒':
                             if st.button('구매내역 조회'):
-                                st.write(data31``)
+                                st.write(data31)
                     else:
                         st.warning('비밀번호가 틀렸습니다')
                 elif options_DN == '밤🌙':           
@@ -1529,7 +1529,7 @@ elif choice == "이것저것":
                                         # 해당 행이 존재할 경우, 행을 삭제
                                         if row_index5 >= 0 and row_index5 < data51.shape[0]:
                                             delete_data51(row_index5)
-                                            save_data5(data51)  # 데이터를 파일에 저장
+                                            save_data51(data51)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                             else :
                                 st.warning('비밀번호가 틀렸습니다.')
