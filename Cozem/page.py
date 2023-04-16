@@ -1509,7 +1509,7 @@ elif choice == "이것저것":
                                         # 해당 행이 존재할 경우, 행을 삭제
                                         if row_index2 >= 0 and row_index2 < data21.shape[0]:
                                             delete_data21(row_index2)
-                                            save_data2(data21)  # 데이터를 파일에 저장
+                                            save_data21(data21)  # 데이터를 파일에 저장
                                             st.success('입력하신 행이 삭제되었습니다.')
                                 elif delete_datass == '구매내역🌞':
                                     st.write("구매내역🌞 입니다")
