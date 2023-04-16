@@ -1666,7 +1666,7 @@ elif choice == "피드백 남기기":
             comment = st.text_input("피드백 내용을 적어주세요")
             day = st.date_input(
                 "피드백 남기는 날짜를 설정해주세요",
-                datetime.date.today)
+                datetime.date.today())
             if st.button('피드백 남기기'):
                 add_data10(name, comment, day)
                 save_data10(data10)
