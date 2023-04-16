@@ -1385,7 +1385,9 @@ elif choice == "이것저것":
                         elif option == '🌞물건구매🎁':
                             st.write('지급된 포인트와 물품 목록은 "물건/포인트보기🔎" 기능을 이용해줘(❁´◡`❁)')
                             # 구매자 이름 입력창
-                            name = st.text_input('이름을 입력해줘😀')
+                            # main_name = st.selectbox('본캐 이름을 골라줘', options=data5['Name'].tolist(), key='main12')
+
+                            name = st.selectbox('이름을 입력해줘😀', options=data21['Name'].tolist(), key='Darak1')
                             # 구매하려는 품목 선택창
                             product_name = st.selectbox('구매하려는 품목을 선택해줘(❁´◡`❁)', options=data11['Name'].tolist())
                             # 구매 수량 입력창
