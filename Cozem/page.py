@@ -756,8 +756,10 @@ elif choice == "직위관리":
                     if st.button('경고 횟수 확인'):
                         warning_one = data1[data1['Warning'] == 1]
                         warning_two = data1[data1['Warning'] == 2]
+                        warning_three = data1[data1['Warning'] == 3]
                         warning_one_list = warning_one['Name'].tolist()
                         warning_two_list = warning_two['Name'].tolist()
+                        warning_three_list = warning_three['Name'].tolist()
                         st.write("경고자 전체 명단입니다.")
                         st.write(data1)
                         if not warning_one_list:
@@ -770,6 +772,11 @@ elif choice == "직위관리":
                         else : 
                             st.write("경고 2회 명단입니다.")
                             st.write(f"{warning_two_list}")
+                        if not warning_three_list:
+                            st.write("이번주 퇴출자는 없습니다")
+                        else : 
+                            st.write("경고 누적 퇴출자입니다.")
+                            st.write(f"{warning_three_list}")
 
                 elif option == "데이터 초기화💣":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
