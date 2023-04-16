@@ -1226,7 +1226,7 @@ elif choice == "이것저것":
         # 사용자로부터 이름, 점수, 포인트, 수량을 입력받아 데이터프레임에 추가하는 함수
         def add_data11(name, price, mount): # 낮 품목 저장
             global data11
-            if name in data11`['Name'].values:
+            if name in data11['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
             data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
