@@ -572,28 +572,31 @@ elif choice == "직위관리":
                         st.write("위클리 코젬 지급은 다음과 같습니다")
                         st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
                     if st.button("분배"):
-                        total_sum = sum(data['Cozem_Total'])
-                        avg = total_sum // 3 + 1
+                        # 총합 계산
+                        total = sum([row[1] for row in data])
 
-                        group1 = []
-                        group2 = []
-                        group3 = []
+                        # 대략적으로 합계를 3등분하여 청크 크기 계산
+                        chunk_size = int(total / 3) + 1  # 1을 더해주는 이유는 나머지 항목들이 하나의 청크를 차지할 경우를 대비한 것입니다.
 
-                        for i, row in data.iterrows():
-                            if sum(group1) < avg:
-                                group1.append(row['Cozem_Total'])
-                            elif sum(group2) < avg:
-                                group2.append(row['Cozem_Total'])
-                            else:
-                                group3.append(row['Cozem_Total'])
+                        # 각 청크의 시작 인덱스와 크기 계산
+                        chunk_starts = [0]
+                        chunk_sizes = []
+                        current_chunk_size = 0
+                        for i, row in enumerate(data):
+                            current_chunk_size += row[1]
+                            if current_chunk_size > chunk_size:
+                                chunk_starts.append(i)
+                                chunk_sizes.append(current_chunk_size - row[1])
+                                current_chunk_size = row[1]
+                        chunk_sizes.append(current_chunk_size)
 
-                        result1 = data[data['Cozem_Total'].isin(group1)][['Name', 'Cozem_Total']]
-                        result2 = data[data['Cozem_Total'].isin(group2)][['Name', 'Cozem_Total']]
-                        result3 = data[data['Cozem_Total'].isin(group3)][['Name', 'Cozem_Total']]
-
-                        st.write("Group 1:", result1)
-                        st.write("Group 2:", result2)
-                        st.write("Group 3:", result3)
+                        # 각 청크에서 총합이 가장 큰 것부터 채워나가며 결과 출력
+                        for i, start in enumerate(chunk_starts):
+                            st.write(f"Chunk {i+1}:")
+                            chunk_data = sorted(data[start:start+chunk_sizes[i]], key=lambda x: x[1], reverse=True)
+                            for row in chunk_data:
+                                st.write(f"{row[0]} ({row[1]})")
+                            st.write()
 
 
                 elif option == "데이터 다운로드💾":
