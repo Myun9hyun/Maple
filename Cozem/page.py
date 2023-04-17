@@ -568,7 +568,7 @@ elif choice == "직위관리":
                         st.write(f"돌체 : {d} 개")
                         st.write(f"영래 : {e} 개")
                     if st.button("위클리 지급 대상"):
-                        monthly = data[(data['Novel'] == 'O') & (data['Role'] == '본캐')]
+                        # monthly = data[(data['Novel'] == 'O') & (data['Role'] == '본캐')]
                         main_character = data[(data['Role'] == '본캐') & (data['Cozem_Total'] > 0)]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
                         st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
