@@ -591,9 +591,9 @@ elif choice == "직위관리":
                         result2 = data[data['Cozem_Total'].isin(group2)][['Name', 'Cozem_Total']]
                         result3 = data[data['Cozem_Total'].isin(group3)][['Name', 'Cozem_Total']]
 
-                        print("Group 1:", result1)
-                        print("Group 2:", result2)
-                        print("Group 3:", result3)
+                        st.write("Group 1:", result1)
+                        st.write("Group 2:", result2)
+                        st.write("Group 3:", result3)
 
 
                 elif option == "데이터 다운로드💾":
