@@ -416,6 +416,8 @@ elif choice == "직위관리":
 
                 elif option == "데이터 조회🔎":
                     # 저장된 데이터
+                    main_character = data[(data['Novel'] == 'O') & (data['Role'] == '본캐')]
+
                     st.write("버튼을 누르면 입력하신 데이터를 확인할 수 있습니다.")
                     if st.button('차트 열기'):
                         if not data.empty:
@@ -426,6 +428,10 @@ elif choice == "직위관리":
                             # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
                         else:
                             st.write('입력되어있는 데이터가 없습니다.')
+                    # st.write()
+                    if st.button("본캐만 조회"):
+                        st.write(main_character)
+
                 
                 elif option == "데이터 삭제✂":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
