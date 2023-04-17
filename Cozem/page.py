@@ -570,7 +570,7 @@ elif choice == "직위관리":
                     if st.button("위클리 지급 대상"):
                         main_character = data[(data['Novel'] == 'O') & (data['Role'] == '본캐')]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
-                        st.write(main_character['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel'])
+                        st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
                             # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
 
                 elif option == "데이터 다운로드💾":
