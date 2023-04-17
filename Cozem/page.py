@@ -573,7 +573,7 @@ elif choice == "직위관리":
                         st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
                     if st.button("분배"):
                         # 총합 계산
-                        total = sum(data['Cozem_Total'])
+                        total = sum([row[1] for row in data])
 
                         # 대략적으로 합계를 3등분하여 청크 크기 계산
                         chunk_size = int(total / 3) + 1  # 1을 더해주는 이유는 나머지 항목들이 하나의 청크를 차지할 경우를 대비한 것입니다.
