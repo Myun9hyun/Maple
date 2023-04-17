@@ -412,7 +412,6 @@ elif choice == "직위관리":
                             add_name(name)
                             save_data5(data5)  # 데이터를 파일에 저장
                             st.success(f'이름 {name}이(가) 추가되었어!')
-                    
 
                 elif option == "데이터 조회🔎":
                     # 저장된 데이터
@@ -429,7 +428,7 @@ elif choice == "직위관리":
                         else:
                             st.write('입력되어있는 데이터가 없습니다.')
                     # st.write()
-                    if st.button("본캐만 조회"):
+                    if st.button("본캐 조회"):
                         st.write(main_character)
 
                 
