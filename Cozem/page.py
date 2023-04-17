@@ -568,11 +568,9 @@ elif choice == "직위관리":
                         st.write(f"돌체 : {d} 개")
                         st.write(f"영래 : {e} 개")
                     if st.button("위클리 지급 대상"):
-                        # monthly = data[(data['Novel'] == 'O') & (data['Role'] == '본캐')]
                         main_character = data[(data['Role'] == '본캐') & (data['Cozem_Total'] > 0)]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
                         st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
-                            # st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
 
                 elif option == "데이터 다운로드💾":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
@@ -585,8 +583,6 @@ elif choice == "직위관리":
                             st.markdown(download_xlsx(data, file_name), unsafe_allow_html=True)
             else:
                 st.warning('비밀번호가 틀렸습니다.')
-                # else:
-                #     st.warning('비밀번호가 틀렸습니다.')
 
         if __name__ == '__main__':
                 main()
