@@ -571,6 +571,30 @@ elif choice == "직위관리":
                         main_character = data[(data['Role'] == '본캐') & (data['Cozem_Total'] > 0)]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
                         st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
+                    if st.button("분배"):
+                        total_sum = sum(data['Cozem_Total'])
+                        avg = total_sum // 3 + 1
+
+                        group1 = []
+                        group2 = []
+                        group3 = []
+
+                        for i, row in data.iterrows():
+                            if sum(group1) < avg:
+                                group1.append(row['Cozem_Total'])
+                            elif sum(group2) < avg:
+                                group2.append(row['Cozem_Total'])
+                            else:
+                                group3.append(row['Cozem_Total'])
+
+                        result1 = data[data['Cozem_Total'].isin(group1)][['Name', 'Cozem_Total']]
+                        result2 = data[data['Cozem_Total'].isin(group2)][['Name', 'Cozem_Total']]
+                        result3 = data[data['Cozem_Total'].isin(group3)][['Name', 'Cozem_Total']]
+
+                        print("Group 1:", result1)
+                        print("Group 2:", result2)
+                        print("Group 3:", result3)
+
 
                 elif option == "데이터 다운로드💾":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
