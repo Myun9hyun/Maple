@@ -224,24 +224,12 @@ elif choice == "길드페이지":
                 level = 'Not found'
                 exp_percentage = 'Not found'
 
-            # 더시드 최고기록 정보 가져오기
-            doosid_element = soup.select_one('.col-lg-3:nth-child(2) .user-summary-box')
-            if doosid_element:
-                doosid_info = doosid_element.select_one('.box-header').text.strip()
-                if '기록이 없습니다' in str(doosid_element):
-                    doosid_info += ' (기록 없음)'
-            else:
-                doosid_info = 'Not found'
-
             st.write(f'직업: {job}')
             st.write(f'서버: {world}')
             st.write(f'길드: {guild}')
             st.write(f'무릉: {mulung_info}')
             st.write(f'레벨: {level}')
             st.write(f'경험치: {exp_percentage}')
-            st.write(f'더시드: {doosid_info}')
-
-
 
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
