@@ -180,66 +180,66 @@ elif choice == "길드페이지":
     with tab3:
         st.header("메이플지지 검색")
 
-                # 검색할 캐릭터 이름
-                character_name = st.text_input("닉네임을 입력해주세요 : ")
+        # 검색할 캐릭터 이름
+        character_name = st.text_input("닉네임을 입력해주세요 : ")
 
-                # 검색 결과 페이지의 URL
-                url = f'https://maple.gg/u/{character_name}'
+        # 검색 결과 페이지의 URL
+        url = f'https://maple.gg/u/{character_name}'
 
-                if character_name:
-                    # requests 모듈을 이용해 HTTP GET 요청을 보내고 HTML 코드를 가져옴
-                    response = requests.get(url)
-                    html = response.content
+        if character_name:
+            # requests 모듈을 이용해 HTTP GET 요청을 보내고 HTML 코드를 가져옴
+            response = requests.get(url)
+            html = response.content
 
-                    # BeautifulSoup 모듈을 이용해 HTML 코드를 파싱
-                    soup = BeautifulSoup(html, 'html.parser')
+            # BeautifulSoup 모듈을 이용해 HTML 코드를 파싱
+            soup = BeautifulSoup(html, 'html.parser')
 
-                    # 직업 정보 가져오기
-                    job_element = soup.select_one('.user-summary-item:nth-child(2)')
-                    job = job_element.text.strip() if job_element else 'Not found'
+            # 직업 정보 가져오기
+            job_element = soup.select_one('.user-summary-item:nth-child(2)')
+            job = job_element.text.strip() if job_element else 'Not found'
 
-                    # 월드 정보 가져오기
-                    world_element = soup.select_one('.user-detail h3 img')
-                    world = world_element['alt'] if world_element else 'Not found'
+            # 월드 정보 가져오기
+            world_element = soup.select_one('.user-detail h3 img')
+            world = world_element['alt'] if world_element else 'Not found'
 
-                    # 길드 정보 가져오기
-                    guild_element = soup.select_one('.user-additional b')
-                    guild = guild_element.find_next_sibling().text.strip() if guild_element else 'Not found'
+            # 길드 정보 가져오기
+            guild_element = soup.select_one('.user-additional b')
+            guild = guild_element.find_next_sibling().text.strip() if guild_element else 'Not found'
 
-                    # 무릉 최고기록 정보 가져오기
-                    mulung_element = soup.select_one('.col-lg-3:nth-child(1) .user-summary-box .user-summary-box-content')
-                    if mulung_element:
-                        mulung_floor = mulung_element.select_one('.user-summary-floor').text.strip().split()[0]
-                        mulung_duration = mulung_element.select_one('.user-summary-duration').text.strip()
-                        mulung_info = f'{mulung_floor} ({mulung_duration})'
-                    else:
-                        mulung_info = 'Not found'
+            # 무릉 최고기록 정보 가져오기
+            mulung_element = soup.select_one('.col-lg-3:nth-child(1) .user-summary-box .user-summary-box-content')
+            if mulung_element:
+                mulung_floor = mulung_element.select_one('.user-summary-floor').text.strip().split()[0]
+                mulung_duration = mulung_element.select_one('.user-summary-duration').text.strip()
+                mulung_info = f'{mulung_floor} ({mulung_duration})'
+            else:
+                mulung_info = 'Not found'
 
-                    level_element = soup.select_one('.user-summary-item:nth-child(1)')
-                    if level_element:
-                        level_info = level_element.text.strip().split('(')
-                        level = level_info[0]
-                        exp_percentage = level_info[1].replace(')', '')
-                    else:
-                        level = 'Not found'
-                        exp_percentage = 'Not found'
+            level_element = soup.select_one('.user-summary-item:nth-child(1)')
+            if level_element:
+                level_info = level_element.text.strip().split('(')
+                level = level_info[0]
+                exp_percentage = level_info[1].replace(')', '')
+            else:
+                level = 'Not found'
+                exp_percentage = 'Not found'
 
-                    # 더시드 최고기록 정보 가져오기
-                    doosid_element = soup.select_one('.col-lg-3:nth-child(2) .user-summary-box')
-                    if doosid_element:
-                        doosid_info = doosid_element.select_one('.box-header').text.strip()
-                        if '기록이 없습니다' in str(doosid_element):
-                            doosid_info += ' (기록 없음)'
-                    else:
-                        doosid_info = 'Not found'
+            # 더시드 최고기록 정보 가져오기
+            doosid_element = soup.select_one('.col-lg-3:nth-child(2) .user-summary-box')
+            if doosid_element:
+                doosid_info = doosid_element.select_one('.box-header').text.strip()
+                if '기록이 없습니다' in str(doosid_element):
+                    doosid_info += ' (기록 없음)'
+            else:
+                doosid_info = 'Not found'
 
-                    st.write(f'직업: {job}')
-                    st.write(f'서버: {world}')
-                    st.write(f'길드: {guild}')
-                    st.write(f'무릉: {mulung_info}')
-                    st.write(f'레벨: {level}')
-                    st.write(f'경험치: {exp_percentage}')
-                    st.write(f'더시드: {doosid_info}')
+            st.write(f'직업: {job}')
+            st.write(f'서버: {world}')
+            st.write(f'길드: {guild}')
+            st.write(f'무릉: {mulung_info}')
+            st.write(f'레벨: {level}')
+            st.write(f'경험치: {exp_percentage}')
+            st.write(f'더시드: {doosid_info}')
 
 
 
