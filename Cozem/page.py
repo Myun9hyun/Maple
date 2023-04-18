@@ -178,7 +178,7 @@ elif choice == "길드페이지":
                     image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
                     st.image(image, caption=f"Page {i+1}", use_column_width=True)
     with tab3:
-        st.header("메이플지지 검색"):
+        st.header("메이플지지 검색")
 
                 # 검색할 캐릭터 이름
                 character_name = st.text_input("닉네임을 입력해주세요 : ")
