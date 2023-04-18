@@ -1632,7 +1632,7 @@ elif choice == "피드백 남기기":
     option = st.selectbox("기능 선택", options, key='select3')
     # 파일에서 데이터 불러오기
     def load_data10():
-        try:
+        try: 
             data10 = pd.read_csv(FILE_PATH10)
         except FileNotFoundError:
             data10 = pd.DataFrame(columns=['Name', 'Comment', 'Day'])
