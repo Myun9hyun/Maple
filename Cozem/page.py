@@ -224,6 +224,36 @@ elif choice == "길드페이지":
                 level = 'Not found'
                 exp_percentage = 'Not found'
 
+        def get_maple_info(nickname):
+            url = f"https://maple.gg/u/{nickname}"
+            response = requests.get(url)
+            soup = BeautifulSoup(response.content, "html.parser")
+
+            coord_items = soup.select(".character-coord__item")
+            coord_list = []
+            for item in coord_items:
+                item_type = item.select_one(".character-coord__item-type").text.strip()
+                item_name = item.select_one(".character-coord__item-name").text.strip()
+                coord_list.append(f"{item_type}: {item_name}")
+
+            img_url = soup.select_one(".character-image")["src"]
+            response = requests.get(img_url)
+            img = Image.open(BytesIO(response.content))
+
+            return coord_list, img
+
+        if st.button("코디 분석"):
+            if not nickname:
+                st.warning("닉네임을 입력해주세요!")
+            else:
+                coord_list, img = get_maple_info(nickname)
+                st.write("코디 분석 결과:")
+                for item in coord_list:
+                    st.write(item)
+                st.image(img, caption="캐릭터 이미지")
+
+        if st.button("랭킹 조회"):
+
             st.write(f'직업: {job}')
             st.write(f'서버: {world}')
             st.write(f'길드: {guild}')
