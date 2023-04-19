@@ -224,8 +224,8 @@ elif choice == "길드페이지":
                 level = 'Not found'
                 exp_percentage = 'Not found'
 
-        def get_maple_info(nickname):
-            url = f"https://maple.gg/u/{nickname}"
+        def get_maple_info(character_name):
+            url = f"https://maple.gg/u/{character_name}"
             response = requests.get(url)
             soup = BeautifulSoup(response.content, "html.parser")
 
@@ -243,10 +243,10 @@ elif choice == "길드페이지":
             return coord_list, img
 
         if st.button("코디 분석"):
-            if not nickname:
+            if not character_name:
                 st.warning("닉네임을 입력해주세요!")
             else:
-                coord_list, img = get_maple_info(nickname)
+                coord_list, img = get_maple_info(character_name)
                 st.write("코디 분석 결과:")
                 for item in coord_list:
                     st.write(item)
