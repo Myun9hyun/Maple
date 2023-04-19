@@ -12,7 +12,14 @@ Python을 이용한 Maple 길드관리 프로그램
   - [사이드바](#사이드바)
   - [메인페이지](#메인페이지)
   - [길드페이지](#길드페이지)
+    - [Manager](#manager)
+    - [Rules](#rules)
+    - [Character_data](#character_data)
   - [직위관리](#직위관리-페이지)
+    - [Cozem](#cozem)
+    - [Warning](#warning)
+    - [Pause](#pause)
+    - [Donated_Cozem](#donated_cozem)
   - [아카이브](#아카이브)
   - [이것저것](#이것저것)
   - [피드백남기기](#피드백남기기)
@@ -80,19 +87,19 @@ Q. 어떤 기능들이 있나요?
 
 * Maple.gg사이트의 검색결과를 보여주는 Character_data 탭이 있습니다.
 
-> ### Manager 탭
+> ### Manager
 ---
 * 길드의 간부진을 소개하는 탭입니다.
 
 ![Manager](Cozem/read_me_image/guild_page_1.png)
 
-> ### Rule 탭
+> ### Rules
 ---
 * 길드의 규칙을 pdf파일로 보여줍니다.
 
 ![Rule](Cozem/read_me_image/guild_page_2.png)
 
-> ### Character_data 탭
+> ### Character_data
 * 닉네임을 입력하면 Maple.gg사이트의 검색결과를 보여줍니다.
 
 ![Character_data](Cozem/read_me_image/guild_page_3.png)
@@ -105,7 +112,7 @@ Q. 어떤 기능들이 있나요?
 
 * 각 탭의 소개는 기능을 소개하면서 진행하겠습니다.
 
-> ### Cozem 탭
+> ### Cozem
 ---
 * 먼저 코어젬스톤 탭입니다.
 
@@ -154,7 +161,7 @@ Q. 어떤 기능들이 있나요?
 
 ![엑셀](Cozem/read_me_image/grade_page_9.png)
 
-> ### Warning 탭
+> ### Warning
 ---
 * 경고자 관리 탭입니다.
 * 노블레스 스킬 사용제한에 걸린 길드원은 경고를 1회 얻습니다.
@@ -167,7 +174,7 @@ Q. 어떤 기능들이 있나요?
 
 ![경고](Cozem/read_me_image/grade_page_2_1.png)
 
-> ### Pause 탭
+> ### Pause
 ---
 * 유예자 관리 탭입니다.
 
@@ -178,7 +185,7 @@ Q. 어떤 기능들이 있나요?
 
 ![유예](Cozem/read_me_image/grade_page_3_2.png)
 
-> ### Donated_cozem 탭
+> ### Donated_cozem
 ---
 * 간혹 위클리 이벤트나, 개인적으로 길드를 위해 코젬을 기부해주는 분들의 기부내역을 정리해두는 페이지 입니다.
 
