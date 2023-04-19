@@ -45,7 +45,9 @@ Q. 어떤 기능들이 있나요?
 * 페이지 링크에 접속하면 바로 보이는 화면입니다.
 
 * 페이지 링크 https://agizagi.streamlit.app/
+
 * 배너에는 길드이미지, 배너 우측에는 버전과 워터마크
+
 * 좌측에는 각종 기능이 담긴 사이드바가 있습니다.
 
 ![메인화면](Cozem/read_me_image/main_page.png)
@@ -54,9 +56,11 @@ Q. 어떤 기능들이 있나요?
 ## 사이드바
 ---
 * 먼저 사이드바입니다
+
 * 사이드바에는 각 페이지로 이동할 수 있는 메뉴 창
 
 * 길드문의 오픈채팅방으로 이동할 수 있는 링크와 길드원 명부를 정리해둔 구글독스 링크
+
 * 배경음악이 재생 가능한 음악재생 버튼이 있습니다.
 
 ![사이드바](Cozem/read_me_image/sidebar.png)
@@ -71,20 +75,28 @@ Q. 어떤 기능들이 있나요?
 * 길드페이지에는 총 3개의 탭이 있습니다.
 
 * 길드의 간부진을 소개하는 Manager탭
+
 * 길드의 규칙을 pdf파일로 정리해둔 Rule탭
+
 * Maple.gg사이트의 검색결과를 보여주는 Character_data 탭이 있습니다.
 
 > ### Manager 탭
 ---
 * 길드의 간부진을 소개하는 탭입니다.
+
 ![Manager](Cozem/read_me_image/guild_page_1.png)
+
 > ### Rule 탭
 ---
 * 길드의 규칙을 pdf파일로 보여줍니다.
+
 ![Rule](Cozem/read_me_image/guild_page_2.png)
+
 > ### Character_data 탭
 * 닉네임을 입력하면 Maple.gg사이트의 검색결과를 보여줍니다.
+
 ![Character_data](Cozem/read_me_image/guild_page_3.png)
+
 ![Character_data](Cozem/read_me_image/guild_page_3-1.png)
 
 ## 직위관리 페이지
