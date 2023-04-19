@@ -9,9 +9,13 @@ Python을 이용한 Maple 길드관리 프로그램
 - [Q&A](#Q&A)
 - [사용언어](#사용언어)
 - [화면](#메인화면)
-  - 메인화면
-
-
+  - [사이드바](#사이드바)
+  - [메인페이지](#메인페이지)
+  - [길드페이지](#길드페이지)
+  - [직위관리](#직위관리-페이지)
+  - [아카이브](#아카이브)
+  - [이것저것](#이것저것)
+  - [피드백남기기](#피드백남기기)
 ## 참고
 ---
 <h2 style = "color:red">**실제 운영중인 길드에서 사용하는 페이지입니다.**</h2>
@@ -134,10 +138,75 @@ Q. 어떤 기능들이 있나요?
 
 ![코젬계산](Cozem/read_me_image/grade_page_8-3.png)
 
+* 데이터 다운로드는 입력해둔 표의 데이터를 xlsx 파일로 다운로드 받을 수 있는 탭입니다.
 
+![엑셀](Cozem/read_me_image/grade_page_9.png)
 
-## sw 정보
+> ### Warning 탭
 ---
-sw 정보
-![정보](https://user-images.githubusercontent.com/49426352/159939207-79368db1-46e8-4d7c-8a10-6018e4daafa3.png)
+* 경고자 관리 탭입니다.
+* 노블레스 스킬 사용제한에 걸린 길드원은 경고를 1회 얻습니다.
+
+* 경고가 총 3회 될 경우에는 길드에서 퇴출됩니다.
+
+![경고](Cozem/read_me_image/grade_page_2_3.png)
+
+![경고](Cozem/read_me_image/grade_page_2_2.png)
+
+![경고](Cozem/read_me_image/grade_page_2_1.png)
+
+> ### Pause 탭
+---
+* 유예자 관리 탭입니다.
+
+* 개인사정으로 길드 컨텐츠에 참여하게 되지 못할 경우에 사용하는 탭입니다.
+* 인정될 만한 사유의 경우, 유예자 명단에 등록하고, 해당 기간 동안 길드컨텐츠는 면제됩니다.
+
+![유예](Cozem/read_me_image/grade_page_3_1.png)
+
+![유예](Cozem/read_me_image/grade_page_3_2.png)
+
+> ### Donated_cozem 탭
+---
+* 간혹 위클리 이벤트나, 개인적으로 길드를 위해 코젬을 기부해주는 분들의 기부내역을 정리해두는 페이지 입니다.
+
+* 기부받은 코어젬스톤을 길드 이벤트에 사용할 경우, 사용 내역도 기록합니다.
+
+![기부](Cozem/read_me_image/grade_page_4-1.png)
+
+![사용](Cozem/read_me_image/grade_page_4-2.png)
+
+![조회](Cozem/read_me_image/grade_page_4-3.png)
+
+
+## 아카이브
+---
+* 길드에서 디자인을 담당해주는 간부인 "**릎샴**" 님의 재능기부로 만들어진 포스터를 저장해두는 페이지입니다.
+
+* 포스터/길드사진 중에서 선택할 수 있습니다.
+
+* 포스터를 선택하면 포스터의 내역을 볼 수 있습니다.
+
+![포스터](Cozem/read_me_image/archive1.png)
+
+* 길드사진을 선택하면 길드원들끼리의 사진을 볼수 있습니다.
+
+![길드사진](Cozem/read_me_image/archive2.png)
+
+## 이것저것
+---
+* 이 페이지는 지나간 이벤트 내역등을 저장해둔 탭입니다.
+
+* 캡쳐 사진으로 일부 보여드리겠습니다.
+
+![이것저것](Cozem/read_me_image/extra1.png)
+![이것저것](Cozem/read_me_image/extra2.png)
+
+
+## 피드백남기기
+---
+* 페이지 제작자에게 피드백을 남기는 탭입니다.
+
+![피드백](Cozem/read_me_image/feedback1.png)
+![피드백](Cozem/read_me_image/feedback2.png)
 
