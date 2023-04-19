@@ -250,11 +250,9 @@ elif choice == "길드페이지":
                 st.write("코디 분석 결과:")
                 st.image(img, width=200)
                 for item in coord_list:
-                    st.write(item)
-                
+                    st.write(item) 
 
         if st.button("랭킹 조회"):
-
             st.write(f'직업: {job}')
             st.write(f'서버: {world}')
             st.write(f'길드: {guild}')
