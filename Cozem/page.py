@@ -168,16 +168,16 @@ elif choice == "길드페이지":
         st.header("📋길드 규정집📋")
         st.image("Cozem/image/guide1.jpg", use_column_width=True)
         st.image("Cozem/image/guide2.jpg", use_column_width=True)
-        # PDF 파일의 URL을 입력받습니다.
-        pdf_url = "Cozem/rule/아기자기_길드_규정_2023.pdf"
+        # # PDF 파일의 URL을 입력받습니다.
+        # pdf_url = "Cozem/rule/아기자기_길드_규정_2023.pdf"
 
-        # PDF 파일을 이미지로 변환합니다.
-        if pdf_url:
-            with fitz.open(pdf_url) as doc:
-                for i, page in enumerate(doc):
-                    pixmap = page.get_pixmap(dpi=300)  # dpi 값을 300으로 설정
-                    image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
-                    st.image(image, caption=f"Page {i+1}", use_column_width=True)
+        # # PDF 파일을 이미지로 변환합니다.
+        # if pdf_url:
+        #     with fitz.open(pdf_url) as doc:
+        #         for i, page in enumerate(doc):
+        #             pixmap = page.get_pixmap(dpi=300)  # dpi 값을 300으로 설정
+        #             image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
+        #             st.image(image, caption=f"Page {i+1}", use_column_width=True)
     with tab3:
         st.header("메이플지지 검색")
 
