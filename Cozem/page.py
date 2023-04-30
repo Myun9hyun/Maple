@@ -1044,8 +1044,8 @@ elif choice == "직위관리":
                 if info in data3['Info'].values:
                     st.warning(f'{info} (은)는 이미 있는 주차야!')
                     return
-                # data3 = data3.append({
-                data3 = data3.concat({
+                data3 = data3.append({
+                # data3 = data3.concat({
                     'Info': info, 
                     'Cozem' : cozem,
                     'Day' : day
