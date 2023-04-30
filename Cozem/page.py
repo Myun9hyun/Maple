@@ -378,7 +378,8 @@ elif choice == "직위관리":
                     st.warning(f'{main_name} (은)는 존재하지 않는 이름이야!')
                     return
                 main_row = data[data['Name'] == main_name].iloc[0]
-                data = data.append({
+                # data = data.append({
+                data = data.concat({
                     'Name': name, 
                     'Weekly_Mission': weekly_mission, 
                     'Suro': suro,
@@ -401,7 +402,8 @@ elif choice == "직위관리":
                 flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
                 cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
                 novel_value = novel_p(weekly_mission, suro, flag)  # Novel 값 계산
-                data = data.append({
+                # data = data.append({
+                data = data.concat({
                     'Name': name, 
                     'Weekly_Mission': weekly_mission, 
                     'Suro': suro,
@@ -446,7 +448,8 @@ elif choice == "직위관리":
                     warning_main = data[(data['Novel'] == 'X') & (data['Role'] == '본캐')]
                     if name in warning_main['Name'].values:
                         warning_count = warning_count + 1
-                    data = data.append({
+                    # data = data.append({
+                    data = data.concat({
                         'Name': name, 
                         'Weekly_Mission': weekly_mission, 
                         'Suro': suro, 
@@ -798,7 +801,8 @@ elif choice == "직위관리":
                 else:
                     st.success(f"경고자 {name}이(가) 추가되었습니다.")
 
-                data1 = data1.append({
+                # data1 = data1.append({
+                data1 = data1.concat({
                     'Name': name, 
                     'Warning' : warning_count,
                     'Reason' : reason
@@ -939,7 +943,8 @@ elif choice == "직위관리":
                 else:
                     st.success(f"유예자 {name}이(가) 추가되었습니다.")
 
-                data2 = data2.append({
+                # data2 = data2.append({
+                data2 = data2.concat({
                     'Name': name, 
                     'Why' : why,
                     'Due to' : period
@@ -1039,7 +1044,8 @@ elif choice == "직위관리":
                 if info in data3['Info'].values:
                     st.warning(f'{info} (은)는 이미 있는 주차야!')
                     return
-                data3 = data3.append({
+                # data3 = data3.append({
+                data3 = data3.concat({
                     'Info': info, 
                     'Cozem' : cozem,
                     'Day' : day
@@ -1054,7 +1060,8 @@ elif choice == "직위관리":
                 else:
                     st.success(f"코젬 {use_donate}개를 사용했습니다.")
 
-                data3 = data3.append({
+                # data3 = data3.append({
+                data3 = data3.concat({
                     'Info': info, 
                     'Use' : use_cozem,
                     'Day' : day
@@ -1198,7 +1205,8 @@ elif choice == "이것저것":
             result = []
             for i in range(n):
                 selected_value = random.choices(values, probabilities)[0]
-                result.append(selected_value)
+                # result.append(selected_value)
+                result.concat(selected_value)
             return result
 
         # Streamlit 앱을 실행합니다.
@@ -1331,29 +1339,34 @@ elif choice == "이것저것":
             if name in data11['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
-            data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data11 = data11.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def add_data41(name, price, mount): # 밤 품목 저장
             global data41
             if name in data41['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
-            data41 = data41.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data41 = data41.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data41 = data41.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def add_data21(name, point): # 포인트 배분 
             global data21
             if name in data21['Name'].values:
                         st.warning(f'{name} (은)는 이미 있는 이름이야!')
                         return
-            data21 = data21.append({'Name': name, 'Point': point}, ignore_index=True)
+            # data21 = data21.append({'Name': name, 'Point': point}, ignore_index=True)
+            data21 = data21.concat({'Name': name, 'Point': point}, ignore_index=True)
 
         def add_data31(name, price, mount):
             global data31
-            data31 = data31.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data31 = data31.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data31 = data31.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def add_data51(name, price, mount):
             global data51
-            data51 = data51.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data51 = data51.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            data51 = data51.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
 
         def purchase_item(name, product_name, mount): # 낮 구매하기
             global data11, data21
@@ -1432,10 +1445,12 @@ elif choice == "이것저것":
 
         def save_purchase_history(name, product_name, mount): # 낮 구매내역 저장
             global data31
-            data31 = data31.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            # data31 = data31.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            data31 = data31.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
         def save_purchase_history2(name, product_name, mount): # 밤 구매내역 저장
             global data51
-            data51 = data51.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            # data51 = data51.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            data51 = data51.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
             
         def delete_data11(row_index):
                     global data11
@@ -1751,7 +1766,8 @@ elif choice == "피드백 남기기":
     data10 = load_data10()
     def add_data10(name, comment, day):
         global data10
-        data10 = data10.append({
+        # data10 = data10.append({
+        data10 = data10.concat({
             'Name': name, 
             'Comment' : comment,
             'Day' : day
