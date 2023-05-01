@@ -1577,7 +1577,7 @@ elif choice == "이것저것":
                     # st.button("구매내역 확인", on_click=view_purchase_history)
                     
                     # Concatenate purchase_df to data31 and save the updated data
-                    data31 = pd.concat([data31, purchase_df], ignore_index=True)
+                    # data31 = pd.concat([data31, purchase_df], ignore_index=True)
                     save_data31(data31)
                     
                 else:
