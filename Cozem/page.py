@@ -1092,7 +1092,7 @@ elif choice == "직위관리":
                     st.warning(f'{info} (은)는 이미 있는 이유야!')
                     return
                 else:
-                    st.success(f"코젬 {use_donate}개를 사용했습니다.")
+                    st.success(f"코젬 {use_cozem}개를 사용했습니다.")
 
                 new_data3 = pd.DataFrame({'Info': [info], 'Use': [use_cozem], 'Day': [day]})
                 data3 = pd.concat([data3, new_data3], ignore_index=True)
