@@ -969,7 +969,7 @@ elif choice == "직위관리":
                     st.warning(f'{name} (은)는 이미 있는 이름이야!')
                     return
                 else:
-                    st.success(f"경고자 {name}이(가) 추가되었습니다.")
+                    st.success(f"유예자 {name}이(가) 추가되었습니다.")
                     
                 new_data2 = pd.DataFrame({'Name': [name], 'Why': [why], 'Due to': [period]})
                 data2 = pd.concat([data2, new_data2], ignore_index=True)
