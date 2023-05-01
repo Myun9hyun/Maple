@@ -1334,8 +1334,8 @@ elif choice == "이것저것":
             result = []
             for i in range(n):
                 selected_value = random.choices(values, probabilities)[0]
-                # result.append(selected_value)
-                result.concat(selected_value)
+                result.append(selected_value)
+                # result.concat(selected_value)
             return result
 
         # Streamlit 앱을 실행합니다.
