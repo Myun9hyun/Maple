@@ -619,7 +619,7 @@ elif choice == "직위관리":
                             st.write('입력되어있는 데이터가 없습니다.')
                     # st.write()
                     if st.button("본캐 조회"):
-                        st.write(main_character)
+                        st.write(data[(data['Role'] == '본캐')])
 
                 
                 elif option == "데이터 삭제✂":
