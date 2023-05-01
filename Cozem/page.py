@@ -1291,7 +1291,7 @@ elif choice == "아카이브":
         ('초기포스터', '주황', '빨강', '파랑', '오디움', '회색', '봄'))
         if option == '초기포스터':
             st.write("초기 포스터입니다")
-            st.image("poster/"초기.jpg", width=500)
+            st.image("poster/초기.jpg", width=500)
         elif option == '주황':
             st.write("주황색 컨셉 포스터입니다")
             st.image("https://media.licdn.com/dms/image/C5622AQGnvm84OE9XOQ/feedshare-shrink_2048_1536/0/1679574742562?e=1682553600&v=beta&t=Q20T7_h7lySXZjCr2h2WW0P8H7I1KZ3Udv3LPxxTonw", width=500)
