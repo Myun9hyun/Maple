@@ -31,7 +31,7 @@ width, height = image.size
 draw = ImageDraw.Draw(image)
 text_kor = "아기자기"
 text_eng = "Welcome to"
-text_ver = "ver.04.22_1"
+text_ver = "ver.05.01_1"
 text_madeby = "@둥둥향"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
@@ -1578,7 +1578,7 @@ elif choice == "이것저것":
                     
                     # Concatenate purchase_df to data31 and save the updated data
                     # data31 = pd.concat([data31, purchase_df], ignore_index=True)
-                    save_data31(data31)
+                    # save_data31(data31)
                     
                 else:
                     st.warning(f'{name}은(는) {product_name}을(를) 구매할 포인트가 부족해!(┬┬﹏┬┬)')
