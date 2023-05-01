@@ -1896,12 +1896,14 @@ elif choice == "피드백 남기기":
     def add_data10(name, comment, day):
         global data10
         # data10 = data10.append({
-        data10 = data10.concat({
-            'Name': name, 
-            'Comment' : comment,
-            'Day' : day
+        # data10 = data10.concat({
+        #     'Name': name, 
+        #     'Comment' : comment,
+        #     'Day' : day
 
-        }, ignore_index=True)
+        # }, ignore_index=True)
+    new_data10 = pd.DataFrame({'Name': [name], 'Comment': [comment], 'Day': [day]})
+    data10 = pd.concat([data10, new_data10], ignore_index=True)
     def main():
         if option == "피드백 내용 삭제✂":
             st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
