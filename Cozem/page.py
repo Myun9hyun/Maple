@@ -1686,7 +1686,7 @@ elif choice == "이것저것":
                         option_manager = st.selectbox("기능을 선택해줘!ヾ(≧▽≦*)o", options_manager)
                         if option_manager == "데이터추가➕🌞":
                             st.error('⚠️길드 간부진만 접근할 수 있는 메뉴야o(￣┰￣*)ゞ!⚠️')
-                            password_input = st.number_input('비밀번호를 입력해주세요 : ')
+                            password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0)
                             if password_input == password:
                                 st.success('접근을 허용합니다')
                                 name = st.text_input('품목명을 입력해줘')
