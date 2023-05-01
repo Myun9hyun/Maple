@@ -793,20 +793,43 @@ elif choice == "직위관리":
 
             # 불러온 데이터를 전역 변수로 저장
             data1 = load_data1()
+            # def add_data1(name, warning_count, reason):
+            #     global data1
+            #     if name in data1['Name'].values:
+            #         st.warning(f'{name} (은)는 이미 있는 이름이야!')
+            #         return
+            #     else:
+            #         st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
+            #     data1 = data1.append({
+            #     # data1 = data1.concat({
+            #         'Name': name, 
+            #         'Warning' : warning_count,
+            #         'Reason' : reason
+            #     }, ignore_index=True)
             def add_data1(name, warning_count, reason):
                 global data1
-                if name in data1['Name'].values:
-                    st.warning(f'{name} (은)는 이미 있는 이름이야!')
-                    return
-                else:
-                    st.success(f"경고자 {name}이(가) 추가되었습니다.")
+                
+                if data1 is None:
+                    data1 = pd.DataFrame(columns=['Name', 'Warning', 'Reason'])
 
-                data1 = data1.append({
-                # data1 = data1.concat({
-                    'Name': name, 
-                    'Warning' : warning_count,
-                    'Reason' : reason
-                }, ignore_index=True)
+                if len(data1) == 0:
+                    data1 = pd.DataFrame({
+                        'Name': [name],
+                        'Warning': [warning_count],
+                        'Reason': [reason]
+                    })
+                else:
+                    if name in data1['Name'].values:
+                        st.warning(f'{name} (은)는 이미 있는 이름이야!')
+                    else:
+                        data1 = data1.append({
+                            'Name': name,
+                            'Warning': warning_count,
+                            'Reason': reason
+                        }, ignore_index=True)
+                        st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
             
 
             def main():
