@@ -1470,6 +1470,8 @@ elif choice == "이것저것":
                         return
             # data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
             data11 = data11.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            new_data11 = pd.DataFrame({'Name': [name], 'Price': [price], 'Mount': [mount]})
+            data11 = pd.concat([data11, new_data11], ignore_index=True)
 
         def add_data41(name, price, mount): # 밤 품목 저장
             global data41
@@ -1477,7 +1479,9 @@ elif choice == "이것저것":
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
             # data41 = data41.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
-            data41 = data41.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data41 = data41.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            new_data41 = pd.DataFrame({'Name': [name], 'Price': [price], 'Mount': [mount]})
+            data41 = pd.concat([data41, new_data41], ignore_index=True)
 
         def add_data21(name, point): # 포인트 배분 
             global data21
@@ -1485,19 +1489,61 @@ elif choice == "이것저것":
                         st.warning(f'{name} (은)는 이미 있는 이름이야!')
                         return
             # data21 = data21.append({'Name': name, 'Point': point}, ignore_index=True)
-            data21 = data21.concat({'Name': name, 'Point': point}, ignore_index=True)
+            # data21 = data21.concat({'Name': name, 'Point': point}, ignore_index=True)
+            new_data21 = pd.DataFrame({'Name': [name], 'Point': [point]})
+            data21 = pd.concat([data21, new_data21], ignore_index=True)
 
         def add_data31(name, price, mount):
             global data31
             # data31 = data31.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
-            data31 = data31.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data31 = data31.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            new_data31 = pd.DataFrame({'Name': [name], 'Price': [price], 'Mount': [mount]})
+            data31 = pd.concat([data31, new_data31], ignore_index=True)
 
         def add_data51(name, price, mount):
             global data51
             # data51 = data51.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
-            data51 = data51.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data51 = data51.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            new_data51 = pd.DataFrame({'Name': [name], 'Price': [price], 'Mount': [mount]})
+            data51 = pd.concat([data51, new_data51], ignore_index=True)
 
-        def purchase_item(name, product_name, mount): # 낮 구매하기
+        # def purchase_item(name, product_name, mount): # 낮 구매하기
+        #     global data11, data21
+        #     # data에서 product_name에 해당하는 row 선택
+        #     row = data11[data11['Name'] == product_name].iloc[0]
+        #     # data2에서 name에 해당하는 row 선택
+        #     row2 = data21[data21['Name'] == name].iloc[0]
+        #     # 구매하고자 하는 수량만큼 차감
+        #     if row['Mount'] >= mount:
+        #         data11.loc[data11['Name'] == product_name, 'Mount'] -= mount
+        #         save_data11(data11)
+        #         # 품목 가격만큼 point 차감
+        #         total_price = row['Price'] * mount
+        #         if row2['Point'] >= total_price:
+        #             # 데이터프레임에 구매내역 추가
+        #             data31 = load_data31()
+        #             purchase_df = data31[(data31['Name'] == name) & (data31['Product'] == product_name)]
+        #             if purchase_df.empty:
+        #                 purchase_df = pd.DataFrame({
+        #                     'Name': [name],
+        #                     'Product': [product_name],
+        #                     'Mount': [mount]
+        #                 })
+        #                 data31 = pd.concat([data31, purchase_df], ignore_index=True)
+        #             else:
+        #                 data31.loc[(data3['Name'] == name) & (data31['Product'] == product_name), 'Mount'] += mount
+        #             save_data31(data31)
+        #             # 구매자의 포인트 차감
+        #             data21.loc[data21['Name'] == name, 'Point'] -= total_price
+        #             save_data21(data21)
+        #             st.success(f'{product_name} {mount}개 구매 완료!')
+        #             # # 구매내역 호출 버튼 생성
+        #             # st.button("구매내역 확인", on_click=view_purchase_history)
+        #         else:
+        #             st.warning(f'{name}은(는) {product_name}을(를) 구매할 포인트가 부족해!(┬┬﹏┬┬)')
+        #     else:
+        #         st.warning(f'{product_name}(은)는 품절되었어(⊙_⊙;)')
+        def purchase_item(name, product_name, mount):
             global data11, data21
             # data에서 product_name에 해당하는 row 선택
             row = data11[data11['Name'] == product_name].iloc[0]
@@ -1521,7 +1567,7 @@ elif choice == "이것저것":
                         })
                         data31 = pd.concat([data31, purchase_df], ignore_index=True)
                     else:
-                        data31.loc[(data3['Name'] == name) & (data31['Product'] == product_name), 'Mount'] += mount
+                        data31.loc[(data31['Name'] == name) & (data31['Product'] == product_name), 'Mount'] += mount
                     save_data31(data31)
                     # 구매자의 포인트 차감
                     data21.loc[data21['Name'] == name, 'Point'] -= total_price
@@ -1529,11 +1575,53 @@ elif choice == "이것저것":
                     st.success(f'{product_name} {mount}개 구매 완료!')
                     # # 구매내역 호출 버튼 생성
                     # st.button("구매내역 확인", on_click=view_purchase_history)
+                    
+                    # Concatenate purchase_df to data31 and save the updated data
+                    data31 = pd.concat([data31, purchase_df], ignore_index=True)
+                    save_data31(data31)
+                    
                 else:
                     st.warning(f'{name}은(는) {product_name}을(를) 구매할 포인트가 부족해!(┬┬﹏┬┬)')
             else:
                 st.warning(f'{product_name}(은)는 품절되었어(⊙_⊙;)')
 
+
+        # def purchase_item2(name, product_name, mount): # 밤 구매하기
+        #     global data41, data21
+        #     # data에서 product_name에 해당하는 row 선택
+        #     row = data41[data41['Name'] == product_name].iloc[0]
+        #     # data2에서 name에 해당하는 row 선택
+        #     row2 = data21[data21['Name'] == name].iloc[0]
+        #     # 구매하고자 하는 수량만큼 차감
+        #     if row['Mount'] >= mount:
+        #         data41.loc[add_data41['Name'] == product_name, 'Mount'] -= mount
+        #         save_data41(data41)
+        #         # 품목 가격만큼 point 차감
+        #         total_price = row['Price'] * mount
+        #         if row2['Point'] >= total_price:
+        #             # 데이터프레임에 구매내역 추가
+        #             data51 = load_data51()
+        #             purchase_df = data51[(data51['Name'] == name) & (data51['Product'] == product_name)]
+        #             if purchase_df.empty:
+        #                 purchase_df = pd.DataFrame({
+        #                     'Name': [name],
+        #                     'Product': [product_name],
+        #                     'Mount': [mount]
+        #                 })
+        #                 data51 = pd.concat([data51, purchase_df], ignore_index=True)
+        #             else:
+        #                 data51.loc[(data51['Name'] == name) & (data51['Product'] == product_name), 'Mount'] += mount
+        #             save_data51(data51)
+        #             # 구매자의 포인트 차감
+        #             data21.loc[data21['Name'] == name, 'Point'] -= total_price
+        #             save_data21(data21)
+        #             st.success(f'{product_name} {mount}개 구매 완료!')
+        #             # # 구매내역 호출 버튼 생성
+        #             # st.button("구매내역 확인", on_click=view_purchase_history)
+        #         else:
+        #             st.warning(f'{name}은(는) {product_name}을(를) 구매할 포인트가 부족해!(┬┬﹏┬┬)')
+        #     else:
+        #         st.warning(f'{product_name}(은)는 품절되었어(⊙_⊙;)')
         def purchase_item2(name, product_name, mount): # 밤 구매하기
             global data41, data21
             # data에서 product_name에 해당하는 row 선택
@@ -1542,7 +1630,7 @@ elif choice == "이것저것":
             row2 = data21[data21['Name'] == name].iloc[0]
             # 구매하고자 하는 수량만큼 차감
             if row['Mount'] >= mount:
-                data41.loc[add_data41['Name'] == product_name, 'Mount'] -= mount
+                data41.loc[data41['Name'] == product_name, 'Mount'] -= mount
                 save_data41(data41)
                 # 품목 가격만큼 point 차감
                 total_price = row['Price'] * mount
@@ -1572,14 +1660,19 @@ elif choice == "이것저것":
                 st.warning(f'{product_name}(은)는 품절되었어(⊙_⊙;)')
 
 
+
         def save_purchase_history(name, product_name, mount): # 낮 구매내역 저장
             global data31
             # data31 = data31.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
-            data31 = data31.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            # data31 = data31.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            new_data31 = pd.DataFrame({'Name': [name], 'Product': [product_name], 'Mount': [mount]})
+            data31 = pd.concat([data31, new_data31], ignore_index=True)
         def save_purchase_history2(name, product_name, mount): # 밤 구매내역 저장
             global data51
             # data51 = data51.append({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
-            data51 = data51.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            # data51 = data51.concat({'Name': name, 'Product': product_name, 'Mount': mount}, ignore_index=True)
+            new_data51 = pd.DataFrame({'Name': [name], 'Product': [product_name], 'Mount': [mount]})
+            data51 = pd.concat([data51, new_data51], ignore_index=True)
             
         def delete_data11(row_index):
                     global data11
