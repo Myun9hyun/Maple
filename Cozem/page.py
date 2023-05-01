@@ -508,18 +508,14 @@ elif choice == "직위관리":
         #             }, ignore_index=True)
         #     else:
         #         st.warning(f"{character_type} (은)는 본캐/부캐가 아닙니다!")
-        # import pandas as pd
-
-        # data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel', 'Role', 'Main_Name'])
-
         def add_character_data(name, character_type, weekly_mission, suro, flag):
-            global data
+            global data, data5
             add_name(name)  # 입력된 이름을 데이터에 추가
             if character_type == '본캐':
-                add_data(name, character_type, weekly_mission, suro, flag)
+                add_data(name,character_type, weekly_mission, suro, flag)
             elif character_type == '부캐':
                 # main_name = st.text_input('본캐 이름을 입력하세요')
-                main_name = st.selectbox('본캐 이름을 골라줘', options=data['Name'].tolist(), key='main12')
+                main_name = st.selectbox('본캐 이름을 골라줘', options=data5['Name'].tolist(), key='main12')
                 main_data = data.loc[data['Name'] == main_name]
                 if len(main_data) == 0:
                     st.warning(f"{main_name} (은)는 등록되어있지 않아!")
@@ -552,8 +548,8 @@ elif choice == "직위관리":
                         'Flag_Cozem': [flag_cozem],
                         'Cozem_Total': [cozem_total],
                         'Novel': [novel_value],
-                        'Role': [role],
-                        'Main_Name': [main_name]
+                        'Role' : [role],
+                        'Main_Name' : [main_name]
                     })
                     data = pd.concat([data, new_row], ignore_index=True)
             else:
