@@ -1062,18 +1062,29 @@ elif choice == "직위관리":
 
             # 불러온 데이터를 전역 변수로 저장
             data3 = load_data3()
+            # def add_data3(info, cozem, day):
+            #     global data3
+            #     if info in data3['Info'].values:
+            #         st.warning(f'{info} (은)는 이미 있는 주차야!')
+            #         return
+            #     data3 = data3.append({
+            #     # data3 = data3.concat({
+            #         'Info': info, 
+            #         'Cozem' : cozem,
+            #         'Day' : day
+
+            #     }, ignore_index=True)
             def add_data3(info, cozem, day):
                 global data3
                 if info in data3['Info'].values:
-                    st.warning(f'{info} (은)는 이미 있는 주차야!')
+                    st.warning(f'{info} (은)는 이미 있는 이유야!')
                     return
-                data3 = data3.append({
-                # data3 = data3.concat({
-                    'Info': info, 
-                    'Cozem' : cozem,
-                    'Day' : day
+                else:
+                    st.success(f"기부코젬 {info}이(가) 추가되었습니다.")
+                    
+                new_data3 = pd.DataFrame({'Info': [info], 'Cozem': [cozem], 'Day': [day]})
+                data3 = pd.concat([data3, new_data3], ignore_index=True)
 
-                }, ignore_index=True)
             
             def use_cozem(info, use_cozem, day):
                 global data3
@@ -1083,13 +1094,16 @@ elif choice == "직위관리":
                 else:
                     st.success(f"코젬 {use_donate}개를 사용했습니다.")
 
-                # data3 = data3.append({
-                data3 = data3.concat({
-                    'Info': info, 
-                    'Use' : use_cozem,
-                    'Day' : day
+                new_data3 = pd.DataFrame({'Info': [info], 'Use': [use_cozem], 'Day': [day]})
+                data3 = pd.concat([data3, new_data3], ignore_index=True)
 
-                }, ignore_index=True)
+                # # data3 = data3.append({
+                # data3 = data3.concat({
+                #     'Info': info, 
+                #     'Use' : use_cozem,
+                #     'Day' : day
+
+                # }, ignore_index=True)
 
             def main():
                 if option == "기부 코젬 목록 삭제✂":
