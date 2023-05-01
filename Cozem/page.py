@@ -1294,22 +1294,22 @@ elif choice == "아카이브":
             st.image("Cozem/poster/초기.jpg", width=500)
         elif option == '주황':
             st.write("주황색 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/C5622AQGnvm84OE9XOQ/feedshare-shrink_2048_1536/0/1679574742562?e=1682553600&v=beta&t=Q20T7_h7lySXZjCr2h2WW0P8H7I1KZ3Udv3LPxxTonw", width=500)
+            st.image("Cozem/poster/주황.jpg", width=500)
         elif option == '빨강':
             st.write("빨간색 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/D5622AQHnVCtQebUnkg/feedshare-shrink_2048_1536/0/1679574752576?e=1682553600&v=beta&t=UEFF6vu0CO9MJ-eov77W5LShxNIm9kY4Qysep0ZiUHI", width=500)
+            st.image("Cozem/poster/빨강.jpg", width=500)
         elif option == '파랑':
             st.write("파란색 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/C5622AQEB9rQJ982QuA/feedshare-shrink_2048_1536/0/1679575884228?e=1682553600&v=beta&t=Uhyaq3z2-z-65xf2WPO1er8hzP51SF4ZYlLdmMJndL4", width=500)    
+            st.image("Cozem/poster/파랑.jpg", width=500)    
         elif option == '오디움':
             st.write("오디움 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/C5622AQE7RR2V8WJzkQ/feedshare-shrink_2048_1536/0/1679575867836?e=1682553600&v=beta&t=sqzte_TDGnXR0BU5OiYUF4nkFrolt17Oj-RVG-vBBRc", width=500)
+            st.image("Cozem/poster/오디움.jpg", width=500)
         elif option == '회색':
             st.write("회색 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/C5622AQF4OfxEF3RA7Q/feedshare-shrink_2048_1536/0/1679575859198?e=1682553600&v=beta&t=lNiV7RGiigxhNZsi8fYomkA7M4USwxk4Sy_7NtC2Un0", width=500)
+            st.image("Cozem/poster/회색.jpg", width=500)
         elif option == '봄':
             st.write("봄 컨셉 포스터입니다")
-            st.image("https://media.licdn.com/dms/image/D5622AQFO0CCKhf9Drg/feedshare-shrink_2048_1536/0/1679574361605?e=1682553600&v=beta&t=MX4A4NE3E-BJrCI_1-uh3LRAtKZWtpbofbB1ZKN-ykg", width=500)    
+            st.image("Cozem/poster/봄.jpg", width=500)    
     elif options=='길드사진':
         st.write("길드 사진 아카이브입니다.")
         col1, col2=st.columns(2)
