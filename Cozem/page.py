@@ -809,7 +809,7 @@ elif choice == "직위관리":
             #     }, ignore_index=True)
             def add_data1(name, warning_count, reason):
                 global data1
-                
+
                 if data1 is None:
                     data1 = pd.DataFrame(columns=['Name', 'Warning', 'Reason'])
 
@@ -829,6 +829,7 @@ elif choice == "직위관리":
                             'Reason': reason
                         }, ignore_index=True)
                         st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
 
             
 
