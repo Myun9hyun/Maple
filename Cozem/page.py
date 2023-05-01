@@ -948,22 +948,32 @@ elif choice == "직위관리":
 
             # 불러온 데이터를 전역 변수로 저장
             data2 = load_data2()
+            # def add_data2(name, why, period):
+            #     global data2
+            #     if name in data2['Name'].values:
+            #         st.warning(f'{name} (은)는 이미 있는 이름이야!')
+            #         return
+            #     else:
+            #         st.success(f"유예자 {name}이(가) 추가되었습니다.")
+
+            #     # data2 = data2.append({
+            #     data2 = data2.concat({
+            #         'Name': name, 
+            #         'Why' : why,
+            #         'Due to' : period
+
+            #     }, ignore_index=True)
             def add_data2(name, why, period):
                 global data2
                 if name in data2['Name'].values:
                     st.warning(f'{name} (은)는 이미 있는 이름이야!')
                     return
                 else:
-                    st.success(f"유예자 {name}이(가) 추가되었습니다.")
+                    st.success(f"경고자 {name}이(가) 추가되었습니다.")
+                    
+                new_data2 = pd.DataFrame({'Name': [name], 'Why': [why], 'Due to': [period]})
+                data2 = pd.concat([data2, new_data2], ignore_index=True)
 
-                # data2 = data2.append({
-                data2 = data2.concat({
-                    'Name': name, 
-                    'Why' : why,
-                    'Due to' : period
-
-                }, ignore_index=True)
-            
 
             def main():
                 if option == "유예자 삭제✂":
