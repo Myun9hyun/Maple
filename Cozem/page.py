@@ -1902,8 +1902,8 @@ elif choice == "피드백 남기기":
         #     'Day' : day
 
         # }, ignore_index=True)
-    new_data10 = pd.DataFrame({'Name': [name], 'Comment': [comment], 'Day': [day]})
-    data10 = pd.concat([data10, new_data10], ignore_index=True)
+        new_data10 = pd.DataFrame({'Name': [name], 'Comment': [comment], 'Day': [day]})
+        data10 = pd.concat([data10, new_data10], ignore_index=True)
     def main():
         if option == "피드백 내용 삭제✂":
             st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
