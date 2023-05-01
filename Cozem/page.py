@@ -367,32 +367,77 @@ elif choice == "직위관리":
                 return
             new_data = pd.DataFrame({'Name': [names]})
             data5 = pd.concat([data5, new_data], ignore_index=True)
+            # new_data = pd.DataFrame({'Name': [name], 'Warning': [warning_count], 'Reason': [reason]})
+            # data1 = pd.concat([data1, new_data], ignore_index=True)
 
 
+        # def add_data(name,character_type, weekly_mission, suro, flag):
+        #     global data, data5
+        #     if character_type == "부캐":
+        #         # main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
+        #         main_name = st.text_input("본캐의 이름을 입력하세요.")
+        #         if main_name not in data['Name'].values:
+        #             st.warning(f'{main_name} (은)는 존재하지 않는 이름이야!')
+        #             return
+        #         main_row = data[data['Name'] == main_name].iloc[0]
+        #         # data = data.append({
+        #         data = data.concat({
+        #             'Name': name, 
+        #             'Weekly_Mission': weekly_mission, 
+        #             'Suro': suro,
+        #             'Suro_Cozem': suro_cozem,  # suro_cozem 값을 추가
+        #             'Flag': flag, 
+        #             'Flag_Cozem': flag_cozem,  # flag_cozem 값을 추가
+        #             'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag)),
+        #             'Novel': novel_p(weekly_mission, suro, flag),
+        #             'Role': role,
+        #             'Main_Name': main_name,
+        #         }, ignore_index=True)
+        #     else:
+        #         # 중복 검사
+        #         if name in data['Name'].values:
+        #             st.warning(f'{name} (은)는 추가되어있어!')
+        #             return
+        #         else:
+        #             st.success(f"{name}(이)는 추가할 수 있어!")
+        #         suro_cozem = Suro_cozem(suro)  # Suro_cozem 함수를 이용해 suro_cozem 값을 계산
+        #         flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
+        #         cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
+        #         novel_value = novel_p(weekly_mission, suro, flag)  # Novel 값 계산
+        #         # data = data.append({
+        #         data = data.concat({
+        #             'Name': name, 
+        #             'Weekly_Mission': weekly_mission, 
+        #             'Suro': suro,
+        #             'Suro_Cozem': suro_cozem,
+        #             'Flag': flag, 
+        #             'Flag_Cozem': flag_cozem,
+        #             'Cozem_Total': cozem_total,  # 코젬 총합 값을 추가
+        #             'Novel': novel_value,  # Novel 값을 추가
+        #             'Role': '본캐',
+        #             'Main_Name' : '본캐'
+        #         }, ignore_index=True)
         def add_data(name,character_type, weekly_mission, suro, flag):
             global data, data5
             if character_type == "부캐":
-                # main_name = st.selectbox('이름을 골라줘(❁´◡`❁)', options=data5['Name'].tolist())
                 main_name = st.text_input("본캐의 이름을 입력하세요.")
                 if main_name not in data['Name'].values:
                     st.warning(f'{main_name} (은)는 존재하지 않는 이름이야!')
                     return
                 main_row = data[data['Name'] == main_name].iloc[0]
-                # data = data.append({
-                data = data.concat({
+                data = pd.concat([data, pd.DataFrame({
                     'Name': name, 
                     'Weekly_Mission': weekly_mission, 
                     'Suro': suro,
-                    'Suro_Cozem': suro_cozem,  # suro_cozem 값을 추가
+                    'Suro_Cozem': Suro_cozem(suro),  # suro_cozem 값을 추가
                     'Flag': flag, 
-                    'Flag_Cozem': flag_cozem,  # flag_cozem 값을 추가
+                    'Flag_Cozem': Flag_cozem(flag),  # flag_cozem 값을 추가
                     'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag)),
                     'Novel': novel_p(weekly_mission, suro, flag),
-                    'Role': role,
+                    'Role': character_type,
                     'Main_Name': main_name,
-                }, ignore_index=True)
+                }, index=[len(data)])], ignore_index=True)
             else:
-                # 중복 검사
                 if name in data['Name'].values:
                     st.warning(f'{name} (은)는 추가되어있어!')
                     return
@@ -402,8 +447,7 @@ elif choice == "직위관리":
                 flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
                 cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
                 novel_value = novel_p(weekly_mission, suro, flag)  # Novel 값 계산
-                # data = data.append({
-                data = data.concat({
+                data = pd.concat([data, pd.DataFrame({
                     'Name': name, 
                     'Weekly_Mission': weekly_mission, 
                     'Suro': suro,
@@ -412,9 +456,10 @@ elif choice == "직위관리":
                     'Flag_Cozem': flag_cozem,
                     'Cozem_Total': cozem_total,  # 코젬 총합 값을 추가
                     'Novel': novel_value,  # Novel 값을 추가
-                    'Role': '본캐',
-                    'Main_Name' : '본캐'
-                }, ignore_index=True)
+                    'Role': character_type,
+                    'Main_Name': '본캐',
+                }, index=[len(data)])], ignore_index=True)
+
 
         # def role(Role):
         def add_character_data(name, character_type, weekly_mission, suro, flag):
