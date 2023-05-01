@@ -1469,7 +1469,7 @@ elif choice == "이것저것":
                         st.warning(f'{name} (은)는 이미 있는 품목이야!')
                         return
             # data11 = data11.append({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
-            data11 = data11.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
+            # data11 = data11.concat({'Name': name, 'Price': price, 'Mount': mount}, ignore_index=True)
             new_data11 = pd.DataFrame({'Name': [name], 'Price': [price], 'Mount': [mount]})
             data11 = pd.concat([data11, new_data11], ignore_index=True)
 
