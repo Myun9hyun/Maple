@@ -1134,7 +1134,7 @@ elif choice == "직위관리":
                     if st.button('기부 코젬 추가'):
                         add_data3(info, donate_cozem, day)
                         save_data3(data3)
-                        st.success(f"기부코젬 {info}이(가) 추가되었습니다.")
+                        # st.success(f"기부코젬 {info}이(가) 추가되었습니다.")
                 elif option == "기부 코젬 사용💸":
                     donate_total = data3['Cozem'].sum()
                     use_reason = st.text_input("기부 코젬 사용 목적을 작성해주세요")
