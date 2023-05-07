@@ -297,7 +297,7 @@ elif choice == "직위관리":
             return answer
 
         def novel_p(weekly_mission, suro, flag):
-            if (weekly_mission >= 3) and (suro > 0) and (flag > 0):
+            if (weekly_mission >= 3) and (suro > 0):
                 novel = 'O'
             elif weekly_mission == 5 and suro >= 1500:
                 novel = 'O'
