@@ -291,7 +291,7 @@ elif choice == "직위관리":
                 i = (suro // 500)
             return i
         
-        def Wm_five(weekly_mission):
+        def Weekly_cozem(weekly_mission):
             if weekly_mission == 5:
                 i = 2
             else :
@@ -440,8 +440,8 @@ elif choice == "직위관리":
                     'Suro_Cozem': Suro_cozem(suro),  # suro_cozem 값을 추가
                     'Flag': flag, 
                     'Flag_Cozem': Flag_cozem(flag),
-                    'WM_Cozem' : Wm_five(weekly_mission),  # flag_cozem 값을 추가
-                    'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag) + Wm_five(weekly_mission)),
+                    'Weekly_Cozem' : Weekly_cozem(weekly_mission),  # flag_cozem 값을 추가
+                    'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag) + Weekly_cozem(weekly_mission)),
                     'Novel': novel_p(weekly_mission, suro, flag),
                     'Role': character_type,
                     'Main_Name': main_name,
@@ -454,7 +454,8 @@ elif choice == "직위관리":
                     st.success(f"{name}(이)는 추가할 수 있어!")
                 suro_cozem = Suro_cozem(suro)  # Suro_cozem 함수를 이용해 suro_cozem 값을 계산
                 flag_cozem = Flag_cozem(flag)  # flag_cozem 함수를 이용해 flag_cozem 값을 계산
-                cozem_total = suro_cozem + flag_cozem  # 코젬 총합 계산
+                weekly_cozem = Weekly_cozem(weekly_mission)
+                cozem_total = suro_cozem + flag_cozem + weekly_cozem  # 코젬 총합 계산
                 novel_value = novel_p(weekly_mission, suro, flag)  # Novel 값 계산
                 data = pd.concat([data, pd.DataFrame({
                     'Name': name, 
