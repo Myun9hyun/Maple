@@ -324,7 +324,7 @@ elif choice == "직위관리":
             try:
                 data = pd.read_csv(FILE_PATH)
             except FileNotFoundError:
-                data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
+                data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag','Weekly_Cozem', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
             return data
         def load_data5():
             try:
@@ -343,7 +343,7 @@ elif choice == "직위관리":
         # 데이터 초기화 함수
         def clear_data():
             global data
-            data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
+            data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag','Weekly_Cozem', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
             # 파일 삭제
             os.remove(FILE_PATH)
             
@@ -464,6 +464,7 @@ elif choice == "직위관리":
                     'Suro_Cozem': suro_cozem,
                     'Flag': flag, 
                     'Flag_Cozem': flag_cozem,
+                    'Weekly_Cozem' : weekly_cozem,
                     'Cozem_Total': cozem_total,  # 코젬 총합 값을 추가
                     'Novel': novel_value,  # Novel 값을 추가
                     'Role': character_type,
@@ -558,7 +559,7 @@ elif choice == "직위관리":
                         'Suro_Cozem': [suro_cozem],
                         'Flag': [flag], 
                         'Flag_Cozem': [flag_cozem],
-                        'Weekly_Cozem' : [wm_cozem],
+                        'Weekly_Cozem' : [weekly_cozem],
                         'Cozem_Total': [cozem_total],
                         'Novel': [novel_value],
                         'Role' : [role],
