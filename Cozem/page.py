@@ -439,8 +439,9 @@ elif choice == "직위관리":
                     'Suro': suro,
                     'Suro_Cozem': Suro_cozem(suro),  # suro_cozem 값을 추가
                     'Flag': flag, 
-                    'Flag_Cozem': Flag_cozem(flag),  # flag_cozem 값을 추가
-                    'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag)),
+                    'Flag_Cozem': Flag_cozem(flag),
+                    'WM_Cozem' : Wm_five(weekly_mission),  # flag_cozem 값을 추가
+                    'Cozem_Total': main_row['Cozem_Total'] + (Suro_cozem(suro) + Flag_cozem(flag) + Wm_five(weekly_mission)),
                     'Novel': novel_p(weekly_mission, suro, flag),
                     'Role': character_type,
                     'Main_Name': main_name,
@@ -556,6 +557,7 @@ elif choice == "직위관리":
                         'Suro_Cozem': [suro_cozem],
                         'Flag': [flag], 
                         'Flag_Cozem': [flag_cozem],
+                        'Weekly_Cozem' : [wm_cozem],
                         'Cozem_Total': [cozem_total],
                         'Novel': [novel_value],
                         'Role' : [role],
