@@ -324,7 +324,7 @@ elif choice == "직위관리":
             try:
                 data = pd.read_csv(FILE_PATH)
             except FileNotFoundError:
-                data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
+                data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag','Weekly_Cozem', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
             return data
         def load_data5():
             try:
@@ -343,7 +343,7 @@ elif choice == "직위관리":
         # 데이터 초기화 함수
         def clear_data():
             global data
-            data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
+            data = pd.DataFrame(columns=['Name', 'Weekly_Mission', 'Suro', 'Flag','Weekly_Cozem', 'Cozem_Total', 'Novel', 'Role','Main_Name'])
             # 파일 삭제
             os.remove(FILE_PATH)
             
@@ -621,7 +621,7 @@ elif choice == "직위관리":
                     if st.button('차트 열기'):
                         if not data.empty:
                             st.write("코젬 계산 데이터")
-                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem','Weekly_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
                             st.write("이름 데이터")
                             st.write(data5)
                         elif not data5.empty:
