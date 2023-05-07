@@ -1291,7 +1291,7 @@ elif choice == "아카이브":
         ('초기포스터', '주황', '빨강', '파랑', '오디움', '회색', '봄'))
         if option == '초기포스터':
             st.write("초기 포스터입니다")
-            st.image("Cozem/poster/초기.jpg", width=500)
+            st.image("Cozem/poster/초기.jpg", use_column_width=True)
         elif option == '주황':
             st.write("주황색 컨셉 포스터입니다")
             st.image("Cozem/poster/주황.jpg", width=500)
