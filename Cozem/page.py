@@ -290,6 +290,14 @@ elif choice == "직위관리":
             else:
                 i = (suro // 500)
             return i
+        
+        def Wm_five(weekly_mission):
+            if weekly_mission == 5:
+                i = 2
+            else :
+                i = 0
+            return i
+
 
         def cozem_sum(suro, flag):
             answer = 0
@@ -524,7 +532,9 @@ elif choice == "직위관리":
                     main_data_index = main_data.index[0]
                     suro_cozem = Suro_cozem(suro)
                     flag_cozem = Flag_cozem(flag)
-                    cozem_total = suro_cozem + flag_cozem
+                    wm_cozem = Wm_five(weekly_mission)
+                    # cozem_total = suro_cozem + flag_cozem
+                    cozem_total = suro_cozem + flag_cozem + wm_cozem
                     data.loc[main_data_index, 'Cozem_Total'] += cozem_total
                     if main_data['Suro'].values[0] >= 4000:
                         novel_value = main_data['Novel'].values[0]
