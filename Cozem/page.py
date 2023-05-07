@@ -691,8 +691,8 @@ elif choice == "직위관리":
                         warning_WM_list = warning_WM['Name'].tolist()
                         warning_suro = warning[warning['Suro'] == 0]
                         warning_suro_list = warning_suro['Name'].tolist()
-                        warning_flag = warning[warning['Flag'] == 0]
-                        warning_flag_list = warning_flag['Name'].tolist()
+                        # warning_flag = warning[warning['Flag'] == 0]
+                        # warning_flag_list = warning_flag['Name'].tolist()
                         warning_main = data[(data['Novel'] == 'X') & (data['Role'] == '본캐')]
                         warning_main_list = warning_main['Name'].tolist()
 
@@ -717,10 +717,10 @@ elif choice == "직위관리":
                             st.write('이번주 지하수로 미실시자는 없습니다.')
                         else:
                             st.write(f"노블 제한자 중 지하수로 미실시자입니다 :  {warning_suro_list}.")
-                        if not warning_flag_list:
-                            st.write('이번주 플래그 미실시자는 없습니다.')
-                        else:
-                            st.write(f"노블 제한자 중 플래그 미실시자입니다 :  {warning_flag_list}.")
+                        # if not warning_flag_list:
+                        #     st.write('이번주 플래그 미실시자는 없습니다.')
+                        # else:
+                        #     st.write(f"노블 제한자 중 플래그 미실시자입니다 :  {warning_flag_list}.")
 
                     
                     if st.button('노블 사용가능 목록 보기'):
@@ -772,7 +772,7 @@ elif choice == "직위관리":
                     if st.button("위클리 지급 대상"):
                         main_character = data[(data['Role'] == '본캐') & (data['Cozem_Total'] > 0)]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
-                        st.write(main_character[['Name', 'Cozem_Total', 'Suro', 'Flag', 'Novel']])
+                        st.write(main_character[['Name', 'Cozem_Total','Weekly_Mission', 'Suro', 'Flag', 'Novel']])
 
 
                 elif option == "데이터 다운로드💾":
