@@ -534,9 +534,9 @@ elif choice == "직위관리":
                     main_data_index = main_data.index[0]
                     suro_cozem = Suro_cozem(suro)
                     flag_cozem = Flag_cozem(flag)
-                    wm_cozem = Wm_five(weekly_mission)
+                    weekly_cozem = Weekly_cozem(weekly_mission)
                     # cozem_total = suro_cozem + flag_cozem
-                    cozem_total = suro_cozem + flag_cozem + wm_cozem
+                    cozem_total = suro_cozem + flag_cozem + Weekly_cozem
                     data.loc[main_data_index, 'Cozem_Total'] += cozem_total
                     if main_data['Suro'].values[0] >= 4000:
                         novel_value = main_data['Novel'].values[0]
