@@ -621,7 +621,7 @@ elif choice == "직위관리":
                     if st.button('차트 열기'):
                         if not data.empty:
                             st.write("코젬 계산 데이터")
-                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem','Weekly_Cozem', 'Cozem_Total', 'Novel','Role','Main_Name']])
+                            st.write(data[['Name', 'Weekly_Mission', 'Suro', 'Suro_Cozem', 'Flag', 'Flag_Cozem','Cozem_Total', 'Novel','Role','Main_Name']])
                             st.write("이름 데이터")
                             st.write(data5)
                         elif not data5.empty:
