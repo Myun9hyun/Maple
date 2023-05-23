@@ -36,8 +36,8 @@ text_madeby = "@둥둥향"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
 font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
 text_width, text_height = draw.textsize(text_kor, font=font_kor)
-font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 15)
-font_madeby = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 15)
+font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
+font_madeby = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
 stroke_width = 2
 stroke_fill = (0, 0, 0)
 
@@ -50,19 +50,19 @@ x_made = width - text_width - 70
 y_made = height - text_height - 50
 # 테두리가 있는 텍스트 그리기
 
-# 아기자기 글씨 구현
-draw.text((x - stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x + stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, y - stroke_width), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, y + stroke_width), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, y), text_kor, font=font_kor, fill=(255, 255, 255))
+# # 아기자기 글씨 구현
+# draw.text((x - stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x + stroke_width, y), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, y - stroke_width), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, y + stroke_width), text_kor, font=font_kor, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, y), text_kor, font=font_kor, fill=(255, 255, 255))
 
-# Welcome to 구현
-draw.text((x - stroke_width, z), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x + stroke_width, z), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, z - stroke_width), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, z + stroke_width), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x, z), text_eng, font=font_eng, fill=(255, 255, 255))
+# # Welcome to 구현
+# draw.text((x - stroke_width, z), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x + stroke_width, z), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, z - stroke_width), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, z + stroke_width), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x, z), text_eng, font=font_eng, fill=(255, 255, 255))
 
 # 버전 구현
 draw.text((x_ver - stroke_width, y_ver), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
