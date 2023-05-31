@@ -30,7 +30,7 @@ width, height = image.size
 # 이미지에 텍스트 추가
 draw = ImageDraw.Draw(image)
 text_kor = "아기자기"
-text_eng = "Welcome to"
+text_eng = "Welcome to" 
 text_ver = "updated_05.30"
 text_madeby = "@둥둥향"
 font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
