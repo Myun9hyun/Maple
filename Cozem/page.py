@@ -751,9 +751,10 @@ elif choice == "직위관리":
                     if st.button('위클리 코젬 분배 계산'):
                         weekly_main = data[(data['Role'] == '본캐')]
                         weekly_main_total = weekly_main['Cozem_Total'].sum()
-                        quotient = weekly_main_total // 5
-                        remainder = weekly_main_total % 5
-                        a = b = c = d = e = quotient
+                        quotient = weekly_main_total // 4
+                        remainder = weekly_main_total % 4
+                        # a = b = c = d = e = quotient
+                        a = b = c = d = quotient
                         for i in range(remainder):
                             if i == 0:
                                 a += 1
@@ -763,14 +764,14 @@ elif choice == "직위관리":
                                 c += 1
                             elif i == 3:
                                 d += 1
-                            else:
-                                e += 1
+                            # else:
+                            #     e += 1
                         st.write(f"이번주 위클리 이벤트 코젬은 총 {weekly_main_total}개 입니다.")
                         st.write(f"반디 : {a} 개")
                         st.write(f"샴푸 : {b} 개")
                         st.write(f"둥둥 : {c} 개")
-                        st.write(f"돌체 : {d} 개")
-                        st.write(f"영래 : {e} 개")
+                        st.write(f"영래 : {d} 개")
+                        # st.write(f"영래 : {e} 개")
                     if st.button("위클리 지급 대상"):
                         main_character = data[(data['Role'] == '본캐') & (data['Cozem_Total'] > 0)]
                         st.write("위클리 코젬 지급은 다음과 같습니다")
