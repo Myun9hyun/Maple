@@ -1311,7 +1311,7 @@ elif choice == "직위관리":
 
             # 데이터를 파일에 저장하기
             def save_data16(data16):
-                data1.to_csv(FILE_PATH16, index=False)
+                data16.to_csv(FILE_PATH16, index=False)
 
             # 데이터 초기화 함수
             def clear_data16():
