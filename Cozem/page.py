@@ -1387,15 +1387,16 @@ elif choice == "직위관리":
                         add_data16(name, date, reason)
                         save_data16(data16)
                         # st.success(f"경고자 {name}이(가) 추가되었습니다.")
-
-
+                
+                
                 elif option == "탈퇴/추방자 조회🔎":
-                    if st.button('탈퇴/추방자 횟수 확인'):
-                        seceder_list = data16['Name'].tolist()
-                        st.write("탈퇴/추방자 전체 명단입니다.")
+                    seceder_list = data16['Name'].tolist()
+                    if not seceder_list:
+                            st.write('탈퇴/추방자는 없습니다.')
+                        else:
+                            st.write("탈퇴/추방자 전체 명단입니다.")
                         st.write(data16)
-                    else: 
-                        st.write("탈퇴/추방자는 없습니다.")
+
                 elif option == "데이터 초기화💣":
                     st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
                     password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass2')
