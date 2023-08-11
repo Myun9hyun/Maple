@@ -267,7 +267,7 @@ elif choice == "길드페이지":
 
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem"])
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem", "Seceder🏃‍♂️"])
     with tab1:
         st.header("💎코어젬스톤💎")
         st.image("Cozem/image/cozem_guild.jpg", use_column_width=True)
@@ -1292,7 +1292,125 @@ elif choice == "직위관리":
                 main()
         else:
             st.warning('비밀번호가 틀렸습니다.')
-        
+    with tab6:
+        st.header("🏃‍♂️탈퇴/추방자 목록🏃‍♂️")
+        FILE_PATH16 = 'data16.csv'
+        st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+        password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='password16')
+        if password_input == password:
+            st.success('접근을 허용합니다')
+            options = ["탈퇴/추방자 추가➕", "탈퇴/추방자 조회🔎", "탈퇴/추방자 삭제✂", "데이터 초기화💣" ]
+            option = st.selectbox("기능 선택", options, key='select16')
+        # 파일에서 데이터 불러오기
+            def load_data16():
+                try:
+                    data16 = pd.read_csv(FILE_PATH16)
+                except FileNotFoundError:
+                    data16 = pd.DataFrame(columns=['Name', 'Date','Reason'])
+                return data16
+
+            # 데이터를 파일에 저장하기
+            def save_data16(data16):
+                data1.to_csv(FILE_PATH16, index=False)
+
+            # 데이터 초기화 함수
+            def clear_data16():
+                global data16
+                data1 = pd.DataFrame(columns=['Name', 'Date','Reason'])
+                # 파일 삭제
+                os.remove(FILE_PATH16)
+            # 데이터 삭제 함수
+            def delete_data16(row_index):
+                global data16
+                data16 = data16.drop(index=row_index).reset_index(drop=True)
+
+            # 불러온 데이터를 전역 변수로 저장
+            data16 = load_data16()
+            # def add_data1(name, warning_count, reason):
+            #     global data1
+            #     if name in data1['Name'].values:
+            #         st.warning(f'{name} (은)는 이미 있는 이름이야!')
+            #         return
+            #     else:
+            #         st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
+            #     data1 = data1.append({
+            #     # data1 = data1.concat({
+            #         'Name': name, 
+            #         'Warning' : warning_count,
+            #         'Reason' : reason
+            #     }, ignore_index=True)
+            def add_data16(name, date, reason):
+                global data16
+                if name in data16['Name'].values:
+                    st.warning(f'{name} (은)는 이미 있는 이름이야!')
+                    return
+                else:
+                    st.success(f"탈퇴/추방자 {name}이(가) 추가되었습니다.")
+                    
+                new_data = pd.DataFrame({'Name': [name], 'Date': [date], 'Reason': [reason]})
+                data16 = pd.concat([data16, new_data], ignore_index=True)
+
+
+
+            
+
+            def main():
+                if option == "탈퇴/추방자 삭제✂":
+                    st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+                    password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0, key='pass13')
+                    if password_input == password:
+                        st.success('접근을 허용합니다')
+                    # 데이터 삭제 기능
+                    # if st.button('데이터 삭제'):
+                        # 사용자로부터 삭제할 행 번호 입력받기
+                        st.write(data16[['Name','Date','Reason']])
+                        row_index = st.number_input('삭제하고 싶은 데이터의 번호를 입력해주세요', min_value=0, max_value=data16.shape[0]-1)
+                        st.write("Enter를 입력하면 삭제됩니다.")
+                        if st.button('데이터 삭제'):
+                            # 해당 행이 존재할 경우, 행을 삭제
+                            if row_index >= 0 and row_index < data16.shape[0]:
+                                delete_data16(row_index)
+                                save_data16(data16)  # 데이터를 파일에 저장
+                                st.success('입력하신 행이 삭제되었습니다.')
+                    else:
+                        st.warning('비밀번호가 틀렸습니다.')
+                elif option == "탈퇴/추방자 추가➕":
+                    # main_name = st.selectbox('본캐 이름을 골라줘', options=data5['Name'].tolist(), key='main12')
+
+                    name = st.text_input("탈퇴/추방자 이름을 입력해주세요",)
+                    reason = st.text_input("경고 사유를 입력해주세요")
+                    date = data16.loc[data16['Name']==name, 'Date'].values[0] if name in data16['Name'].values else 0
+                    if st.button('탈퇴/추방자 이름 추가'):
+                        add_data16(name, date, reason)
+                        save_data16(data16)
+                        # st.success(f"경고자 {name}이(가) 추가되었습니다.")
+
+
+                elif option == "탈퇴/추방자 조회🔎":
+                    if st.button('탈퇴/추방자 횟수 확인'):
+                        seceder_list = data16['Name'].tolist()
+                        st.write("탈퇴/추방자 전체 명단입니다.")
+                        st.write(data16)
+                        else : 
+                            st.write("탈퇴/추방자는 없습니다.")
+                elif option == "데이터 초기화💣":
+                    st.error('⚠️길드 간부진만 접근할 수 있는 메뉴입니다!⚠️')
+                    password_input = st.number_input('비밀번호를 입력해주세요 : ',min_value=0,key='pass2')
+                    if password_input == password:
+                        st.success('접근을 허용합니다')
+                        # 데이터 전부 삭제
+                        st.write("⚠️버튼을 누르면 데이터가 다 날아갑니다!⚠️")
+                        st.write("⚠️신중하게 누르세요!!⚠️")
+                        if st.button('차트 초기화'):
+                            clear_data16()
+                            st.warning('차트가 초기화 되었습니다')
+                    else:
+                        st.warning('비밀번호가 틀렸습니다.')
+            if __name__ == "__main__":
+                main()
+        else:
+            st.warning('비밀번호가 틀렸습니다.')    
 
 elif choice == "아카이브":
     st.header("길드 아카이브")
