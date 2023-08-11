@@ -1316,7 +1316,7 @@ elif choice == "직위관리":
             # 데이터 초기화 함수
             def clear_data16():
                 global data16
-                data1 = pd.DataFrame(columns=['Name', 'Date','Reason'])
+                data16 = pd.DataFrame(columns=['Name', 'Date','Reason'])
                 # 파일 삭제
                 os.remove(FILE_PATH16)
             # 데이터 삭제 함수
