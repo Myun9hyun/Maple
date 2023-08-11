@@ -1393,8 +1393,8 @@ elif choice == "직위관리":
                     seceder_list = data16['Name'].tolist()
                     if not seceder_list:
                             st.write('탈퇴/추방자는 없습니다.')
-                        else:
-                            st.write("탈퇴/추방자 전체 명단입니다.")
+                    else:
+                        st.write("탈퇴/추방자 전체 명단입니다.")
                         st.write(data16)
 
                 elif option == "데이터 초기화💣":
