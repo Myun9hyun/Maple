@@ -267,7 +267,7 @@ elif choice == "길드페이지":
 
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem", "Seceder🏃‍♂️"])
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💎Cozem", "📋Grade", "❌Warning", "⏸Pause", "💝Donated_Cozem", "🏃‍♂️Seceder🏃‍♂️"])
     with tab1:
         st.header("💎코어젬스톤💎")
         st.image("Cozem/image/cozem_guild.jpg", use_column_width=True)
