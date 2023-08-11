@@ -1379,7 +1379,7 @@ elif choice == "직위관리":
                     # main_name = st.selectbox('본캐 이름을 골라줘', options=data5['Name'].tolist(), key='main12')
 
                     name = st.text_input("탈퇴/추방자 이름을 입력해주세요",)
-                    reason = st.text_input("경고 사유를 입력해주세요")
+                    reason = st.text_input("탈퇴/추방 사유를 입력해주세요")
                     date = st.date_input(
                         "탈퇴/추방 날짜를 설정해주세요",
                             datetime.date.today())
