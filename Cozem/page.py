@@ -1380,7 +1380,9 @@ elif choice == "직위관리":
 
                     name = st.text_input("탈퇴/추방자 이름을 입력해주세요",)
                     reason = st.text_input("경고 사유를 입력해주세요")
-                    date = data16.loc[data16['Name']==name, 'Date'].values[0] if name in data16['Name'].values else 0
+                    date = st.date_input(
+                        "탈퇴/추방 날짜를 설정해주세요",
+                            datetime.date.today())
                     if st.button('탈퇴/추방자 이름 추가'):
                         add_data16(name, date, reason)
                         save_data16(data16)
