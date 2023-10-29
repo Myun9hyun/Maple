@@ -208,7 +208,7 @@ elif choice == "길드페이지":
             world = world_element['alt'] if world_element else 'Not found'
 
             # 길드 정보 가져오기
-            guild_element = soup.select_one('.user-additional text-yellow text-underline')
+            guild_element = soup.select_one('.user-additional col-lg-2 col-md-4 col-sm-4 col-6 mt-3 text-yellow text-underline')
             guild = guild_element.find_next_sibling().text.strip() if guild_element else 'Not found'
 
             # 무릉 최고기록 정보 가져오기
