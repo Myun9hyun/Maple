@@ -224,7 +224,7 @@ elif choice == "길드페이지":
             if level_element:
                 level_info = level_element.text.strip().split('(')
                 level = level_info[0]
-                exp_percentage = level_info[1].replace(')', '')
+                # exp_percentage = level_info[1].replace(')', '')
             else:
                 level = 'Not found'
                 exp_percentage = 'Not found'
