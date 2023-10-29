@@ -224,7 +224,7 @@ elif choice == "길드페이지":
             if level_element:
                 level_info = level_element.text.strip().split('(')
                 level = level_info[0]
-                exp_percentage = level_info[0].replace(')', '')
+                # exp_percentage = level_info[1].replace(')', '')
             else:
                 level = 'Not found'
                 exp_percentage = 'Not found'
@@ -263,7 +263,7 @@ elif choice == "길드페이지":
             st.write(f'길드: {guild}')
             st.write(f'무릉: {mulung_info}')
             st.write(f'레벨: {level}')
-            st.write(f'경험치: {exp_percentage}')
+            # st.write(f'경험치: {exp_percentage}')
 
 elif choice == "직위관리":
     st.header("길드원 직위 관리 페이지")
