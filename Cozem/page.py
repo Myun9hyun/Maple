@@ -25,29 +25,29 @@ st.set_page_config(page_title="BanShamDoongDolYoung", page_icon=":rabbit:", layo
 password = 1234
 password_test = "1234"
 
-image = Image.open("Cozem/image/banner.jpg")
-width, height = image.size
-# 이미지에 텍스트 추가
-draw = ImageDraw.Draw(image)
-text_kor = "아기자기"
-text_eng = "Welcome to" 
-text_ver = "updated_05.30"
-text_madeby = "@둥둥향"
-font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
-font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
-text_width, text_height = draw.textsize(text_kor, font=font_kor)
-font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
-font_madeby = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
-stroke_width = 2
-stroke_fill = (0, 0, 0)
+# image = Image.open("Cozem/image/banner.jpg")
+# width, height = image.size
+# # 이미지에 텍스트 추가
+# draw = ImageDraw.Draw(image)
+# text_kor = "아기자기"
+# text_eng = "Welcome to" 
+# text_ver = "updated_05.30"
+# text_madeby = "@둥둥향"
+# font_kor = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 50)
+# font_eng = ImageFont.truetype("Cozem/font/ARIAL.TTF", 50)
+# text_width, text_height = draw.textsize(text_kor, font=font_kor)
+# font_ver = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
+# font_madeby = ImageFont.truetype("Cozem/font/NanumSquareNeo-eHv.ttf", 30)
+# stroke_width = 2
+# stroke_fill = (0, 0, 0)
 
-x = text_width - 100
-y = height - text_height - 200
-z = height - text_height - 255
-x_ver = width - text_width - 70
-y_ver = height - text_height - 10
-x_made = width - text_width - 70
-y_made = height - text_height - 50
+# x = text_width - 100
+# y = height - text_height - 200
+# z = height - text_height - 255
+# x_ver = width - text_width - 70
+# y_ver = height - text_height - 10
+# x_made = width - text_width - 70
+# y_made = height - text_height - 50
 # 테두리가 있는 텍스트 그리기
 
 # # 아기자기 글씨 구현
