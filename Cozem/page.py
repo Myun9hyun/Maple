@@ -77,6 +77,7 @@ password_test = "1234"
 # draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 # draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
 # draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
+
 def set_BGM(bgm):
     if bgm:
         audio_path = f"Cozem/bgm/{bgm}.mp3"
