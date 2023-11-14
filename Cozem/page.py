@@ -25,7 +25,7 @@ st.set_page_config(page_title="BanShamDoongYoung", page_icon=":rabbit:", layout=
 password = 1234
 password_test = "1234"
 
-# image = Image.open("Cozem/image/banner.jpg")
+image = Image.open("Cozem/image/banner.jpg")
 # width, height = image.size
 # # 이미지에 텍스트 추가
 # draw = ImageDraw.Draw(image)
@@ -91,7 +91,7 @@ def set_BGM(bgm):
         pass
 
 # # streamlit에 이미지 표시
-# st.image(image, use_column_width=True)
+st.image(image, use_column_width=True)
 
 with st.sidebar:
     choice = option_menu("Menu", ["메인페이지", "길드페이지", "직위관리", "아카이브", "이것저것", "피드백 남기기"],
