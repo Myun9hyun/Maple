@@ -64,19 +64,19 @@ password_test = "1234"
 # draw.text((x, z + stroke_width), text_eng, font=font_eng, fill=stroke_fill, stroke_width=stroke_width)
 # draw.text((x, z), text_eng, font=font_eng, fill=(255, 255, 255))
 
-# 버전 구현
-draw.text((x_ver - stroke_width, y_ver), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_ver + stroke_width, y_ver), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_ver, y_ver - stroke_width), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_ver, y_ver + stroke_width), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_ver, y_ver), text_ver, font=font_ver, fill=(255, 255, 255))
+# # 버전 구현
+# draw.text((x_ver - stroke_width, y_ver), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_ver + stroke_width, y_ver), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_ver, y_ver - stroke_width), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_ver, y_ver + stroke_width), text_ver, font=font_ver, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_ver, y_ver), text_ver, font=font_ver, fill=(255, 255, 255))
 
-# madeby구현
-draw.text((x_made - stroke_width, y_made), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
-draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
+# # madeby구현
+# draw.text((x_made - stroke_width, y_made), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_made + stroke_width, y_made), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_made, y_made - stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_made, y_made + stroke_width), text_madeby, font=font_madeby, fill=stroke_fill, stroke_width=stroke_width)
+# draw.text((x_made, y_made), text_madeby, font=font_madeby, fill=(255, 255, 255))
 def set_BGM(bgm):
     if bgm:
         audio_path = f"Cozem/bgm/{bgm}.mp3"
